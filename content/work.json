@@ -1,111 +1,101 @@
 {
   "items": [
     {
-      "kind": "Article",
       "title": "My Community My University: How Community-Based Research Stopped a Coal Power Plant in Myanmar",
+      "kind": "Article",
       "year": "2026",
       "role": "Writer / Photographer",
-      "url": "",
-      "image": "",
-      "description": "Part of a three-article series on people who used community-based research tools. I interviewed and profiled Mi Tri, an activist and community-based researcher from Mon State, Myanmar, about the tools and strategies she used against a large-scale development project that threatened her community's environment."
+      "url": "https://earthrights.org/blog/my-community-my-university-how-community-based-research-stopped-a-coal-power-plant-in-myanmar/",
+      "image": "/images/image (1).png",
+      "description": "Article about how Mi Tri fought back against a large-scale development project in her community with community based research tools. Part of the three-part series on community-based research tools."
     },
     {
-      "kind": "Article",
       "title": "Drawing the River Under Surveillance: How Communities in Laos Protect Their Rights and Natural Resources",
+      "kind": "Article",
       "year": "2026",
       "role": "Writer / Interviewer",
-      "url": "",
-      "image": "",
-      "description": "Interviewed and profiled a Lao lawyer and community rights defender on how he works directly with communities, the tools he uses, and the challenges he has faced."
+      "url": "https://earthrights.org/blog/drawing-the-river-under-surveillance-how-communities-in-laos-protect-their-rights-and-natural-resources/",
+      "image": "/images/image (2).png",
+      "description": "Read about how Bounmy, a Lao lawyer and community rights defender, works directly with communities to defend their legal rights. Part of the three-part series on community-based research tools."
     },
     {
-      "kind": "Article",
       "title": "Bringing Out Community Knowledge: LEAD Lessons from the Mekong",
+      "kind": "Article",
       "year": "2026",
       "role": "Writer / Photographer",
-      "url": "",
-      "image": "",
+      "url": "https://earthrights.org/blog/bringing-out-community-knowledge-lead-lessons-from-the-mekong/",
+      "image": "/images/image (51).png",
       "description": "Blog post and briefer on community-led research methods in the Mekong region. Compiled and analysed insights from multi-country training sessions into accessible content on participatory approaches and centring local knowledge in human rights work."
     },
     {
-      "kind": "Article",
       "title": "Six Harvests of Campaigning for an End to Coal Mining in Omkoi",
+      "kind": "Article",
       "year": "2025",
       "role": "Writer / Photographer",
-      "url": "",
-      "image": "",
+      "url": "https://earthrights.org/blog/six-harvests-of-campaigning-for-an-end-to-coal-mining-in-omkoi/",
+      "image": "/images/image (52).png",
       "description": "Social media and blog post announcing the achievements, history and future hopes of the six-year campaign."
     },
     {
-      "kind": "Article",
       "title": "Juvie, using documentation as a tool against injustice",
+      "kind": "Article",
       "year": "2024",
       "role": "Writer / Interviewer / Photographer",
-      "url": "",
-      "image": "",
+      "url": "https://sheltercity.org/juvie-using-documentation-as-a-tool-against-injustice/",
+      "image": "/images/IMG_3234.jpg",
       "description": "Interviewed a human rights defender from the Philippines on her experience and outlook. Published as a social media campaign and blog post."
     },
     {
-      "kind": "Article",
       "title": "From Africa to Europe: Enhancing global collaborations to protect human rights defenders at risk",
+      "kind": "Article",
       "year": "2024",
       "role": "Writer / Photographer",
-      "url": "",
-      "image": "",
+      "url": "https://sheltercity.org/2023-global-partner-meeting/",
+      "image": "/images/image (49).png",
       "description": "Documented an international convening on protecting at-risk human rights defenders."
     },
     {
-      "kind": "Article",
       "title": "The beginning of a partnership between Ubuntu Hub Cities and Shelter City",
+      "kind": "Article",
       "year": "2024",
       "role": "Writer / Photographer",
-      "url": "",
-      "image": "",
+      "url": "https://sheltercity.org/ubuntu-hub-cities-and-shelter-city/",
+      "image": "/images/image (50).png",
       "description": "Announced the collaboration between Shelter City and Ubuntu Hub Cities to expand the temporary relocation network for at-risk African human rights defenders."
     },
     {
-      "kind": "Document",
       "title": "Facilitating Community-Led Research in Challenging Contexts",
+      "kind": "Document",
       "year": "2026",
       "role": "Writer",
-      "url": "",
-      "image": "",
       "description": "Wrote the contents of the report and collaborated on the design and layout."
     },
     {
-      "kind": "Document",
       "title": "Welcome Guide NL",
+      "kind": "Document",
       "year": "2024",
       "role": "Writer / Graphic designer / Layout",
-      "url": "",
-      "image": "",
       "description": "A guide to the Netherlands for new Shelter City guests. I designed, compiled and edited the document."
     },
     {
-      "kind": "Document",
       "title": "Welcome Booklet, Global Partner Meeting",
+      "kind": "Document",
       "year": "2023",
       "role": "Writer / Graphic designer / Layout",
-      "url": "",
-      "image": "",
       "description": "Produced for over 70 participants at the Shelter City Global Partner Meeting."
     },
     {
-      "kind": "Document",
       "title": "A Guide to The Hague",
+      "kind": "Document",
       "year": "2022",
       "role": "Writer / Graphic designer / Layout",
-      "url": "",
-      "image": "",
       "description": "A plain-language guide to The Hague for new HRD guests hosted in the city and for participants of the Global Partner Meeting."
     },
     {
-      "kind": "Document",
       "title": "Bi-yearly Reflection Report",
+      "kind": "Document",
       "year": "2022",
       "role": "Writer / Graphic design / Layout",
-      "url": "",
-      "image": "",
       "description": "Designed the report in line with branding, wrote the contents, and led the evaluation of different projects."
     }
   ]
