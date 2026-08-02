@@ -1,0 +1,893 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sam Hofman — Communications Portfolio</title>
+<meta name="description" content="Storytelling, human rights and environmental justice. Written and visual work from Southeast Asia and beyond.">
+<meta property="og:title" content="Sam Hofman — Communications Portfolio">
+<meta property="og:description" content="Storytelling, human rights and environmental justice.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --clay:#c8b489;
+  --clay-2:#bca576;
+  --clay-3:#d6c6a3;
+  --ink:#17150f;
+  --ink-2:#3a3427;
+  --bone:#f4efe2;
+  --river:#2c5a61;
+  --marker:#e9c46a;
+
+  --display:'Archivo',system-ui,sans-serif;
+  --body:'Newsreader',Georgia,serif;
+  --mono:'IBM Plex Mono',ui-monospace,monospace;
+
+  --gut:clamp(20px,5vw,64px);
+  --maxw:1240px;
+}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{
+  margin:0;background:var(--clay);color:var(--ink);
+  font-family:var(--body);font-size:17px;line-height:1.62;
+  font-synthesis-weight:none;-webkit-font-smoothing:antialiased;
+}
+img{max-width:100%;display:block}
+a{color:inherit}
+button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
+:focus-visible{outline:2.5px solid var(--river);outline-offset:3px}
+
+.wrap{max-width:var(--maxw);margin:0 auto;padding-inline:var(--gut)}
+.mono{font-family:var(--mono);font-size:.7rem;letter-spacing:.14em;text-transform:uppercase}
+
+/* ---------- top bar ---------- */
+.topbar{
+  position:fixed;inset:0 0 auto 0;z-index:60;
+  display:flex;align-items:center;gap:24px;
+  padding:14px var(--gut);
+  transition:background .35s ease,color .35s ease,padding .35s ease;
+}
+.topbar.stuck{background:var(--ink);color:var(--bone);padding-block:10px}
+.topbar .sig{font-family:var(--display);font-weight:700;letter-spacing:-.02em;font-size:.95rem;white-space:nowrap}
+.topbar nav{margin-left:auto;display:flex;gap:4px;overflow-x:auto;scrollbar-width:none}
+.topbar nav::-webkit-scrollbar{display:none}
+.topbar nav a{
+  font-family:var(--display);font-size:.82rem;font-weight:500;
+  text-decoration:none;padding:6px 10px;border-radius:2px;white-space:nowrap;
+  opacity:.72;transition:opacity .2s,background .2s;
+}
+.topbar nav a:hover{opacity:1}
+.topbar nav a.on{opacity:1;box-shadow:inset 0 -2px 0 var(--marker)}
+.menu-btn{display:none}
+
+/* ---------- hero ---------- */
+.hero{
+  position:relative;min-height:min(94svh,860px);
+  display:flex;align-items:flex-end;
+  background:var(--ink);color:var(--bone);overflow:hidden;
+  background-image:repeating-linear-gradient(135deg,rgba(244,239,226,.045) 0 1px,transparent 1px 13px);
+}
+.hero-img{position:absolute;inset:0}
+.hero-img img{width:100%;height:100%;object-fit:cover;opacity:.62;filter:saturate(.86)}
+.hero-img::after{
+  content:'';position:absolute;inset:0;
+  background:linear-gradient(180deg,rgba(23,21,15,.55) 0%,rgba(23,21,15,.1) 38%,rgba(23,21,15,.88) 100%);
+}
+.hero-inner{position:relative;width:100%;max-width:var(--maxw);margin:0 auto;padding:0 var(--gut) clamp(36px,7vh,76px)}
+.hero .eyebrow{color:var(--marker);margin-bottom:14px}
+.hero h1{
+  font-family:var(--display);font-weight:800;
+  font-size:clamp(2.9rem,10.5vw,7.4rem);line-height:.92;letter-spacing:-.035em;
+  margin:0 0 10px;text-wrap:balance;
+}
+.hero h1 .sweep{position:relative;display:inline-block}
+.hero h1 .sweep::after{
+  content:'';position:absolute;left:-.04em;right:-.04em;bottom:.1em;height:.16em;
+  background:var(--marker);z-index:-1;transform-origin:left;
+  transform:scaleX(0);animation:sweep 1s cubic-bezier(.2,.7,.3,1) .5s forwards;
+}
+@keyframes sweep{to{transform:scaleX(1)}}
+.hero .standfirst{
+  font-size:clamp(1.02rem,2.1vw,1.28rem);max-width:44ch;color:#e8e1cf;margin:18px 0 0;
+}
+.hero .credit{margin-top:28px;color:#b8ae94;line-height:1.6;font-size:.66rem}
+.scroll-cue{
+  position:absolute;right:var(--gut);bottom:clamp(36px,7vh,76px);
+  writing-mode:vertical-rl;color:#b8ae94;display:none;
+}
+@media(min-width:900px){.scroll-cue{display:block}}
+
+/* ---------- section furniture ---------- */
+.band{padding-block:clamp(64px,9vw,116px)}
+.band--ink{background:var(--ink);color:var(--bone)}
+.band--deep{background:var(--clay-2)}
+.sec-head{display:flex;align-items:baseline;gap:18px;margin-bottom:clamp(28px,4vw,48px);flex-wrap:wrap}
+.sec-head h2{
+  font-family:var(--display);font-weight:800;letter-spacing:-.03em;
+  font-size:clamp(2rem,5.4vw,3.6rem);line-height:1;margin:0;
+}
+.sec-head .count{font-family:var(--mono);font-size:.7rem;letter-spacing:.14em;opacity:.55;text-transform:uppercase}
+.sec-intro{max-width:62ch;margin:0 0 clamp(28px,4vw,44px);font-size:1.05rem}
+.rule{height:1px;background:currentColor;opacity:.18;margin-block:clamp(48px,7vw,84px)}
+
+/* ---------- about ---------- */
+.about{display:grid;gap:clamp(28px,5vw,56px);grid-template-columns:1fr}
+@media(min-width:860px){.about{grid-template-columns:1.15fr .85fr;align-items:start}}
+.about p{margin:0 0 1.1em;font-size:1.1rem}
+.about .portrait{position:relative}
+.about .portrait figcaption{margin-top:10px;opacity:.6;font-size:.66rem}
+.tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:26px;padding:0;list-style:none}
+.tags li{
+  font-family:var(--mono);font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;
+  padding:6px 11px;border:1px solid rgba(23,21,15,.35);border-radius:999px;
+}
+
+/* ---------- work: year spine + rows ---------- */
+.filters{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:32px}
+.filters button{
+  font-family:var(--display);font-size:.8rem;font-weight:600;
+  padding:8px 16px;border:1.5px solid rgba(23,21,15,.4);border-radius:999px;
+  transition:background .2s,color .2s,border-color .2s;
+}
+.filters button:hover{border-color:var(--ink)}
+.filters button[aria-pressed="true"]{background:var(--ink);color:var(--bone);border-color:var(--ink)}
+
+.work-layout{display:grid;grid-template-columns:1fr;gap:0}
+@media(min-width:900px){.work-layout{grid-template-columns:88px 1fr;gap:40px}}
+
+.spine{display:none}
+@media(min-width:900px){
+  .spine{display:block;position:sticky;top:88px;align-self:start;padding-top:6px}
+}
+.spine ol{list-style:none;margin:0;padding:0;border-left:1px solid rgba(23,21,15,.25)}
+.spine li{position:relative}
+.spine button{
+  font-family:var(--mono);font-size:.78rem;letter-spacing:.04em;
+  padding:7px 0 7px 16px;width:100%;text-align:left;opacity:.4;transition:opacity .25s;
+}
+.spine button::before{
+  content:'';position:absolute;left:-1px;top:50%;width:8px;height:1px;background:var(--ink);opacity:.35;
+}
+.spine li.on button{opacity:1;font-weight:500}
+.spine li.on button::before{width:16px;height:2px;background:var(--river);opacity:1}
+
+.rows{list-style:none;margin:0;padding:0}
+.row{border-top:1px solid rgba(23,21,15,.22)}
+.rows .row:last-child{border-bottom:1px solid rgba(23,21,15,.22)}
+.row-in{
+  display:grid;gap:14px 16px;grid-template-columns:88px 1fr;align-items:start;
+  padding:24px 0;text-decoration:none;
+}
+@media(min-width:640px){.row-in{grid-template-columns:132px 1fr;gap:16px 24px}}
+@media(min-width:1080px){.row-in{grid-template-columns:132px 1.5fr 1fr;gap:16px 36px}}
+.row-thumb{aspect-ratio:4/3;overflow:hidden;background:var(--clay-3)}
+.row-thumb img{width:100%;height:100%;object-fit:cover;transition:transform .5s cubic-bezier(.2,.7,.3,1)}
+.row:hover .row-thumb img{transform:scale(1.05)}
+.row h3{
+  font-family:var(--display);font-weight:700;letter-spacing:-.017em;
+  font-size:clamp(1.12rem,2.1vw,1.42rem);line-height:1.22;margin:0 0 10px;
+}
+.row h3 span{
+  background-image:linear-gradient(var(--marker),var(--marker));
+  background-repeat:no-repeat;background-position:0 88%;background-size:0% .28em;
+  transition:background-size .38s cubic-bezier(.2,.7,.3,1);
+  box-decoration-break:clone;-webkit-box-decoration-break:clone;
+}
+.row:hover h3 span,.row-in:focus-visible h3 span{background-size:100% .28em}
+.row-meta{display:flex;flex-wrap:wrap;gap:6px 14px;align-items:center;opacity:.72}
+.row-meta .yr{color:var(--river);font-weight:500;opacity:1}
+.row-desc{font-size:.98rem;opacity:.86;margin:0}
+@media(max-width:1079px){.row-desc{margin-top:12px;grid-column:2/-1}}
+@media(max-width:520px){.row-desc{grid-column:1/-1}}
+.row-go{
+  display:inline-flex;align-items:center;gap:7px;margin-top:14px;
+  font-family:var(--mono);font-size:.66rem;letter-spacing:.14em;text-transform:uppercase;color:var(--river);
+}
+.row-go svg{transition:transform .3s}
+.row:hover .row-go svg{transform:translate(3px,-3px)}
+.row-nolink{margin-top:14px;opacity:.45}
+
+/* ---------- placeholder swatch ---------- */
+.ph{
+  position:relative;background:var(--clay-3);
+  background-image:repeating-linear-gradient(135deg,rgba(23,21,15,.09) 0 1px,transparent 1px 9px);
+  display:flex;align-items:flex-end;padding:8px;
+}
+.ph span{
+  font-family:var(--mono);font-size:.54rem;letter-spacing:.1em;text-transform:uppercase;
+  opacity:.45;line-height:1.3;
+}
+.band--ink .ph{background-color:#241f16;background-image:repeating-linear-gradient(135deg,rgba(244,239,226,.09) 0 1px,transparent 1px 9px)}
+
+/* ---------- storytelling ---------- */
+.story+.story{margin-top:clamp(48px,7vw,80px)}
+.story h3{
+  font-family:var(--display);font-weight:700;font-size:clamp(1.3rem,3vw,1.85rem);
+  letter-spacing:-.02em;margin:0 0 12px;
+}
+.story p{max-width:66ch;margin:0 0 22px;opacity:.88}
+.strip-head{display:flex;align-items:center;gap:10px;margin-bottom:12px}
+.strip-head .mono{opacity:.5;margin-right:auto}
+.strip-nav{display:flex;gap:6px}
+.strip-nav button{
+  width:34px;height:34px;border:1px solid currentColor;border-radius:50%;
+  display:grid;place-items:center;opacity:.5;transition:opacity .2s;
+}
+.strip-nav button:hover{opacity:1}
+.strip{
+  display:grid;grid-auto-flow:column;grid-auto-columns:minmax(190px,240px);
+  gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;
+  padding-bottom:14px;scrollbar-width:thin;
+}
+.strip>*{scroll-snap-align:start}
+.strip figure{margin:0}
+.strip .frame{aspect-ratio:4/5;overflow:hidden;cursor:zoom-in}
+.strip .frame img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
+.strip .frame:hover img{transform:scale(1.04)}
+.strip figcaption{margin-top:8px;opacity:.55;font-size:.62rem}
+
+/* ---------- photography ---------- */
+.gallery{columns:2;column-gap:14px}
+@media(min-width:760px){.gallery{columns:3}}
+@media(min-width:1100px){.gallery{columns:4}}
+.gallery figure{margin:0 0 14px;break-inside:avoid;cursor:zoom-in;position:relative}
+.gallery .frame{overflow:hidden}
+.gallery img{width:100%;transition:transform .55s cubic-bezier(.2,.7,.3,1)}
+.gallery figure:hover img{transform:scale(1.045)}
+.reels{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));margin-top:22px}
+.reel{text-decoration:none}
+.reel .frame{aspect-ratio:9/16;overflow:hidden;position:relative;background:#241f16}
+.reel .frame img{width:100%;height:100%;object-fit:cover}
+.reel .play{
+  position:absolute;inset:0;display:grid;place-items:center;
+  background:rgba(23,21,15,.28);transition:background .3s;
+}
+.reel:hover .play{background:rgba(23,21,15,.1)}
+.reel .play i{
+  width:52px;height:52px;border-radius:50%;border:1.5px solid var(--bone);
+  display:grid;place-items:center;color:var(--bone);
+}
+.reel figcaption{margin-top:9px;opacity:.6;font-size:.66rem}
+
+/* ---------- events ---------- */
+.event+.event{margin-top:clamp(48px,7vw,80px)}
+.event h3{font-family:var(--display);font-weight:700;font-size:clamp(1.3rem,3vw,1.9rem);letter-spacing:-.02em;margin:0 0 10px}
+.event p{max-width:70ch;margin:0 0 22px;opacity:.88}
+
+/* ---------- research ---------- */
+.papers{display:grid;gap:clamp(24px,4vw,40px);grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
+.paper .cover{aspect-ratio:1/1.414;overflow:hidden;background:var(--bone);cursor:zoom-in}
+.paper .cover img{width:100%;height:100%;object-fit:cover}
+.paper h3{font-family:var(--display);font-weight:700;font-size:1.06rem;line-height:1.3;letter-spacing:-.01em;margin:16px 0 8px}
+.paper p{font-size:.95rem;opacity:.85;margin:10px 0 0}
+.paper .award{
+  display:inline-block;margin-top:10px;padding:3px 9px;border:1px solid currentColor;
+  font-family:var(--mono);font-size:.6rem;letter-spacing:.12em;text-transform:uppercase;color:var(--river);
+}
+.band--ink .paper .award{color:var(--marker)}
+
+/* ---------- contact ---------- */
+.contact{display:grid;gap:32px;grid-template-columns:1fr}
+@media(min-width:800px){.contact{grid-template-columns:1.2fr .8fr;align-items:end}}
+.contact h2{font-family:var(--display);font-weight:800;font-size:clamp(1.9rem,5vw,3.2rem);letter-spacing:-.03em;line-height:1.02;margin:0}
+.links{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:2px}
+.links a{
+  display:flex;justify-content:space-between;gap:20px;align-items:center;
+  padding:13px 0;border-bottom:1px solid rgba(244,239,226,.22);
+  text-decoration:none;font-family:var(--display);font-weight:600;font-size:1rem;
+}
+.links a:hover{color:var(--marker)}
+.colophon{margin-top:56px;opacity:.42;font-size:.62rem;line-height:1.7}
+
+/* ---------- lightbox ---------- */
+.lb{
+  position:fixed;inset:0;z-index:100;background:rgba(12,11,8,.94);
+  display:none;align-items:center;justify-content:center;padding:clamp(16px,4vw,56px);
+}
+.lb.open{display:flex}
+.lb figure{margin:0;max-width:100%;max-height:100%;display:flex;flex-direction:column;gap:12px;align-items:center}
+.lb img{max-width:100%;max-height:78svh;object-fit:contain}
+.lb .ph{width:min(70vw,520px);aspect-ratio:4/5}
+.lb figcaption{color:#cfc6ad;font-family:var(--mono);font-size:.68rem;letter-spacing:.06em;text-align:center;max-width:60ch}
+.lb-btn{
+  position:absolute;color:var(--bone);width:46px;height:46px;border-radius:50%;
+  border:1px solid rgba(244,239,226,.4);display:grid;place-items:center;
+}
+.lb-btn:hover{background:rgba(244,239,226,.12)}
+.lb-close{top:18px;right:18px}
+.lb-prev{left:14px;top:50%;transform:translateY(-50%)}
+.lb-next{right:14px;top:50%;transform:translateY(-50%)}
+.lb-count{position:absolute;bottom:18px;left:50%;transform:translateX(-50%);color:#8f886f;font-family:var(--mono);font-size:.66rem;letter-spacing:.14em}
+
+/* ---------- reveal ---------- */
+.rv{opacity:0;transform:translateY(18px);transition:opacity .7s ease,transform .7s cubic-bezier(.2,.7,.3,1)}
+.rv.in{opacity:1;transform:none}
+
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}
+  .rv{opacity:1;transform:none}
+  .hero h1 .sweep::after{transform:scaleX(1)}
+}
+</style>
+</head>
+
+<body>
+
+<header class="topbar" id="topbar">
+  <span class="sig">Sam Hofman</span>
+  <nav id="nav" aria-label="Sections">
+    <a href="#about">About</a>
+    <a href="#work">Published work</a>
+    <a href="#storytelling">Storytelling</a>
+    <a href="#photography">Photography &amp; video</a>
+    <a href="#events">Events</a>
+    <a href="#research">Research</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
+
+<main>
+
+  <section class="hero" id="hero">
+    <div class="hero-img" id="heroImg"></div>
+    <div class="hero-inner">
+      <p class="mono eyebrow" id="heroEyebrow"></p>
+      <h1><span class="sweep" id="heroTitleA"></span><br><span id="heroTitleB"></span></h1>
+      <p class="standfirst" id="heroStand"></p>
+      <p class="mono credit" id="heroCredit"></p>
+    </div>
+    <span class="mono scroll-cue">Scroll</span>
+  </section>
+
+  <section class="band" id="about">
+    <div class="wrap">
+      <div class="sec-head rv"><h2>About Sam</h2></div>
+      <div class="about">
+        <div class="rv">
+          <div id="aboutText"></div>
+          <ul class="tags" id="aboutTags"></ul>
+        </div>
+        <figure class="portrait rv" id="portrait"></figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="band band--deep" id="work">
+    <div class="wrap">
+      <div class="sec-head rv">
+        <h2>Published work</h2>
+        <span class="count" id="workCount"></span>
+      </div>
+      <p class="sec-intro rv">Articles, profiles, reports and guides written and produced for human rights and environmental organisations.</p>
+      <div class="filters rv" id="workFilters" role="group" aria-label="Filter work"></div>
+      <div class="work-layout">
+        <div class="spine" aria-hidden="true"><ol id="spine"></ol></div>
+        <ul class="rows" id="workRows"></ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="band" id="storytelling">
+    <div class="wrap">
+      <div class="sec-head rv"><h2>Storytelling</h2></div>
+      <p class="sec-intro rv" id="storyIntro"></p>
+      <div id="stories"></div>
+    </div>
+  </section>
+
+  <section class="band band--ink" id="photography">
+    <div class="wrap">
+      <div class="sec-head rv"><h2>Photography</h2><span class="count" id="photoCount"></span></div>
+      <p class="sec-intro rv" id="photoIntro"></p>
+      <div class="gallery rv" id="gallery"></div>
+      <div class="rule"></div>
+      <div class="sec-head rv"><h2>Reels</h2></div>
+      <div class="reels rv" id="reels"></div>
+    </div>
+  </section>
+
+  <section class="band band--deep" id="events">
+    <div class="wrap">
+      <div class="sec-head rv"><h2>Events</h2></div>
+      <div id="eventList"></div>
+    </div>
+  </section>
+
+  <section class="band" id="research">
+    <div class="wrap">
+      <div class="sec-head rv"><h2>Academic research</h2></div>
+      <div class="papers" id="papers"></div>
+    </div>
+  </section>
+
+  <section class="band band--ink" id="contact">
+    <div class="wrap">
+      <div class="contact">
+        <h2 class="rv" id="contactLine"></h2>
+        <ul class="links rv" id="contactLinks"></ul>
+      </div>
+      <p class="colophon" id="colophon"></p>
+    </div>
+  </section>
+
+</main>
+
+<div class="lb" id="lb" role="dialog" aria-modal="true" aria-label="Image viewer">
+  <button class="lb-btn lb-close" id="lbClose" aria-label="Close">&#10005;</button>
+  <button class="lb-btn lb-prev" id="lbPrev" aria-label="Previous image">&#8592;</button>
+  <button class="lb-btn lb-next" id="lbNext" aria-label="Next image">&#8594;</button>
+  <figure id="lbFig"></figure>
+  <span class="lb-count" id="lbCount"></span>
+</div>
+
+<script type="application/json" id="seed">
+{
+  "site": {
+    "name": "Sam Hofman",
+    "eyebrow": "Human rights · Environmental justice · Southeast Asia",
+    "titleLine1": "Communications",
+    "titleLine2": "Portfolio",
+    "standfirst": "Written and visual work made with frontline communities, Indigenous rights movements and human rights defenders.",
+    "heroImage": "",
+    "heroCredit": "Omkoi, Chiang Mai, Thailand. Taken for the sixth anniversary of the Stop the Coal Mine campaign. Photo: Sam Hofman",
+    "aboutText": "I work at the intersection of storytelling, human rights and environmental justice. My work focuses on Indigenous rights, frontline communities and environmental issues across Southeast Asia.\n\nI have produced written and visual stories, human rights defender profiles, communications campaigns, briefers and community organiser profiles for NGOs including EarthRights International and Justice & Peace Netherlands (Shelter City Network).",
+    "portrait": "",
+    "portraitCaption": "",
+    "tags": ["Storytelling", "Communications", "Community-centred research", "Photography", "Southeast Asia"],
+    "contactLine": "Open to communications, storytelling and research roles.",
+    "email": "",
+    "linkedin": "",
+    "instagram": "",
+    "cv": ""
+  },
+
+  "work": { "items": [
+    { "kind":"Article", "title":"My Community My University: How Community-Based Research Stopped a Coal Power Plant in Myanmar", "year":"2026", "role":"Writer / Photographer", "url":"", "image":"",
+      "description":"Part of a three-article series on people who used community-based research tools. I interviewed and profiled Mi Tri, an activist and community-based researcher from Mon State, Myanmar, about the tools and strategies she used against a large-scale development project that threatened her community's environment." },
+    { "kind":"Article", "title":"Drawing the River Under Surveillance: How Communities in Laos Protect Their Rights and Natural Resources", "year":"2026", "role":"Writer / Interviewer", "url":"", "image":"",
+      "description":"Interviewed and profiled a Lao lawyer and community rights defender on how he works directly with communities, the tools he uses, and the challenges he has faced." },
+    { "kind":"Article", "title":"Bringing Out Community Knowledge: LEAD Lessons from the Mekong", "year":"2026", "role":"Writer / Photographer", "url":"", "image":"",
+      "description":"Blog post and briefer on community-led research methods in the Mekong region. Compiled and analysed insights from multi-country training sessions into accessible content on participatory approaches and centring local knowledge in human rights work." },
+    { "kind":"Article", "title":"Six Harvests of Campaigning for an End to Coal Mining in Omkoi", "year":"2025", "role":"Writer / Photographer", "url":"", "image":"",
+      "description":"Social media and blog post announcing the achievements, history and future hopes of the six-year campaign." },
+    { "kind":"Article", "title":"Juvie, using documentation as a tool against injustice", "year":"2024", "role":"Writer / Interviewer / Photographer", "url":"", "image":"",
+      "description":"Interviewed a human rights defender from the Philippines on her experience and outlook. Published as a social media campaign and blog post." },
+    { "kind":"Article", "title":"From Africa to Europe: Enhancing global collaborations to protect human rights defenders at risk", "year":"2024", "role":"Writer / Photographer", "url":"", "image":"",
+      "description":"Documented an international convening on protecting at-risk human rights defenders." },
+    { "kind":"Article", "title":"The beginning of a partnership between Ubuntu Hub Cities and Shelter City", "year":"2024", "role":"Writer / Photographer", "url":"", "image":"",
+      "description":"Announced the collaboration between Shelter City and Ubuntu Hub Cities to expand the temporary relocation network for at-risk African human rights defenders." },
+    { "kind":"Document", "title":"Facilitating Community-Led Research in Challenging Contexts", "year":"2026", "role":"Writer", "url":"", "image":"",
+      "description":"Wrote the contents of the report and collaborated on the design and layout." },
+    { "kind":"Document", "title":"Welcome Guide NL", "year":"2024", "role":"Writer / Graphic designer / Layout", "url":"", "image":"",
+      "description":"A guide to the Netherlands for new Shelter City guests. I designed, compiled and edited the document." },
+    { "kind":"Document", "title":"Welcome Booklet, Global Partner Meeting", "year":"2023", "role":"Writer / Graphic designer / Layout", "url":"", "image":"",
+      "description":"Produced for over 70 participants at the Shelter City Global Partner Meeting." },
+    { "kind":"Document", "title":"A Guide to The Hague", "year":"2022", "role":"Writer / Graphic designer / Layout", "url":"", "image":"",
+      "description":"A plain-language guide to The Hague for new HRD guests hosted in the city and for participants of the Global Partner Meeting." },
+    { "kind":"Document", "title":"Bi-yearly Reflection Report", "year":"2022", "role":"Writer / Graphic design / Layout", "url":"", "image":"",
+      "description":"Designed the report in line with branding, wrote the contents, and led the evaluation of different projects." }
+  ]},
+
+  "storytelling": {
+    "intro": "My work blends written and visual storytelling to document human rights, environmental issues and community-led movements. Through interviews, profiles, photography and digital narratives, I aim to tell stories that shift understanding and build empathy.",
+    "items": [
+      { "title":"Spotlighting Community-Based Research",
+        "description":"Wrote and interviewed three articles on community-based research practitioners across the Mekong region. The first, Drawing the River Under Surveillance: How Communities in Laos Protect Their Rights and Natural Resources (2026), has been published.",
+        "images":[] },
+      { "title":"Shelter City Human Rights Update",
+        "description":"A human rights update on Instagram Stories, letting Shelter City guests raise awareness of their work while staying anonymous. Updates covered arbitrary detention of HRDs in Venezuela, new anti-LGBT legislation in Iraq, the foreign agent law in Kyrgyzstan, and rising violence against Indigenous and environmental rights defenders in the Philippines.",
+        "images":[
+          {"src":"","caption":"Kyrgyzstan · foreign agent law"},
+          {"src":"","caption":"Venezuela · arbitrary detention"},
+          {"src":"","caption":"Philippines · violence against defenders"},
+          {"src":"","caption":"Iraq · anti-LGBT legislation"}
+        ]},
+      { "title":"Shelter City Resource Campaign",
+        "description":"Working on Shelter City branding at Justice & Peace NL, I revamped and revised the resource campaign designed to inform and support human rights defenders and former guests around the world. Posts went out every two weeks with clear, vivid updates on useful resources in the sector.",
+        "images":[
+          {"src":"","caption":"Resources · human rights defenders"},
+          {"src":"","caption":"Artivist award"},
+          {"src":"","caption":"Resources · defenders"},
+          {"src":"","caption":"Champions of the Earth Award"},
+          {"src":"","caption":"Resources · journalists"},
+          {"src":"","caption":"Guide to investigating war crimes"},
+          {"src":"","caption":"Resources · lawyers"},
+          {"src":"","caption":"Resources"}
+        ]},
+      { "title":"Human Rights Defender Stories",
+        "description":"In-depth stories on human rights defenders, their experience and their hopes. Posted on social media with a corresponding blog post on the website. More detailed than the Meet the Guest campaign, and requiring deeper research.",
+        "images":[
+          {"src":"","caption":"Photographer / copywriter / graphic designer"},
+          {"src":"","caption":"Photographer / copywriter / graphic designer"},
+          {"src":"","caption":"Photographer / copywriter / graphic designer / writer"},
+          {"src":"","caption":"Photographer / copywriter / graphic designer"}
+        ]},
+      { "title":"Meet the Guest Campaign",
+        "description":"This series introduced Shelter City guests to partners and the wider community. We protected their security by not publishing faces or identifying information, working in close consultation with each guest and monitoring the situation in their country. The call to action was an invitation to get in touch rather than a link, keeping the focus on growing each guest's network.",
+        "images":[
+          {"src":"","caption":"Photographer / copywriter / graphic designer"},
+          {"src":"","caption":"Photographer / copywriter / graphic designer"},
+          {"src":"","caption":"Photographer / copywriter / graphic designer / writer"},
+          {"src":"","caption":"Photographer / copywriter / graphic designer"}
+        ]},
+      { "title":"Other Communications",
+        "description":"Communication material outside specific campaigns: events, announcements and information about the Shelter City network and programme.",
+        "images":[
+          {"src":"","caption":"Networking"},
+          {"src":"","caption":"Exhibition"},
+          {"src":"","caption":"Exhibition"},
+          {"src":"","caption":"Focusing on wellbeing"}
+        ]},
+      { "title":"Poster Campaign",
+        "description":"For the Global Shelter City Partner Meeting I designed and led the printing of material shown during the meeting, including this poster series.",
+        "images":[
+          {"src":"","caption":"Copywriter / graphic designer"},
+          {"src":"","caption":"Copywriter / graphic designer"},
+          {"src":"","caption":"Copywriter / graphic designer"},
+          {"src":"","caption":"Copywriter / graphic designer"}
+        ]}
+    ]
+  },
+
+  "photography": {
+    "intro": "Photos taken over the years for different organisations: portraits, group activities, workshops, landscapes, cultural events and talks. They highlight the moments I have captured, always trying to convey the real emotion and energy of the scene. Made during my time at EarthRights International, Justice & Peace NL, or for personal projects.",
+    "photos": [
+      {"src":"","caption":"Village and hills"},
+      {"src":"","caption":"Workshop portrait"},
+      {"src":"","caption":"Stop the Coal Mine, Omkoi"},
+      {"src":"","caption":"Facilitator, training session"},
+      {"src":"","caption":"Fieldwork, riverbank"},
+      {"src":"","caption":"Street portrait"},
+      {"src":"","caption":"Conversation, café"},
+      {"src":"","caption":"Community meeting"},
+      {"src":"","caption":"Hills, northern Thailand"},
+      {"src":"","caption":"Speaker at gathering"},
+      {"src":"","caption":"Portrait"},
+      {"src":"","caption":"Group, The Hague"},
+      {"src":"","caption":"Portrait, evening"},
+      {"src":"","caption":"Bridge, winter"},
+      {"src":"","caption":"Panel discussion"},
+      {"src":"","caption":"Training participants"},
+      {"src":"","caption":"Presentation, meeting room"}
+    ],
+    "reels": [
+      {"url":"","thumb":"","caption":"2023 recap"},
+      {"url":"","thumb":"","caption":"Looking back at the guests' stay"},
+      {"url":"","thumb":"","caption":"Engaging with local allies"}
+    ]
+  },
+
+  "events": { "items": [
+    { "title":"Colouring Our World: Bridging Art and Environmental Narratives", "year":"2024",
+      "description":"I organised an art book launch for a guest of the Artist's Safe Haven Programme. I set up a partnership with Bookstor, the oldest bookstore in the Netherlands, who hosted the event free of charge. A.G. (Artivist) told his story and participants were invited to buy his newly published drawing book. Over 80 people attended.",
+      "images":[
+        {"src":"","caption":"Invitation"},
+        {"src":"","caption":"Contribute to sustainable societies"},
+        {"src":"","caption":"Guests with the book"},
+        {"src":"","caption":"The launch"}
+      ]},
+    { "title":"Pride Event: Sharing Stories", "year":"2024",
+      "description":"Together with COC Haaglanden, the largest LGBTQI+ rights organisation in The Hague and the Netherlands, we organised a space where six LGBTQI+ activists shared their stories and met each other. Over 25 people attended.",
+      "images":[
+        {"src":"","caption":"Human Library: sharing international stories"},
+        {"src":"","caption":"Participant"},
+        {"src":"","caption":"Speaker"},
+        {"src":"","caption":"Conversation"}
+      ]}
+  ]},
+
+  "research": { "items": [
+    { "title":"Master thesis — Too Late When Deemed a Crisis: Humanitarian Non-Response to Heavy Metal Contamination in the Transboundary Kok River Basin", "year":"2026", "role":"Writer / Researcher", "award":"", "url":"", "cover":"",
+      "description":"Researched how rare-earth mining, entangled in the conflict economy of Wa State, affects downstream river communities on the Kok River in Thailand." },
+    { "title":"Briefer — Humanitarian Access Constraints in Myanmar", "year":"2025", "role":"Writer / Researcher", "award":"Awarded A", "url":"", "cover":"",
+      "description":"Researched and analysed humanitarian access constraints across Myanmar and turned them into a briefer aimed at policy makers." },
+    { "title":"Bachelor thesis — Creating Smiles or Frowns", "year":"2023", "role":"Writer / Researcher", "award":"Awarded A", "url":"", "cover":"",
+      "description":"Researched smallholder farmers in Thailand in an increasingly competitive agricultural market, writing on the political and cultural context and using the Gambia as a comparison case." }
+  ]}
+}
+</script>
+
+<script>
+(function(){
+  'use strict';
+  const $ = (s,r)=> (r||document).querySelector(s);
+  const $$ = (s,r)=> Array.from((r||document).querySelectorAll(s));
+  const esc = s => String(s==null?'':s).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+
+  const FILES = {
+    site:'content/site.json', work:'content/work.json', storytelling:'content/storytelling.json',
+    photography:'content/photography.json', events:'content/events.json', research:'content/research.json'
+  };
+
+  const seed = JSON.parse($('#seed').textContent);
+
+  async function load(){
+    try{
+      const keys = Object.keys(FILES);
+      const res = await Promise.all(keys.map(k => fetch(FILES[k], {cache:'no-cache'})));
+      if(res.some(r=>!r.ok)) throw new Error('missing content file');
+      const parsed = await Promise.all(res.map(r=>r.json()));
+      const out = {};
+      keys.forEach((k,i)=> out[k]=parsed[i]);
+      return out;
+    }catch(e){
+      console.warn('Using built-in content. Once deployed, the files in /content take over.', e.message);
+      return seed;
+    }
+  }
+
+  /* ---- media helpers ---- */
+  function media(src, caption, cls, ratio){
+    const label = caption ? esc(caption) : 'Image';
+    if(src){
+      return `<div class="frame ${cls||''}"${ratio?` style="aspect-ratio:${ratio}"`:''}><img src="${esc(src)}" alt="${label}" loading="lazy"></div>`;
+    }
+    return `<div class="frame ph ${cls||''}"${ratio?` style="aspect-ratio:${ratio}"`:''}><span>${label}</span></div>`;
+  }
+
+  /* ---- render ---- */
+  function renderSite(s){
+    $('#heroEyebrow').textContent = s.eyebrow||'';
+    $('#heroTitleA').textContent = s.titleLine1||'';
+    $('#heroTitleB').textContent = s.titleLine2||'';
+    $('#heroStand').textContent = s.standfirst||'';
+    $('#heroCredit').textContent = s.heroCredit||'';
+    $('.topbar .sig').textContent = s.name||'';
+    document.title = (s.name?s.name+' — ':'')+'Communications Portfolio';
+
+    if(s.heroImage){
+      $('#heroImg').innerHTML = `<img src="${esc(s.heroImage)}" alt="">`;
+    }
+
+    $('#aboutText').innerHTML = String(s.aboutText||'').split(/\n\s*\n/).map(p=>`<p>${esc(p)}</p>`).join('');
+    $('#aboutTags').innerHTML = (s.tags||[]).map(t=>`<li>${esc(t)}</li>`).join('');
+    $('#portrait').innerHTML = media(s.portrait, s.portraitCaption||'Portrait', '', '4/5')
+      + (s.portraitCaption?`<figcaption class="mono">${esc(s.portraitCaption)}</figcaption>`:'');
+
+    $('#contactLine').textContent = s.contactLine||'';
+    const links = [];
+    if(s.email) links.push(['Email', 'mailto:'+s.email]);
+    if(s.linkedin) links.push(['LinkedIn', s.linkedin]);
+    if(s.instagram) links.push(['Instagram', s.instagram]);
+    if(s.cv) links.push(['Download CV', s.cv]);
+    $('#contactLinks').innerHTML = links.length
+      ? links.map(([l,h])=>`<li><a href="${esc(h)}"${h.startsWith('mailto')?'':' target="_blank" rel="noopener"'}>${esc(l)}<span aria-hidden="true">&#8599;</span></a></li>`).join('')
+      : `<li><a href="#work">Add your contact links in the CMS<span aria-hidden="true">&#8599;</span></a></li>`;
+    $('#colophon').textContent = '© '+new Date().getFullYear()+' '+(s.name||'')+'. All photographs by Sam Hofman unless otherwise credited.';
+  }
+
+  let workItems = [], activeFilter = 'All';
+
+  function renderWork(){
+    const shown = activeFilter==='All' ? workItems : workItems.filter(i=>i.kind===activeFilter);
+    $('#workCount').textContent = shown.length+' '+(shown.length===1?'item':'items');
+
+    $('#workRows').innerHTML = shown.map((it,i)=>{
+      const hasLink = !!it.url;
+      const tag = hasLink ? 'a' : 'div';
+      const attrs = hasLink ? ` href="${esc(it.url)}" target="_blank" rel="noopener"` : '';
+      return `<li class="row rv" data-year="${esc(it.year)}" data-i="${i}">
+        <${tag} class="row-in"${attrs}>
+          <div class="row-thumb ph"${it.image?' style="background:none"':''}>${it.image?`<img src="${esc(it.image)}" alt="">`:`<span>${esc(it.kind||'')}</span>`}</div>
+          <div>
+            <h3><span>${esc(it.title)}</span></h3>
+            <div class="row-meta mono">
+              <span class="yr">${esc(it.year)}</span>
+              <span>${esc(it.kind||'')}</span>
+              <span>${esc(it.role||'')}</span>
+            </div>
+            ${hasLink
+              ? `<span class="row-go">Read<svg width="11" height="11" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M2 10L10 2M10 2H4M10 2v6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>`
+              : `<span class="row-go row-nolink">Link to be added</span>`}
+          </div>
+          <p class="row-desc">${esc(it.description)}</p>
+        </${tag}>
+      </li>`;
+    }).join('');
+
+    const years = [...new Set(shown.map(i=>i.year))].sort().reverse();
+    $('#spine').innerHTML = years.map(y=>`<li data-year="${esc(y)}"><button type="button">${esc(y)}</button></li>`).join('');
+    $$('#spine button').forEach(b=>{
+      b.addEventListener('click', ()=>{
+        const y = b.parentElement.dataset.year;
+        const target = $(`#workRows .row[data-year="${y}"]`);
+        if(target) window.scrollTo({top: target.getBoundingClientRect().top + window.scrollY - 110, behavior:'smooth'});
+      });
+    });
+    observeRows();
+    revealScan();
+  }
+
+  function renderStorytelling(d){
+    $('#storyIntro').textContent = d.intro||'';
+    $('#stories').innerHTML = (d.items||[]).map((s,si)=>`
+      <article class="story rv">
+        <h3>${esc(s.title)}</h3>
+        <p>${esc(s.description)}</p>
+        ${(s.images&&s.images.length)?`
+          <div class="strip-head">
+            <span class="mono">${s.images.length} image${s.images.length===1?'':'s'}</span>
+            <div class="strip-nav">
+              <button type="button" data-dir="-1" data-strip="s${si}" aria-label="Scroll left">&#8592;</button>
+              <button type="button" data-dir="1" data-strip="s${si}" aria-label="Scroll right">&#8594;</button>
+            </div>
+          </div>
+          <div class="strip" id="s${si}" data-gallery="story-${si}">
+            ${s.images.map((im,ii)=>`<figure>
+              <div class="frame ${im.src?'':'ph'}" data-gi="${ii}" tabindex="0" role="button" aria-label="Open image">
+                ${im.src?`<img src="${esc(im.src)}" alt="${esc(im.caption||'')}" loading="lazy">`:`<span>${esc(im.caption||'Image')}</span>`}
+              </div>
+              <figcaption class="mono">${esc(im.caption||'')}</figcaption>
+            </figure>`).join('')}
+          </div>`:''}
+      </article>`).join('');
+
+    $$('.strip-nav button').forEach(b=>b.addEventListener('click',()=>{
+      const el = document.getElementById(b.dataset.strip);
+      el.scrollBy({left: (+b.dataset.dir)*Math.min(el.clientWidth*0.8, 600), behavior:'smooth'});
+    }));
+    registerGalleries(d.items.map((s,i)=>({key:'story-'+i, images:s.images||[]})));
+  }
+
+  function renderPhotography(d){
+    $('#photoIntro').textContent = d.intro||'';
+    $('#photoCount').textContent = (d.photos||[]).length+' frames';
+    const ratios = ['3/2','4/5','3/2','1/1','4/5','3/2','5/4','3/2','16/10','4/5','1/1','3/2','4/5','3/2','5/4','3/2','4/5'];
+    $('#gallery').innerHTML = (d.photos||[]).map((p,i)=>`
+      <figure data-gallery="photos" >
+        <div class="frame ${p.src?'':'ph'}" data-gi="${i}" tabindex="0" role="button" aria-label="Open image"${p.src?'':` style="aspect-ratio:${ratios[i%ratios.length]}"`}>
+          ${p.src?`<img src="${esc(p.src)}" alt="${esc(p.caption||'')}" loading="lazy">`:`<span>${esc(p.caption||'Photograph')}</span>`}
+        </div>
+      </figure>`).join('');
+
+    $('#reels').innerHTML = (d.reels||[]).map(r=>{
+      const inner = `<div class="frame">${r.thumb?`<img src="${esc(r.thumb)}" alt="">`:''}<span class="play"><i>&#9654;</i></span></div>
+        <figcaption class="mono">${esc(r.caption||'')}</figcaption>`;
+      return r.url
+        ? `<a class="reel" href="${esc(r.url)}" target="_blank" rel="noopener">${inner}</a>`
+        : `<div class="reel">${inner}</div>`;
+    }).join('');
+
+    registerGalleries([{key:'photos', images:d.photos||[]}]);
+  }
+
+  function renderEvents(d){
+    $('#eventList').innerHTML = (d.items||[]).map((e,ei)=>`
+      <article class="event rv">
+        <p class="mono" style="opacity:.55;margin:0 0 8px">${esc(e.year||'')}</p>
+        <h3>${esc(e.title)}</h3>
+        <p>${esc(e.description)}</p>
+        ${(e.images&&e.images.length)?`
+        <div class="strip" data-gallery="event-${ei}">
+          ${e.images.map((im,ii)=>`<figure>
+            <div class="frame ${im.src?'':'ph'}" data-gi="${ii}" tabindex="0" role="button" aria-label="Open image">
+              ${im.src?`<img src="${esc(im.src)}" alt="${esc(im.caption||'')}" loading="lazy">`:`<span>${esc(im.caption||'Image')}</span>`}
+            </div>
+            <figcaption class="mono">${esc(im.caption||'')}</figcaption>
+          </figure>`).join('')}
+        </div>`:''}
+      </article>`).join('');
+    registerGalleries((d.items||[]).map((e,i)=>({key:'event-'+i, images:e.images||[]})));
+  }
+
+  function renderResearch(d){
+    $('#papers').innerHTML = (d.items||[]).map((p,i)=>`
+      <article class="paper rv">
+        <div class="cover ${p.cover?'':'ph'}" data-gallery="papers" data-gi="${i}" tabindex="0" role="button" aria-label="Open cover">
+          ${p.cover?`<img src="${esc(p.cover)}" alt="${esc(p.title)}">`:`<span>${esc(p.year||'')} cover</span>`}
+        </div>
+        <h3>${p.url?`<a href="${esc(p.url)}" target="_blank" rel="noopener">${esc(p.title)}</a>`:esc(p.title)}</h3>
+        <div class="row-meta mono"><span class="yr">${esc(p.year)}</span><span>${esc(p.role||'')}</span></div>
+        ${p.award?`<span class="award">${esc(p.award)}</span>`:''}
+        <p>${esc(p.description)}</p>
+      </article>`).join('');
+    registerGalleries([{key:'papers', images:(d.items||[]).map(p=>({src:p.cover,caption:p.title}))}]);
+  }
+
+  /* ---- lightbox ---- */
+  const galleries = {};
+  let lbKey=null, lbIndex=0;
+  function registerGalleries(list){ list.forEach(g=>{ galleries[g.key]=g.images; }); }
+
+  function openLb(key,i){
+    lbKey=key; lbIndex=i;
+    paintLb(); $('#lb').classList.add('open'); document.body.style.overflow='hidden'; $('#lbClose').focus();
+  }
+  function paintLb(){
+    const imgs = galleries[lbKey]||[]; const im = imgs[lbIndex]||{};
+    $('#lbFig').innerHTML = (im.src?`<img src="${esc(im.src)}" alt="${esc(im.caption||'')}">`:`<div class="ph"><span>${esc(im.caption||'Image')}</span></div>`)
+      + (im.caption?`<figcaption>${esc(im.caption)}</figcaption>`:'');
+    $('#lbCount').textContent = (lbIndex+1)+' / '+imgs.length;
+    const many = imgs.length>1;
+    $('#lbPrev').style.display = many?'grid':'none';
+    $('#lbNext').style.display = many?'grid':'none';
+  }
+  function stepLb(d){ const n=(galleries[lbKey]||[]).length; if(!n) return; lbIndex=(lbIndex+d+n)%n; paintLb(); }
+  function closeLb(){ $('#lb').classList.remove('open'); document.body.style.overflow=''; }
+
+  $('#lbClose').addEventListener('click', closeLb);
+  $('#lbPrev').addEventListener('click', ()=>stepLb(-1));
+  $('#lbNext').addEventListener('click', ()=>stepLb(1));
+  $('#lb').addEventListener('click', e=>{ if(e.target.id==='lb') closeLb(); });
+  document.addEventListener('keydown', e=>{
+    if(!$('#lb').classList.contains('open')) return;
+    if(e.key==='Escape') closeLb();
+    if(e.key==='ArrowLeft') stepLb(-1);
+    if(e.key==='ArrowRight') stepLb(1);
+  });
+  function frameActivate(e){
+    const f = e.target.closest('[data-gi]');
+    if(!f) return;
+    const holder = f.closest('[data-gallery]') || f;
+    const key = holder.dataset.gallery;
+    if(!key || !galleries[key]) return;
+    if(e.type==='keydown' && e.key!=='Enter' && e.key!==' ') return;
+    if(e.type==='keydown') e.preventDefault();
+    openLb(key, +f.dataset.gi);
+  }
+  document.addEventListener('click', frameActivate);
+  document.addEventListener('keydown', frameActivate);
+
+  /* ---- scroll behaviour ---- */
+  const topbar = $('#topbar');
+  addEventListener('scroll', ()=>{ topbar.classList.toggle('stuck', scrollY > innerHeight*0.7); }, {passive:true});
+
+  const navLinks = $$('#nav a');
+  const secObs = new IntersectionObserver(es=>{
+    es.forEach(e=>{
+      if(e.isIntersecting){
+        navLinks.forEach(a=>a.classList.toggle('on', a.getAttribute('href')==='#'+e.target.id));
+      }
+    });
+  }, {rootMargin:'-45% 0px -50% 0px'});
+  $$('main section[id]').forEach(s=>secObs.observe(s));
+
+  let rowObs;
+  function observeRows(){
+    if(rowObs) rowObs.disconnect();
+    rowObs = new IntersectionObserver(es=>{
+      es.forEach(e=>{
+        if(e.isIntersecting){
+          const y = e.target.dataset.year;
+          $$('#spine li').forEach(li=>li.classList.toggle('on', li.dataset.year===y));
+        }
+      });
+    }, {rootMargin:'-40% 0px -55% 0px'});
+    $$('#workRows .row').forEach(r=>rowObs.observe(r));
+  }
+
+  const revObs = new IntersectionObserver(es=>{
+    es.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); revObs.unobserve(e.target); } });
+  }, {rootMargin:'0px 0px -8% 0px'});
+  function revealScan(){ $$('.rv:not(.in)').forEach(el=>revObs.observe(el)); }
+
+  /* ---- boot ---- */
+  load().then(data=>{
+    renderSite(data.site||{});
+    workItems = (data.work&&data.work.items)||[];
+    const kinds = ['All', ...new Set(workItems.map(i=>i.kind).filter(Boolean))];
+    $('#workFilters').innerHTML = kinds.map(k=>
+      `<button type="button" aria-pressed="${k===activeFilter}">${esc(k==='Article'?'Articles':k==='Document'?'Documents':k)}</button>`
+    ).join('');
+    $$('#workFilters button').forEach((b,i)=>b.addEventListener('click',()=>{
+      activeFilter = kinds[i];
+      $$('#workFilters button').forEach((x,j)=>x.setAttribute('aria-pressed', String(j===i)));
+      renderWork();
+    }));
+    renderWork();
+    renderStorytelling(data.storytelling||{});
+    renderPhotography(data.photography||{});
+    renderEvents(data.events||{});
+    renderResearch(data.research||{});
+    revealScan();
+  });
+})();
+</script>
+</body>
+</html>

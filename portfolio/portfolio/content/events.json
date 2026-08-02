@@ -1,0 +1,50 @@
+{
+  "items": [
+    {
+      "title": "Colouring Our World: Bridging Art and Environmental Narratives",
+      "year": "2024",
+      "description": "I organised an art book launch for a guest of the Artist's Safe Haven Programme. I set up a partnership with Bookstor, the oldest bookstore in the Netherlands, who hosted the event free of charge. A.G. (Artivist) told his story and participants were invited to buy his newly published drawing book. Over 80 people attended.",
+      "images": [
+        {
+          "src": "",
+          "caption": "Invitation"
+        },
+        {
+          "src": "",
+          "caption": "Contribute to sustainable societies"
+        },
+        {
+          "src": "",
+          "caption": "Guests with the book"
+        },
+        {
+          "src": "",
+          "caption": "The launch"
+        }
+      ]
+    },
+    {
+      "title": "Pride Event: Sharing Stories",
+      "year": "2024",
+      "description": "Together with COC Haaglanden, the largest LGBTQI+ rights organisation in The Hague and the Netherlands, we organised a space where six LGBTQI+ activists shared their stories and met each other. Over 25 people attended.",
+      "images": [
+        {
+          "src": "",
+          "caption": "Human Library: sharing international stories"
+        },
+        {
+          "src": "",
+          "caption": "Participant"
+        },
+        {
+          "src": "",
+          "caption": "Speaker"
+        },
+        {
+          "src": "",
+          "caption": "Conversation"
+        }
+      ]
+    }
+  ]
+}

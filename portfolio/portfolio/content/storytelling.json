@@ -1,0 +1,158 @@
+{
+  "intro": "My work blends written and visual storytelling to document human rights, environmental issues and community-led movements. Through interviews, profiles, photography and digital narratives, I aim to tell stories that shift understanding and build empathy.",
+  "items": [
+    {
+      "title": "Spotlighting Community-Based Research",
+      "description": "Wrote and interviewed three articles on community-based research practitioners across the Mekong region. The first, Drawing the River Under Surveillance: How Communities in Laos Protect Their Rights and Natural Resources (2026), has been published.",
+      "images": []
+    },
+    {
+      "title": "Shelter City Human Rights Update",
+      "description": "A human rights update on Instagram Stories, letting Shelter City guests raise awareness of their work while staying anonymous. Updates covered arbitrary detention of HRDs in Venezuela, new anti-LGBT legislation in Iraq, the foreign agent law in Kyrgyzstan, and rising violence against Indigenous and environmental rights defenders in the Philippines.",
+      "images": [
+        {
+          "src": "",
+          "caption": "Kyrgyzstan · foreign agent law"
+        },
+        {
+          "src": "",
+          "caption": "Venezuela · arbitrary detention"
+        },
+        {
+          "src": "",
+          "caption": "Philippines · violence against defenders"
+        },
+        {
+          "src": "",
+          "caption": "Iraq · anti-LGBT legislation"
+        }
+      ]
+    },
+    {
+      "title": "Shelter City Resource Campaign",
+      "description": "Working on Shelter City branding at Justice & Peace NL, I revamped and revised the resource campaign designed to inform and support human rights defenders and former guests around the world. Posts went out every two weeks with clear, vivid updates on useful resources in the sector.",
+      "images": [
+        {
+          "src": "",
+          "caption": "Resources · human rights defenders"
+        },
+        {
+          "src": "",
+          "caption": "Artivist award"
+        },
+        {
+          "src": "",
+          "caption": "Resources · defenders"
+        },
+        {
+          "src": "",
+          "caption": "Champions of the Earth Award"
+        },
+        {
+          "src": "",
+          "caption": "Resources · journalists"
+        },
+        {
+          "src": "",
+          "caption": "Guide to investigating war crimes"
+        },
+        {
+          "src": "",
+          "caption": "Resources · lawyers"
+        },
+        {
+          "src": "",
+          "caption": "Resources"
+        }
+      ]
+    },
+    {
+      "title": "Human Rights Defender Stories",
+      "description": "In-depth stories on human rights defenders, their experience and their hopes. Posted on social media with a corresponding blog post on the website. More detailed than the Meet the Guest campaign, and requiring deeper research.",
+      "images": [
+        {
+          "src": "",
+          "caption": "Photographer / copywriter / graphic designer"
+        },
+        {
+          "src": "",
+          "caption": "Photographer / copywriter / graphic designer"
+        },
+        {
+          "src": "",
+          "caption": "Photographer / copywriter / graphic designer / writer"
+        },
+        {
+          "src": "",
+          "caption": "Photographer / copywriter / graphic designer"
+        }
+      ]
+    },
+    {
+      "title": "Meet the Guest Campaign",
+      "description": "This series introduced Shelter City guests to partners and the wider community. We protected their security by not publishing faces or identifying information, working in close consultation with each guest and monitoring the situation in their country. The call to action was an invitation to get in touch rather than a link, keeping the focus on growing each guest's network.",
+      "images": [
+        {
+          "src": "",
+          "caption": "Photographer / copywriter / graphic designer"
+        },
+        {
+          "src": "",
+          "caption": "Photographer / copywriter / graphic designer"
+        },
+        {
+          "src": "",
+          "caption": "Photographer / copywriter / graphic designer / writer"
+        },
+        {
+          "src": "",
+          "caption": "Photographer / copywriter / graphic designer"
+        }
+      ]
+    },
+    {
+      "title": "Other Communications",
+      "description": "Communication material outside specific campaigns: events, announcements and information about the Shelter City network and programme.",
+      "images": [
+        {
+          "src": "",
+          "caption": "Networking"
+        },
+        {
+          "src": "",
+          "caption": "Exhibition"
+        },
+        {
+          "src": "",
+          "caption": "Exhibition"
+        },
+        {
+          "src": "",
+          "caption": "Focusing on wellbeing"
+        }
+      ]
+    },
+    {
+      "title": "Poster Campaign",
+      "description": "For the Global Shelter City Partner Meeting I designed and led the printing of material shown during the meeting, including this poster series.",
+      "images": [
+        {
+          "src": "",
+          "caption": "Copywriter / graphic designer"
+        },
+        {
+          "src": "",
+          "caption": "Copywriter / graphic designer"
+        },
+        {
+          "src": "",
+          "caption": "Copywriter / graphic designer"
+        },
+        {
+          "src": "",
+          "caption": "Copywriter / graphic designer"
+        }
+      ]
+    }
+  ]
+}
