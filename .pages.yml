@@ -1,0 +1,135 @@
+media: images
+
+content:
+  - name: site
+    label: About & contact
+    type: file
+    path: content/site.json
+    format: json
+    fields:
+      - { name: name, label: Your name, type: string }
+      - { name: eyebrow, label: Line above the title, type: string }
+      - { name: titleLine1, label: Big title, first line, type: string }
+      - { name: titleLine2, label: Big title, second line, type: string }
+      - { name: standfirst, label: Intro sentence under the title, type: text }
+      - { name: heroImage, label: Cover photo, type: image }
+      - { name: heroCredit, label: Cover photo caption and credit, type: text }
+      - { name: aboutText, label: About me, type: text, description: "Leave a blank line between paragraphs." }
+      - { name: portrait, label: Portrait photo, type: image }
+      - { name: portraitCaption, label: Portrait caption, type: string }
+      - { name: tags, label: Keywords, type: string, list: true }
+      - { name: contactLine, label: Contact heading, type: string }
+      - { name: email, label: Email, type: string }
+      - { name: linkedin, label: LinkedIn URL, type: string }
+      - { name: instagram, label: Instagram URL, type: string }
+      - { name: cv, label: CV file, type: file }
+
+  - name: work
+    label: Published work
+    type: file
+    path: content/work.json
+    format: json
+    fields:
+      - name: items
+        label: Pieces
+        type: object
+        list: true
+        fields:
+          - { name: title, label: Title, type: string, required: true }
+          - name: kind
+            label: Type
+            type: select
+            options:
+              values: [Article, Document]
+            default: Article
+          - { name: year, label: Year, type: string }
+          - { name: role, label: Your role, type: string, description: "e.g. Writer / Photographer" }
+          - { name: url, label: Link to the published piece, type: string }
+          - { name: image, label: Thumbnail, type: image }
+          - { name: description, label: Description, type: text }
+
+  - name: storytelling
+    label: Storytelling
+    type: file
+    path: content/storytelling.json
+    format: json
+    fields:
+      - { name: intro, label: Section intro, type: text }
+      - name: items
+        label: Campaigns and series
+        type: object
+        list: true
+        fields:
+          - { name: title, label: Title, type: string, required: true }
+          - { name: description, label: Description, type: text }
+          - name: images
+            label: Images
+            type: object
+            list: true
+            fields:
+              - { name: src, label: Image, type: image }
+              - { name: caption, label: Caption or role, type: string }
+
+  - name: photography
+    label: Photography & reels
+    type: file
+    path: content/photography.json
+    format: json
+    fields:
+      - { name: intro, label: Section intro, type: text }
+      - name: photos
+        label: Photographs
+        type: object
+        list: true
+        fields:
+          - { name: src, label: Photo, type: image }
+          - { name: caption, label: Caption, type: string }
+      - name: reels
+        label: Reels
+        type: object
+        list: true
+        fields:
+          - { name: url, label: Link to the reel, type: string }
+          - { name: thumb, label: Thumbnail, type: image }
+          - { name: caption, label: Caption, type: string }
+
+  - name: events
+    label: Events
+    type: file
+    path: content/events.json
+    format: json
+    fields:
+      - name: items
+        label: Events
+        type: object
+        list: true
+        fields:
+          - { name: title, label: Title, type: string, required: true }
+          - { name: year, label: Year, type: string }
+          - { name: description, label: Description, type: text }
+          - name: images
+            label: Images
+            type: object
+            list: true
+            fields:
+              - { name: src, label: Image, type: image }
+              - { name: caption, label: Caption, type: string }
+
+  - name: research
+    label: Academic research
+    type: file
+    path: content/research.json
+    format: json
+    fields:
+      - name: items
+        label: Papers
+        type: object
+        list: true
+        fields:
+          - { name: title, label: Title, type: string, required: true }
+          - { name: year, label: Year, type: string }
+          - { name: role, label: Your role, type: string }
+          - { name: award, label: Grade or award, type: string }
+          - { name: url, label: Link to the paper, type: string }
+          - { name: cover, label: Cover image, type: image }
+          - { name: description, label: Description, type: text }
