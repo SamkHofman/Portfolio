@@ -24,6 +24,25 @@ content:
       - { name: instagram, label: Instagram URL, type: string }
       - { name: cv, label: CV file, type: file }
 
+  - name: recentwork
+    label: Recent work
+    type: file
+    path: content/recentwork.json
+    format: json
+    fields:
+      - { name: intro, label: Section intro, type: text }
+      - name: items
+        label: Pieces
+        type: object
+        list: true
+        fields:
+          - { name: title, label: Title, type: string, required: true }
+          - { name: year, label: Year, type: string }
+          - { name: tags, label: Tags, type: string, list: true, description: "e.g. Article, Project, Photographer" }
+          - { name: url, label: Link, type: string }
+          - { name: image, label: Thumbnail, type: image }
+          - { name: description, label: Description, type: text }
+
   - name: work
     label: Published work
     type: file
@@ -77,13 +96,19 @@ content:
     format: json
     fields:
       - { name: intro, label: Section intro, type: text }
-      - name: photos
-        label: Photographs
+      - name: categories
+        label: Categories
         type: object
         list: true
         fields:
-          - { name: src, label: Photo, type: image }
-          - { name: caption, label: Caption, type: string }
+          - { name: name, label: Category name, type: string, required: true }
+          - name: photos
+            label: Photographs
+            type: object
+            list: true
+            fields:
+              - { name: src, label: Photo, type: image }
+              - { name: caption, label: Caption, type: string }
       - name: reels
         label: Reels
         type: object
@@ -133,3 +158,4 @@ content:
           - { name: url, label: Link to the paper, type: string }
           - { name: cover, label: Cover image, type: image }
           - { name: description, label: Description, type: text }
+          
