@@ -44,7 +44,7 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
 :focus-visible{outline:2.5px solid var(--river);outline-offset:3px}
 
 .wrap{max-width:var(--maxw);margin:0 auto;padding-inline:var(--gut)}
-.mono{font-family:var(--mono);font-size:.7rem;letter-spacing:.14em;text-transform:uppercase}
+.mono{font-family:var(--mono);font-size:.7rem;letter-spacing:.14em}
 
 /* ---------- top bar ---------- */
 .topbar{
@@ -83,7 +83,7 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
 .hero .eyebrow{color:var(--marker);margin-bottom:14px}
 .hero h1{
   font-family:var(--display);font-weight:800;
-  font-size:clamp(2.9rem,10.5vw,7.4rem);line-height:.92;letter-spacing:-.035em;
+  font-size:clamp(1.9rem,5.2vw,50px);line-height:1.02;letter-spacing:-.03em;
   margin:0 0 10px;text-wrap:balance;
 }
 .hero h1 .sweep{position:relative;display:inline-block}
@@ -99,7 +99,7 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
 .hero .credit{margin-top:28px;color:#b8ae94;line-height:1.6;font-size:.66rem}
 .scroll-cue{
   position:absolute;right:var(--gut);bottom:clamp(36px,7vh,76px);
-  writing-mode:vertical-rl;color:#b8ae94;display:none;
+  writing-mode:vertical-rl;color:#b8ae94;display:none;text-transform:uppercase;
 }
 @media(min-width:900px){.scroll-cue{display:block}}
 
@@ -127,6 +127,23 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
   font-family:var(--mono);font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;
   padding:6px 11px;border:1px solid rgba(23,21,15,.35);border-radius:999px;
 }
+
+/* ---------- recent work ---------- */
+.recent-grid{display:grid;gap:clamp(24px,4vw,36px);grid-template-columns:repeat(auto-fit,minmax(250px,1fr))}
+.recent-card{display:flex;flex-direction:column}
+.recent-card .thumb{aspect-ratio:4/3;overflow:hidden;margin-bottom:16px}
+.recent-card .thumb img{width:100%;height:100%;object-fit:cover;transition:transform .5s cubic-bezier(.2,.7,.3,1)}
+.recent-card:hover .thumb img{transform:scale(1.05)}
+.recent-card h3{font-family:var(--display);font-weight:700;font-size:1.12rem;line-height:1.28;letter-spacing:-.015em;margin:0 0 10px}
+.recent-card h3 a{text-decoration:none}
+.recent-card h3 a:hover{color:var(--river)}
+.recent-chips{display:flex;flex-wrap:wrap;gap:6px;margin:0 0 10px}
+.recent-chips span{
+  font-family:var(--mono);font-size:.62rem;letter-spacing:.08em;
+  padding:4px 9px;border:1px solid rgba(23,21,15,.35);border-radius:999px;opacity:.75;
+}
+.recent-card .yr{font-family:var(--mono);font-size:.7rem;color:var(--river);font-weight:500;margin-bottom:8px;display:block}
+.recent-card p{font-size:.95rem;opacity:.86;margin:0}
 
 /* ---------- work: year spine + rows ---------- */
 .filters{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:32px}
@@ -180,7 +197,7 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
   box-decoration-break:clone;-webkit-box-decoration-break:clone;
 }
 .row:hover h3 span,.row-in:focus-visible h3 span{background-size:100% .28em}
-.row-meta{display:flex;flex-wrap:wrap;gap:6px 14px;align-items:center;opacity:.72}
+.row-meta{display:flex;flex-wrap:wrap;gap:6px 14px;align-items:center;opacity:.72;text-transform:uppercase}
 .row-meta .yr{color:var(--river);font-weight:500;opacity:1}
 .row-desc{font-size:.98rem;opacity:.86;margin:0}
 @media(max-width:1079px){.row-desc{margin-top:12px;grid-column:2/-1}}
@@ -200,7 +217,7 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
   display:flex;align-items:flex-end;padding:8px;
 }
 .ph span{
-  font-family:var(--mono);font-size:.54rem;letter-spacing:.1em;text-transform:uppercase;
+  font-family:var(--mono);font-size:.54rem;letter-spacing:.06em;
   opacity:.45;line-height:1.3;
 }
 .band--ink .ph{background-color:#241f16;background-image:repeating-linear-gradient(135deg,rgba(244,239,226,.09) 0 1px,transparent 1px 9px)}
@@ -213,7 +230,7 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
 }
 .story p{max-width:66ch;margin:0 0 22px;opacity:.88}
 .strip-head{display:flex;align-items:center;gap:10px;margin-bottom:12px}
-.strip-head .mono{opacity:.5;margin-right:auto}
+.strip-head .mono{opacity:.5;margin-right:auto;text-transform:uppercase}
 .strip-nav{display:flex;gap:6px}
 .strip-nav button{
   width:34px;height:34px;border:1px solid currentColor;border-radius:50%;
@@ -232,14 +249,29 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
 .strip .frame:hover img{transform:scale(1.04)}
 .strip figcaption{margin-top:8px;opacity:.55;font-size:.62rem}
 
-/* ---------- photography ---------- */
-.gallery{columns:2;column-gap:14px}
-@media(min-width:760px){.gallery{columns:3}}
-@media(min-width:1100px){.gallery{columns:4}}
-.gallery figure{margin:0 0 14px;break-inside:avoid;cursor:zoom-in;position:relative}
-.gallery .frame{overflow:hidden}
-.gallery img{width:100%;transition:transform .55s cubic-bezier(.2,.7,.3,1)}
-.gallery figure:hover img{transform:scale(1.045)}
+/* ---------- photography: categorised slideshows ---------- */
+.photo-cats{display:grid;gap:clamp(40px,6vw,60px) clamp(28px,4vw,52px);grid-template-columns:1fr}
+@media(min-width:860px){.photo-cats{grid-template-columns:1fr 1fr}}
+.photo-cat h3{
+  font-family:var(--display);font-weight:700;letter-spacing:-.015em;
+  font-size:clamp(1.15rem,2.4vw,1.5rem);margin:0 0 14px;
+}
+.slideshow{position:relative}
+.slideshow .stage{aspect-ratio:3/2;overflow:hidden;cursor:zoom-in;position:relative}
+.slideshow .stage img{width:100%;height:100%;object-fit:cover}
+.slideshow .stage .ph{width:100%;height:100%}
+.slide-btn{
+  position:absolute;top:50%;transform:translateY(-50%);z-index:2;
+  width:38px;height:38px;border-radius:50%;
+  background:rgba(23,21,15,.55);color:var(--bone);
+  display:grid;place-items:center;transition:background .2s;
+}
+.slide-btn:hover{background:rgba(23,21,15,.82)}
+.slide-btn.prev{left:10px}
+.slide-btn.next{right:10px}
+.slide-meta{display:flex;justify-content:space-between;align-items:baseline;gap:14px;margin-top:10px}
+.slide-meta .cap{font-size:.92rem;opacity:.85}
+.slide-meta .count{opacity:.5;white-space:nowrap;font-family:var(--mono);font-size:.66rem;letter-spacing:.1em}
 .reels{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));margin-top:22px}
 .reel{text-decoration:none}
 .reel .frame{aspect-ratio:9/16;overflow:hidden;position:relative;background:#241f16}
@@ -323,8 +355,9 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
   <span class="sig">Sam Hofman</span>
   <nav id="nav" aria-label="Sections">
     <a href="#about">About</a>
+    <a href="#recent-work">Recent work</a>
     <a href="#work">Published work</a>
-    <a href="#storytelling">Storytelling</a>
+    <a href="#storytelling">Communication projects</a>
     <a href="#photography">Photography &amp; video</a>
     <a href="#events">Events</a>
     <a href="#research">Research</a>
@@ -358,6 +391,14 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
     </div>
   </section>
 
+  <section class="band" id="recent-work">
+    <div class="wrap">
+      <div class="sec-head rv"><h2>Recent work</h2></div>
+      <p class="sec-intro rv" id="recentIntro"></p>
+      <div class="recent-grid" id="recentItems"></div>
+    </div>
+  </section>
+
   <section class="band band--deep" id="work">
     <div class="wrap">
       <div class="sec-head rv">
@@ -375,7 +416,7 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
 
   <section class="band" id="storytelling">
     <div class="wrap">
-      <div class="sec-head rv"><h2>Storytelling</h2></div>
+      <div class="sec-head rv"><h2>Communication projects</h2></div>
       <p class="sec-intro rv" id="storyIntro"></p>
       <div id="stories"></div>
     </div>
@@ -385,7 +426,7 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
     <div class="wrap">
       <div class="sec-head rv"><h2>Photography</h2><span class="count" id="photoCount"></span></div>
       <p class="sec-intro rv" id="photoIntro"></p>
-      <div class="gallery rv" id="gallery"></div>
+      <div class="photo-cats" id="photoCats"></div>
       <div class="rule"></div>
       <div class="sec-head rv"><h2>Reels</h2></div>
       <div class="reels rv" id="reels"></div>
@@ -445,6 +486,20 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
     "linkedin": "",
     "instagram": "",
     "cv": ""
+  },
+
+  "recentwork": {
+    "intro": "A few recent pieces, spanning writing and photography.",
+    "items": [
+      { "title":"My Community My University: How Community-Based Research Stopped a Coal Power Plant in Myanmar", "year":"2026", "tags":["Article","Writer / Photographer"], "url":"", "image":"",
+        "description":"Part of a three-article series on people who used community-based research tools. I interviewed and profiled Mi Tri, an activist and community-based researcher from Mon State, Myanmar." },
+      { "title":"Drawing the River Under Surveillance: How Communities in Laos Protect Their Rights and Natural Resources", "year":"2026", "tags":["Article","Writer / Interviewer"], "url":"", "image":"",
+        "description":"Interviewed and profiled a Lao lawyer and community rights defender on how he works directly with communities and the tools he uses." },
+      { "title":"Bringing Out Community Knowledge: LEAD Lessons from the Mekong", "year":"2026", "tags":["Article","Writer / Photographer"], "url":"", "image":"",
+        "description":"Blog post and briefer on community-led research methods in the Mekong region, compiled from multi-country training sessions." },
+      { "title":"Collaboration between The Bowl Spot and Chow Chow Chiang Mai", "year":"2026", "tags":["Project","Photographer"], "url":"", "image":"",
+        "description":"I was hired to photograph the making of the new recipe and menu." }
+    ]
   },
 
   "work": { "items": [
@@ -537,24 +592,32 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
 
   "photography": {
     "intro": "Photos taken over the years for different organisations: portraits, group activities, workshops, landscapes, cultural events and talks. They highlight the moments I have captured, always trying to convey the real emotion and energy of the scene. Made during my time at EarthRights International, Justice & Peace NL, or for personal projects.",
-    "photos": [
-      {"src":"","caption":"Village and hills"},
-      {"src":"","caption":"Workshop portrait"},
-      {"src":"","caption":"Stop the Coal Mine, Omkoi"},
-      {"src":"","caption":"Facilitator, training session"},
-      {"src":"","caption":"Fieldwork, riverbank"},
-      {"src":"","caption":"Street portrait"},
-      {"src":"","caption":"Conversation, café"},
-      {"src":"","caption":"Community meeting"},
-      {"src":"","caption":"Hills, northern Thailand"},
-      {"src":"","caption":"Speaker at gathering"},
-      {"src":"","caption":"Portrait"},
-      {"src":"","caption":"Group, The Hague"},
-      {"src":"","caption":"Portrait, evening"},
-      {"src":"","caption":"Bridge, winter"},
-      {"src":"","caption":"Panel discussion"},
-      {"src":"","caption":"Training participants"},
-      {"src":"","caption":"Presentation, meeting room"}
+    "categories": [
+      { "name":"Landscapes & fieldwork", "photos":[
+        {"src":"","caption":"Village and hills"},
+        {"src":"","caption":"Fieldwork, riverbank"},
+        {"src":"","caption":"Hills, northern Thailand"},
+        {"src":"","caption":"Bridge, winter"}
+      ]},
+      { "name":"Portraits", "photos":[
+        {"src":"","caption":"Workshop portrait"},
+        {"src":"","caption":"Street portrait"},
+        {"src":"","caption":"Portrait"},
+        {"src":"","caption":"Portrait, evening"}
+      ]},
+      { "name":"Community & groups", "photos":[
+        {"src":"","caption":"Stop the Coal Mine, Omkoi"},
+        {"src":"","caption":"Conversation, café"},
+        {"src":"","caption":"Community meeting"},
+        {"src":"","caption":"Group, The Hague"}
+      ]},
+      { "name":"Workshops & talks", "photos":[
+        {"src":"","caption":"Facilitator, training session"},
+        {"src":"","caption":"Speaker at gathering"},
+        {"src":"","caption":"Panel discussion"},
+        {"src":"","caption":"Training participants"},
+        {"src":"","caption":"Presentation, meeting room"}
+      ]}
     ],
     "reels": [
       {"url":"","thumb":"","caption":"2023 recap"},
@@ -601,7 +664,7 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
   const esc = s => String(s==null?'':s).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
 
   const FILES = {
-    site:'content/site.json', work:'content/work.json', storytelling:'content/storytelling.json',
+    site:'content/site.json', recentwork:'content/recentwork.json', work:'content/work.json', storytelling:'content/storytelling.json',
     photography:'content/photography.json', events:'content/events.json', research:'content/research.json'
   };
 
@@ -663,6 +726,7 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
   }
 
   let workItems = [], activeFilter = 'All';
+  let photoCategories = [], photoState = {};
 
   function renderWork(){
     const shown = activeFilter==='All' ? workItems : workItems.filter(i=>i.kind===activeFilter);
@@ -704,6 +768,22 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
     revealScan();
   }
 
+  function renderRecentWork(d){
+    $('#recentIntro').textContent = d.intro||'';
+    $('#recentItems').innerHTML = (d.items||[]).map(it=>{
+      const hasLink = !!it.url;
+      const titleInner = esc(it.title);
+      return `<article class="recent-card rv">
+        <div class="thumb ph"${it.image?' style="background:none"':''}>${it.image?`<img src="${esc(it.image)}" alt="">`:`<span>${titleInner}</span>`}</div>
+        <span class="yr">${esc(it.year)}</span>
+        <h3>${hasLink?`<a href="${esc(it.url)}" target="_blank" rel="noopener">${titleInner}</a>`:titleInner}</h3>
+        <div class="recent-chips">${(it.tags||[]).map(t=>`<span>${esc(t)}</span>`).join('')}</div>
+        <p>${esc(it.description)}</p>
+      </article>`;
+    }).join('');
+    revealScan();
+  }
+
   function renderStorytelling(d){
     $('#storyIntro').textContent = d.intro||'';
     $('#stories').innerHTML = (d.items||[]).map((s,si)=>`
@@ -735,16 +815,52 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
     registerGalleries(d.items.map((s,i)=>({key:'story-'+i, images:s.images||[]})));
   }
 
+  function paintSlide(ci){
+    const cat = photoCategories[ci]; if(!cat) return;
+    const i = photoState[ci]||0;
+    const photo = cat.photos[i]||{};
+    const root = document.querySelector(`.slideshow[data-cat="${ci}"]`);
+    if(!root) return;
+    const stage = root.querySelector('.stage');
+    stage.dataset.gi = i;
+    stage.innerHTML = photo.src
+      ? `<img src="${esc(photo.src)}" alt="${esc(photo.caption||'')}" loading="lazy">`
+      : `<div class="ph"><span>${esc(photo.caption||'Photograph')}</span></div>`;
+    root.querySelector('.cap').textContent = photo.caption||'';
+    root.querySelector('.count').textContent = (i+1)+' / '+cat.photos.length;
+  }
+  function stepSlide(ci,dir){
+    const cat = photoCategories[ci]; if(!cat) return;
+    const n = cat.photos.length; if(!n) return;
+    photoState[ci] = ((photoState[ci]||0)+dir+n)%n;
+    paintSlide(ci);
+  }
+
   function renderPhotography(d){
     $('#photoIntro').textContent = d.intro||'';
-    $('#photoCount').textContent = (d.photos||[]).length+' frames';
-    const ratios = ['3/2','4/5','3/2','1/1','4/5','3/2','5/4','3/2','16/10','4/5','1/1','3/2','4/5','3/2','5/4','3/2','4/5'];
-    $('#gallery').innerHTML = (d.photos||[]).map((p,i)=>`
-      <figure data-gallery="photos" >
-        <div class="frame ${p.src?'':'ph'}" data-gi="${i}" tabindex="0" role="button" aria-label="Open image"${p.src?'':` style="aspect-ratio:${ratios[i%ratios.length]}"`}>
-          ${p.src?`<img src="${esc(p.src)}" alt="${esc(p.caption||'')}" loading="lazy">`:`<span>${esc(p.caption||'Photograph')}</span>`}
+    photoCategories = d.categories||[];
+    photoState = {};
+    const total = photoCategories.reduce((n,c)=>n+(c.photos||[]).length,0);
+    $('#photoCount').textContent = total+' frames';
+
+    $('#photoCats').innerHTML = photoCategories.map((cat,ci)=>`
+      <div class="photo-cat rv">
+        <h3>${esc(cat.name)}</h3>
+        <div class="slideshow" data-cat="${ci}">
+          <div class="stage" data-gallery="cat-${ci}" data-gi="0" tabindex="0" role="button" aria-label="Open image"></div>
+          ${(cat.photos||[]).length>1?`
+          <button type="button" class="slide-btn prev" data-cat="${ci}" data-dir="-1" aria-label="Previous photo">&#8592;</button>
+          <button type="button" class="slide-btn next" data-cat="${ci}" data-dir="1" aria-label="Next photo">&#8594;</button>`:''}
+          <div class="slide-meta">
+            <span class="cap"></span>
+            <span class="count mono"></span>
+          </div>
         </div>
-      </figure>`).join('');
+      </div>`).join('');
+
+    photoCategories.forEach((c,ci)=>paintSlide(ci));
+    $$('.slide-btn').forEach(b=>b.addEventListener('click', ()=>stepSlide(+b.dataset.cat, +b.dataset.dir)));
+    registerGalleries(photoCategories.map((c,i)=>({key:'cat-'+i, images:c.photos||[]})));
 
     $('#reels').innerHTML = (d.reels||[]).map(r=>{
       const inner = `<div class="frame">${r.thumb?`<img src="${esc(r.thumb)}" alt="">`:''}<span class="play"><i>&#9654;</i></span></div>
@@ -753,8 +869,6 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
         ? `<a class="reel" href="${esc(r.url)}" target="_blank" rel="noopener">${inner}</a>`
         : `<div class="reel">${inner}</div>`;
     }).join('');
-
-    registerGalleries([{key:'photos', images:d.photos||[]}]);
   }
 
   function renderEvents(d){
@@ -881,6 +995,7 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
       renderWork();
     }));
     renderWork();
+    renderRecentWork(data.recentwork||{});
     renderStorytelling(data.storytelling||{});
     renderPhotography(data.photography||{});
     renderEvents(data.events||{});
