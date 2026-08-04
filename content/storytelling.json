@@ -2,6 +2,12 @@
   "intro": "My work blends written and visual storytelling to document human rights, environmental issues and community-led movements. Through interviews, profiles, photography and digital narratives, I aim to tell stories that shift understanding and build empathy.",
   "items": [
     {
+      "title": "Chow Chow x The Bowl Spot",
+      "aspect": "landscape",
+      "description": "Add the story of this collaboration here — what the project involved, and your role in it.",
+      "images": []
+    },
+    {
       "title": "Spotlighting Community-Based Research",
       "aspect": "landscape",
       "description": "Wrote and interviewed three articles on community-based research practitioners across the Mekong region. The first, Drawing the River Under Surveillance: How Communities in Laos Protect Their Rights and Natural Resources (2026), has been published.",
@@ -27,6 +33,29 @@
         {
           "src": "",
           "caption": "Iraq · anti-LGBT legislation"
+        }
+      ]
+    },
+    {
+      "title": "Human Rights Defender Stories",
+      "aspect": "portrait",
+      "description": "In-depth stories on human rights defenders, their experience and their hopes. Posted on social media with a corresponding blog post on the website. More detailed than the Meet the Guest campaign, and requiring deeper research.",
+      "images": [
+        {
+          "src": "",
+          "caption": "Photographer / copywriter / graphic designer"
+        },
+        {
+          "src": "",
+          "caption": "Photographer / copywriter / graphic designer"
+        },
+        {
+          "src": "",
+          "caption": "Photographer / copywriter / graphic designer / writer"
+        },
+        {
+          "src": "",
+          "caption": "Photographer / copywriter / graphic designer"
         }
       ]
     },
@@ -70,29 +99,6 @@
       ]
     },
     {
-      "title": "Human Rights Defender Stories",
-      "aspect": "portrait",
-      "description": "In-depth stories on human rights defenders, their experience and their hopes. Posted on social media with a corresponding blog post on the website. More detailed than the Meet the Guest campaign, and requiring deeper research.",
-      "images": [
-        {
-          "src": "",
-          "caption": "Photographer / copywriter / graphic designer"
-        },
-        {
-          "src": "",
-          "caption": "Photographer / copywriter / graphic designer"
-        },
-        {
-          "src": "",
-          "caption": "Photographer / copywriter / graphic designer / writer"
-        },
-        {
-          "src": "",
-          "caption": "Photographer / copywriter / graphic designer"
-        }
-      ]
-    },
-    {
       "title": "Meet the Guest Campaign",
       "aspect": "portrait",
       "description": "This series introduced Shelter City guests to partners and the wider community. We protected their security by not publishing faces or identifying information, working in close consultation with each guest and monitoring the situation in their country. The call to action was an invitation to get in touch rather than a link, keeping the focus on growing each guest's network.",
@@ -116,9 +122,9 @@
       ]
     },
     {
-      "title": "Other Communications",
+      "title": "Highlighting the Shelter City Programme",
       "aspect": "portrait",
-      "description": "Communication material outside specific campaigns: events, announcements and information about the Shelter City network and programme.",
+      "description": "Communication material introducing and highlighting the Shelter City programme itself — events, announcements and updates on how the network operates and supports its guests.",
       "images": [
         {
           "src": "",
@@ -135,35 +141,6 @@
         {
           "src": "",
           "caption": "Focusing on wellbeing"
-        }
-      ]
-    },
-    {
-      "title": "Chow Chow x The Bowl Spot",
-      "aspect": "landscape",
-      "description": "Add the story of this collaboration here — what the project involved, and your role in it.",
-      "images": []
-    },
-    {
-      "title": "Poster Campaign",
-      "aspect": "portrait",
-      "description": "For the Global Shelter City Partner Meeting I designed and led the printing of material shown during the meeting, including this poster series.",
-      "images": [
-        {
-          "src": "",
-          "caption": "Copywriter / graphic designer"
-        },
-        {
-          "src": "",
-          "caption": "Copywriter / graphic designer"
-        },
-        {
-          "src": "",
-          "caption": "Copywriter / graphic designer"
-        },
-        {
-          "src": "",
-          "caption": "Copywriter / graphic designer"
         }
       ]
     }
