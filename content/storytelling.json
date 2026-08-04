@@ -105,16 +105,16 @@
       "description": "Communication material outside specific campaigns: events, announcements and information about the Shelter City network and programme.",
       "images": [
         {
-          "caption": "Networking"
-        },
-        {
-          "caption": "Exhibition"
-        },
-        {
-          "caption": "Exhibition"
-        },
-        {
+          "src": "/images/image (10).png",
           "caption": "Focusing on wellbeing"
+        },
+        {
+          "src": "/images/image (11).png",
+          "caption": "Exhibition"
+        },
+        {
+          "src": "/images/2.png",
+          "caption": "Exhibition [picture not taken by me]"
         }
       ]
     },
@@ -123,15 +123,19 @@
       "description": "For the Global Shelter City Partner Meeting I designed and led the printing of material shown during the meeting, including this poster series.",
       "images": [
         {
+          "src": "/images/image (6).png",
           "caption": "Copywriter / graphic designer"
         },
         {
+          "src": "/images/image (5).png",
           "caption": "Copywriter / graphic designer"
         },
         {
+          "src": "/images/image (4).png",
           "caption": "Copywriter / graphic designer"
         },
         {
+          "src": "/images/image (3).png",
           "caption": "Copywriter / graphic designer"
         }
       ]
