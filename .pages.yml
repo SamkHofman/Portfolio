@@ -15,8 +15,14 @@ content:
       - { name: heroImage, label: Cover photo, type: image }
       - { name: heroCredit, label: Cover photo caption and credit, type: text }
       - { name: aboutText, label: About me, type: text, description: "Leave a blank line between paragraphs." }
-      - { name: portrait, label: Portrait photo, type: image }
-      - { name: portraitCaption, label: Portrait caption, type: string }
+      - name: portraitPhotos
+        label: About-me photos (auto-advancing slideshow)
+        type: object
+        list: true
+        fields:
+          - { name: src, label: Photo, type: image }
+          - { name: caption, label: Caption, type: string }
+      - { name: portraitVideo, label: About-me video (plays after the photos), type: file }
       - { name: tags, label: Keywords, type: string, list: true }
       - { name: contactLine, label: Contact heading, type: string }
       - { name: email, label: Email, type: string }
@@ -68,19 +74,26 @@ content:
           - { name: description, label: Description, type: text }
 
   - name: storytelling
-    label: Storytelling
+    label: Communication projects
     type: file
     path: content/storytelling.json
     format: json
     fields:
       - { name: intro, label: Section intro, type: text }
       - name: items
-        label: Campaigns and series
+        label: Projects
         type: object
         list: true
         fields:
           - { name: title, label: Title, type: string, required: true }
           - { name: description, label: Description, type: text }
+          - name: aspect
+            label: Slideshow shape
+            type: select
+            options:
+              values: [landscape, square, portrait]
+            default: landscape
+            description: "landscape = wide photo, square = Instagram square, portrait = Instagram portrait post"
           - name: images
             label: Images
             type: object
@@ -158,4 +171,3 @@ content:
           - { name: url, label: Link to the paper, type: string }
           - { name: cover, label: Cover image, type: image }
           - { name: description, label: Description, type: text }
-          
