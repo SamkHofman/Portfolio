@@ -68,13 +68,17 @@
       "kind": "Document",
       "year": "2026",
       "role": "Writer",
-      "description": "Wrote the contents of the report and collaborated on the design and layout."
+      "url": "https://earthrights.org/wp-content/uploads/2026/01/LEAD-ToT-Briefer.pdf",
+      "image": "/images/image (46)-1.png",
+      "description": "Wrote the contents of the report and collaborated on the design and layout. This brief, co-published with JustGround, captures the key  learnings, challenges, and strategies that emerged from discussions to serve as a reference for facilitators of community-led research across  the Mekong Region."
     },
     {
-      "title": "Welcome Guide NL",
+      "title": "Guide to the Netherlands",
       "kind": "Document",
       "year": "2024",
       "role": "Writer / Graphic designer / Layout",
+      "url": "https://drive.google.com/file/d/1TruPsU_9Ou7Xu3xl8JUQ7L3Q4rGaI2wN/view?usp=sharing",
+      "image": "/images/image (48)-1.png",
       "description": "A guide to the Netherlands for new Shelter City guests. I designed, compiled and edited the document."
     },
     {
@@ -82,6 +86,7 @@
       "kind": "Document",
       "year": "2023",
       "role": "Writer / Graphic designer / Layout",
+      "url": "https://drive.google.com/file/d/1ac1JuwAsBi0g-rD0hPT-A3r4Vp3gQuoe/view?usp=sharing",
       "description": "Produced for over 70 participants at the Shelter City Global Partner Meeting."
     },
     {
@@ -96,6 +101,8 @@
       "kind": "Document",
       "year": "2022",
       "role": "Writer / Graphic design / Layout",
+      "url": "https://ucstudentcouncil.com/wp-content/uploads/2024/06/4fa97-46f2f4_7a5c8c91d22a45a3a8e9b73b272bd51c.pdf",
+      "image": "/images/image (47)-1.png",
       "description": "Designed the report in line with branding, wrote the contents, and led the evaluation of different projects."
     }
   ]
