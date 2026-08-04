@@ -2,147 +2,167 @@
   "intro": "My work blends written and visual storytelling to document human rights, environmental issues and community-led movements. Through interviews, profiles, photography and digital narratives, I aim to tell stories that shift understanding and build empathy.",
   "items": [
     {
-      "title": "Photographing Chow Chow x Bowl Spot Chiang Mai ",
-      "description": "Hired as a photographer for the release of a new menu and collaboration between two restuarants and a marketing firm. ",
-      "images": [
-        {}
-      ]
-    },
-    {
       "title": "Spotlighting Community-Based Research",
-      "description": "Wrote and interviewed three articles on community-based research practitioners across the Mekong region. ",
-      "images": [
-        {
-          "src": "/images/image (1)-1.png",
-          "caption": "My Community My University"
-        },
-        {
-          "src": "/images/image (2)-1.png",
-          "caption": "Drawing the River under Surveillance"
-        }
-      ]
+      "aspect": "landscape",
+      "description": "Wrote and interviewed three articles on community-based research practitioners across the Mekong region. The first, Drawing the River Under Surveillance: How Communities in Laos Protect Their Rights and Natural Resources (2026), has been published.",
+      "images": []
     },
     {
       "title": "Shelter City Human Rights Update",
+      "aspect": "portrait",
       "description": "A human rights update on Instagram Stories, letting Shelter City guests raise awareness of their work while staying anonymous. Updates covered arbitrary detention of HRDs in Venezuela, new anti-LGBT legislation in Iraq, the foreign agent law in Kyrgyzstan, and rising violence against Indigenous and environmental rights defenders in the Philippines.",
       "images": [
         {
-          "src": "/images/image (33).png",
+          "src": "",
           "caption": "Kyrgyzstan · foreign agent law"
         },
         {
-          "src": "/images/image (35).png",
+          "src": "",
           "caption": "Venezuela · arbitrary detention"
         },
         {
-          "src": "/images/image (36).png",
+          "src": "",
+          "caption": "Philippines · violence against defenders"
+        },
+        {
+          "src": "",
           "caption": "Iraq · anti-LGBT legislation"
         }
       ]
     },
     {
       "title": "Shelter City Resource Campaign",
+      "aspect": "square",
       "description": "Working on Shelter City branding at Justice & Peace NL, I revamped and revised the resource campaign designed to inform and support human rights defenders and former guests around the world. Posts went out every two weeks with clear, vivid updates on useful resources in the sector.",
       "images": [
         {
-          "src": "/images/image (28).png",
+          "src": "",
           "caption": "Resources · human rights defenders"
         },
         {
-          "src": "/images/image (15).png",
-          "caption": "Human Rights Press Award"
+          "src": "",
+          "caption": "Artivist award"
         },
         {
-          "src": "/images/image (32).png",
-          "caption": "Resources cover - photo by Sam"
+          "src": "",
+          "caption": "Resources · defenders"
         },
         {
-          "src": "/images/image (31).png",
-          "caption": "Artivist Award"
+          "src": "",
+          "caption": "Champions of the Earth Award"
         },
         {
+          "src": "",
+          "caption": "Resources · journalists"
+        },
+        {
+          "src": "",
           "caption": "Guide to investigating war crimes"
         },
         {
+          "src": "",
+          "caption": "Resources · lawyers"
+        },
+        {
+          "src": "",
           "caption": "Resources"
         }
       ]
     },
     {
       "title": "Human Rights Defender Stories",
-      "description": "In-depth stories on human rights defenders, their experience and their hopes. Posted on social media with a corresponding blog post on the website. More detailed than the Meet the Guest campaign, and required deeper research.",
+      "aspect": "portrait",
+      "description": "In-depth stories on human rights defenders, their experience and their hopes. Posted on social media with a corresponding blog post on the website. More detailed than the Meet the Guest campaign, and requiring deeper research.",
       "images": [
         {
-          "src": "/images/image (21).png",
+          "src": "",
           "caption": "Photographer / copywriter / graphic designer"
         },
         {
-          "src": "/images/image (24).png",
+          "src": "",
           "caption": "Photographer / copywriter / graphic designer"
         },
         {
-          "src": "/images/image (22).png",
+          "src": "",
           "caption": "Photographer / copywriter / graphic designer / writer"
         },
         {
+          "src": "",
           "caption": "Photographer / copywriter / graphic designer"
         }
       ]
     },
     {
       "title": "Meet the Guest Campaign",
-      "description": "This series introduced Shelter City guests to partners and the wider community. The call to action was an invitation to get in touch rather than a link, keeping the focus on growing each guest's network.",
+      "aspect": "portrait",
+      "description": "This series introduced Shelter City guests to partners and the wider community. We protected their security by not publishing faces or identifying information, working in close consultation with each guest and monitoring the situation in their country. The call to action was an invitation to get in touch rather than a link, keeping the focus on growing each guest's network.",
       "images": [
         {
-          "src": "/images/image (20).png",
+          "src": "",
           "caption": "Photographer / copywriter / graphic designer"
         },
         {
-          "src": "/images/image (19).png",
+          "src": "",
           "caption": "Photographer / copywriter / graphic designer"
         },
         {
-          "src": "/images/image (17).png",
-          "caption": "Photographer / copywriter / graphic designer "
+          "src": "",
+          "caption": "Photographer / copywriter / graphic designer / writer"
+        },
+        {
+          "src": "",
+          "caption": "Photographer / copywriter / graphic designer"
         }
       ]
     },
     {
-      "title": "Highlighting the Shelter City Program",
+      "title": "Other Communications",
+      "aspect": "portrait",
       "description": "Communication material outside specific campaigns: events, announcements and information about the Shelter City network and programme.",
       "images": [
         {
-          "src": "/images/image (10).png",
-          "caption": "Focusing on wellbeing"
+          "src": "",
+          "caption": "Networking"
         },
         {
-          "src": "/images/image (11).png",
+          "src": "",
           "caption": "Exhibition"
         },
         {
-          "src": "/images/2.png",
-          "caption": "Exhibition [picture not taken by me]"
+          "src": "",
+          "caption": "Exhibition"
+        },
+        {
+          "src": "",
+          "caption": "Focusing on wellbeing"
         }
       ]
     },
     {
+      "title": "Chow Chow x The Bowl Spot",
+      "aspect": "landscape",
+      "description": "Add the story of this collaboration here — what the project involved, and your role in it.",
+      "images": []
+    },
+    {
       "title": "Poster Campaign",
+      "aspect": "portrait",
       "description": "For the Global Shelter City Partner Meeting I designed and led the printing of material shown during the meeting, including this poster series.",
       "images": [
         {
-          "src": "/images/image (6).png",
+          "src": "",
           "caption": "Copywriter / graphic designer"
         },
         {
-          "src": "/images/image (5).png",
+          "src": "",
           "caption": "Copywriter / graphic designer"
         },
         {
-          "src": "/images/image (4).png",
+          "src": "",
           "caption": "Copywriter / graphic designer"
         },
         {
-          "src": "/images/image (3).png",
+          "src": "",
           "caption": "Copywriter / graphic designer"
         }
       ]
