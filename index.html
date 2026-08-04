@@ -80,6 +80,10 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
 }
 .hero-inner{position:relative;width:100%;max-width:var(--maxw);margin:0 auto;padding:0 var(--gut) clamp(36px,7vh,76px)}
 .hero .eyebrow{color:var(--marker);margin-bottom:14px}
+.hero .name-line{
+  font-family:var(--display);font-weight:700;font-size:1.05rem;
+  letter-spacing:.01em;margin:0 0 10px;color:var(--bone);
+}
 .hero h1{
   font-family:var(--display);font-weight:800;
   font-size:clamp(1.9rem,5.2vw,50px);line-height:1.02;letter-spacing:-.03em;
@@ -120,7 +124,7 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
 @media(min-width:860px){.about{grid-template-columns:.85fr 1.15fr;align-items:start}}
 .about p{margin:0 0 1.1em;font-size:1.1rem}
 .portrait-slideshow{position:relative}
-.portrait-stage{aspect-ratio:4/5;overflow:hidden;position:relative;background:var(--clay-3)}
+.portrait-stage{aspect-ratio:3/2;overflow:hidden;position:relative;background:var(--clay-3)}
 .portrait-stage img,.portrait-stage video{width:100%;height:100%;object-fit:cover;display:block}
 .portrait-slideshow figcaption{margin-top:10px;opacity:.6;font-size:.66rem}
 .tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:26px;padding:0;list-style:none}
@@ -364,6 +368,7 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
     <div class="hero-img" id="heroImg"></div>
     <div class="hero-inner">
       <p class="mono eyebrow" id="heroEyebrow"></p>
+      <p class="name-line" id="heroName"></p>
       <h1><span class="sweep" id="heroTitleA"></span><br><span id="heroTitleB"></span></h1>
       <p class="standfirst" id="heroStand"></p>
       <p class="mono credit" id="heroCredit"></p>
@@ -527,6 +532,9 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
   "storytelling": {
     "intro": "My work blends written and visual storytelling to document human rights, environmental issues and community-led movements. Through interviews, profiles, photography and digital narratives, I aim to tell stories that shift understanding and build empathy.",
     "items": [
+      { "title":"Chow Chow x The Bowl Spot", "aspect":"landscape",
+        "description":"Add the story of this collaboration here — what the project involved, and your role in it.",
+        "images":[] },
       { "title":"Spotlighting Community-Based Research", "aspect":"landscape",
         "description":"Wrote and interviewed three articles on community-based research practitioners across the Mekong region. The first, Drawing the River Under Surveillance: How Communities in Laos Protect Their Rights and Natural Resources (2026), has been published.",
         "images":[] },
@@ -537,6 +545,14 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
           {"src":"","caption":"Venezuela · arbitrary detention"},
           {"src":"","caption":"Philippines · violence against defenders"},
           {"src":"","caption":"Iraq · anti-LGBT legislation"}
+        ]},
+      { "title":"Human Rights Defender Stories", "aspect":"portrait",
+        "description":"In-depth stories on human rights defenders, their experience and their hopes. Posted on social media with a corresponding blog post on the website. More detailed than the Meet the Guest campaign, and requiring deeper research.",
+        "images":[
+          {"src":"","caption":"Photographer / copywriter / graphic designer"},
+          {"src":"","caption":"Photographer / copywriter / graphic designer"},
+          {"src":"","caption":"Photographer / copywriter / graphic designer / writer"},
+          {"src":"","caption":"Photographer / copywriter / graphic designer"}
         ]},
       { "title":"Shelter City Resource Campaign", "aspect":"square",
         "description":"Working on Shelter City branding at Justice & Peace NL, I revamped and revised the resource campaign designed to inform and support human rights defenders and former guests around the world. Posts went out every two weeks with clear, vivid updates on useful resources in the sector.",
@@ -550,14 +566,6 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
           {"src":"","caption":"Resources · lawyers"},
           {"src":"","caption":"Resources"}
         ]},
-      { "title":"Human Rights Defender Stories", "aspect":"portrait",
-        "description":"In-depth stories on human rights defenders, their experience and their hopes. Posted on social media with a corresponding blog post on the website. More detailed than the Meet the Guest campaign, and requiring deeper research.",
-        "images":[
-          {"src":"","caption":"Photographer / copywriter / graphic designer"},
-          {"src":"","caption":"Photographer / copywriter / graphic designer"},
-          {"src":"","caption":"Photographer / copywriter / graphic designer / writer"},
-          {"src":"","caption":"Photographer / copywriter / graphic designer"}
-        ]},
       { "title":"Meet the Guest Campaign", "aspect":"portrait",
         "description":"This series introduced Shelter City guests to partners and the wider community. We protected their security by not publishing faces or identifying information, working in close consultation with each guest and monitoring the situation in their country. The call to action was an invitation to get in touch rather than a link, keeping the focus on growing each guest's network.",
         "images":[
@@ -566,24 +574,13 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
           {"src":"","caption":"Photographer / copywriter / graphic designer / writer"},
           {"src":"","caption":"Photographer / copywriter / graphic designer"}
         ]},
-      { "title":"Other Communications", "aspect":"portrait",
-        "description":"Communication material outside specific campaigns: events, announcements and information about the Shelter City network and programme.",
+      { "title":"Highlighting the Shelter City Programme", "aspect":"portrait",
+        "description":"Communication material introducing and highlighting the Shelter City programme itself — events, announcements and updates on how the network operates and supports its guests.",
         "images":[
           {"src":"","caption":"Networking"},
           {"src":"","caption":"Exhibition"},
           {"src":"","caption":"Exhibition"},
           {"src":"","caption":"Focusing on wellbeing"}
-        ]},
-      { "title":"Chow Chow x The Bowl Spot", "aspect":"landscape",
-        "description":"Add the story of this collaboration here — what the project involved, and your role in it.",
-        "images":[] },
-      { "title":"Poster Campaign", "aspect":"portrait",
-        "description":"For the Global Shelter City Partner Meeting I designed and led the printing of material shown during the meeting, including this poster series.",
-        "images":[
-          {"src":"","caption":"Copywriter / graphic designer"},
-          {"src":"","caption":"Copywriter / graphic designer"},
-          {"src":"","caption":"Copywriter / graphic designer"},
-          {"src":"","caption":"Copywriter / graphic designer"}
         ]}
     ]
   },
@@ -696,6 +693,7 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
   /* ---- render ---- */
   function renderSite(s){
     $('#heroEyebrow').textContent = s.eyebrow||'';
+    $('#heroName').textContent = s.name||'';
     $('#heroTitleA').textContent = s.titleLine1||'';
     $('#heroTitleB').textContent = s.titleLine2||'';
     $('#heroStand').textContent = s.standfirst||'';
