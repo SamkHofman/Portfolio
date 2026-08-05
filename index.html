@@ -1,173 +1,1111 @@
-media: images
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sam Hofman — Communications Portfolio</title>
+<meta name="description" content="Storytelling, human rights and environmental justice. Written and visual work from Southeast Asia and beyond.">
+<meta property="og:title" content="Sam Hofman — Communications Portfolio">
+<meta property="og:description" content="Storytelling, human rights and environmental justice.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&display=swap" rel="stylesheet">
 
-content:
-  - name: site
-    label: About & contact
-    type: file
-    path: content/site.json
-    format: json
-    fields:
-      - { name: name, label: Your name, type: string }
-      - { name: eyebrow, label: Line above the title, type: string }
-      - { name: titleLine1, label: Big title, first line, type: string }
-      - { name: titleLine2, label: Big title, second line, type: string }
-      - { name: standfirst, label: Intro sentence under the title, type: text }
-      - { name: heroImage, label: Cover photo, type: image }
-      - { name: heroCredit, label: Cover photo caption and credit, type: text }
-      - { name: aboutText, label: About me, type: text, description: "Leave a blank line between paragraphs." }
-      - name: portraitPhotos
-        label: About-me photos (auto-advancing slideshow)
-        type: object
-        list: true
-        fields:
-          - { name: src, label: Photo, type: image }
-          - { name: caption, label: Caption, type: string }
-      - { name: portraitVideo, label: About-me video (plays after the photos), type: file }
-      - { name: tags, label: Keywords, type: string, list: true }
-      - { name: contactLine, label: Contact heading, type: string }
-      - { name: email, label: Email, type: string }
-      - { name: linkedin, label: LinkedIn URL, type: string }
-      - { name: instagram, label: Instagram URL, type: string }
-      - { name: cv, label: CV file, type: file }
+<style>
+:root{
+  --clay:#c8b489;
+  --clay-2:#bca576;
+  --clay-3:#d6c6a3;
+  --ink:#17150f;
+  --ink-2:#3a3427;
+  --bone:#f4efe2;
+  --river:#2c5a61;
+  --marker:#e9c46a;
 
-  - name: recentwork
-    label: Recent work
-    type: file
-    path: content/recentwork.json
-    format: json
-    fields:
-      - { name: intro, label: Section intro, type: text }
-      - name: items
-        label: Pieces
-        type: object
-        list: true
-        fields:
-          - { name: title, label: Title, type: string, required: true }
-          - { name: year, label: Year, type: string }
-          - { name: tags, label: Tags, type: string, list: true, description: "e.g. Article, Project, Photographer" }
-          - { name: url, label: Link, type: string }
-          - { name: image, label: Thumbnail, type: image }
-          - { name: description, label: Description, type: text }
+  --display:'Archivo',system-ui,sans-serif;
+  --body:'Newsreader',Georgia,serif;
+  --mono:'IBM Plex Mono',ui-monospace,monospace;
 
-  - name: work
-    label: Published work
-    type: file
-    path: content/work.json
-    format: json
-    fields:
-      - name: items
-        label: Pieces
-        type: object
-        list: true
-        fields:
-          - { name: title, label: Title, type: string, required: true }
-          - name: kind
-            label: Type
-            type: select
-            options:
-              values: [Article, Document]
-            default: Article
-          - { name: year, label: Year, type: string }
-          - { name: role, label: Your role, type: string, description: "e.g. Writer / Photographer" }
-          - { name: url, label: Link to the published piece, type: string }
-          - { name: image, label: Thumbnail, type: image }
-          - { name: description, label: Description, type: text }
+  --gut:clamp(20px,5vw,64px);
+  --maxw:1240px;
+}
 
-  - name: storytelling
-    label: Communication projects
-    type: file
-    path: content/storytelling.json
-    format: json
-    fields:
-      - { name: intro, label: Section intro, type: text }
-      - name: items
-        label: Projects
-        type: object
-        list: true
-        fields:
-          - { name: title, label: Title, type: string, required: true }
-          - { name: description, label: Description, type: text }
-          - name: aspect
-            label: Photo strip shape
-            type: select
-            options:
-              values: [landscape, square, portrait]
-            default: portrait
-            description: "landscape = wide photo, square = Instagram square, portrait = Instagram portrait post"
-          - name: images
-            label: Images
-            type: object
-            list: true
-            fields:
-              - { name: src, label: Image, type: image }
-              - { name: caption, label: Caption or role, type: string }
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{
+  margin:0;background:var(--clay);color:var(--ink);
+  font-family:var(--body);font-size:17px;line-height:1.62;
+  font-synthesis-weight:none;-webkit-font-smoothing:antialiased;
+}
+img{max-width:100%;display:block}
+a{color:inherit}
+button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
+:focus-visible{outline:2.5px solid var(--river);outline-offset:3px}
 
-  - name: photography
-    label: Photography & reels
-    type: file
-    path: content/photography.json
-    format: json
-    fields:
-      - { name: intro, label: Section intro, type: text }
-      - name: categories
-        label: Categories
-        type: object
-        list: true
-        fields:
-          - { name: name, label: Category name, type: string, required: true }
-          - name: photos
-            label: Photographs
-            type: object
-            list: true
-            fields:
-              - { name: src, label: Photo, type: image }
-              - { name: caption, label: Caption, type: string }
-      - name: reels
-        label: Reels
-        type: object
-        list: true
-        fields:
-          - { name: url, label: Instagram Reel link, type: string, description: "Paste the reel's URL from Instagram (e.g. instagram.com/reel/...). Clicking the card opens this directly." }
-          - { name: thumb, label: Thumbnail, type: image, description: "A cover image for the reel — a screenshot from the video works well." }
-          - { name: caption, label: Caption, type: string }
+.wrap{max-width:var(--maxw);margin:0 auto;padding-inline:var(--gut)}
+.mono{font-family:var(--mono);font-size:.7rem;letter-spacing:.14em}
 
-  - name: events
-    label: Events
-    type: file
-    path: content/events.json
-    format: json
-    fields:
-      - name: items
-        label: Events
-        type: object
-        list: true
-        fields:
-          - { name: title, label: Title, type: string, required: true }
-          - { name: year, label: Year, type: string }
-          - { name: description, label: Description, type: text }
-          - name: images
-            label: Images
-            type: object
-            list: true
-            fields:
-              - { name: src, label: Image, type: image }
-              - { name: caption, label: Caption, type: string }
+/* ---------- top bar ---------- */
+.topbar{
+  position:fixed;inset:0 0 auto 0;z-index:60;
+  display:flex;align-items:center;gap:24px;
+  padding:14px var(--gut);color:var(--bone);
+  transition:background .35s ease,color .35s ease,padding .35s ease;
+}
+.topbar.stuck{background:var(--ink);color:var(--bone);padding-block:10px}
+.topbar .sig{
+  font-family:var(--display);font-weight:700;letter-spacing:-.02em;font-size:.95rem;white-space:nowrap;
+  opacity:0;transition:opacity .3s ease;
+}
+.topbar.stuck .sig{opacity:1}
+.topbar nav{margin-left:auto;display:flex;gap:4px;overflow-x:auto;scrollbar-width:none}
+.topbar nav::-webkit-scrollbar{display:none}
+.topbar nav a{
+  font-family:var(--display);font-size:.82rem;font-weight:500;
+  text-decoration:none;padding:6px 10px;border-radius:2px;white-space:nowrap;
+  opacity:.72;transition:opacity .2s,background .2s;
+}
+.topbar nav a:hover{opacity:1}
+.topbar nav a.on{opacity:1;background:var(--clay);color:var(--ink)}
 
-  - name: research
-    label: Academic research
-    type: file
-    path: content/research.json
-    format: json
-    fields:
-      - name: items
-        label: Papers
-        type: object
-        list: true
-        fields:
-          - { name: title, label: Title, type: string, required: true }
-          - { name: year, label: Year, type: string }
-          - { name: role, label: Your role, type: string }
-          - { name: award, label: Grade or award, type: string }
-          - { name: url, label: Link to the paper, type: string }
-          - { name: cover, label: Cover image, type: image }
-          - { name: description, label: Description, type: text }
+.current-section{
+  display:none;margin-left:auto;font-family:var(--mono);font-size:.68rem;
+  letter-spacing:.1em;text-transform:uppercase;white-space:nowrap;opacity:.85;
+}
+.menu-btn{
+  display:none;flex-direction:column;justify-content:center;gap:5px;
+  width:26px;height:20px;margin-left:16px;flex-shrink:0;
+}
+.menu-btn span{display:block;height:2px;background:currentColor;border-radius:1px;transition:transform .25s,opacity .25s}
+.menu-btn[aria-expanded="true"] span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.menu-btn[aria-expanded="true"] span:nth-child(2){opacity:0}
+.menu-btn[aria-expanded="true"] span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+
+@media(max-width:700px){
+  .current-section{display:block}
+  .menu-btn{display:flex}
+  .topbar nav{
+    display:none;position:absolute;top:100%;left:0;right:0;
+    flex-direction:column;gap:0;background:var(--ink);color:var(--bone);
+    padding:6px var(--gut) 18px;max-height:70vh;overflow-y:auto;
+    box-shadow:0 12px 24px rgba(0,0,0,.25);
+  }
+  .topbar nav.open{display:flex}
+  .topbar nav a{
+    padding:13px 0;border-radius:0;opacity:.85;
+    border-bottom:1px solid rgba(244,239,226,.14);
+  }
+  .topbar nav a.on{background:none;color:var(--marker);opacity:1}
+}
+
+/* ---------- hero ---------- */
+.hero{
+  position:relative;min-height:min(94svh,860px);
+  display:flex;align-items:flex-end;
+  background:var(--ink);color:var(--bone);overflow:hidden;
+}
+.hero-img{position:absolute;inset:0}
+.hero-img img{width:100%;height:100%;object-fit:cover;opacity:.82;filter:saturate(.9)}
+.hero-img::after{
+  content:'';position:absolute;inset:0;
+  background:linear-gradient(180deg,rgba(23,21,15,.4) 0%,rgba(23,21,15,.06) 38%,rgba(23,21,15,.68) 100%);
+}
+.hero-inner{position:relative;width:100%;max-width:var(--maxw);margin:0 auto;padding:0 var(--gut) clamp(36px,7vh,76px)}
+.hero .eyebrow{color:var(--marker);margin-bottom:14px}
+.hero .name-line{
+  font-family:var(--display);font-weight:700;font-size:1.05rem;
+  letter-spacing:.01em;margin:0 0 10px;color:var(--bone);
+}
+.hero h1{
+  font-family:var(--display);font-weight:800;
+  font-size:clamp(1.9rem,5.2vw,50px);line-height:1.02;letter-spacing:-.03em;
+  margin:0 0 10px;text-wrap:balance;
+}
+.hero h1 .sweep{position:relative;display:inline-block}
+.hero h1 .sweep::after{
+  content:'';position:absolute;left:-.04em;right:-.04em;bottom:.1em;height:.16em;
+  background:var(--marker);z-index:-1;transform-origin:left;
+  transform:scaleX(0);animation:sweep 1s cubic-bezier(.2,.7,.3,1) .5s forwards;
+}
+@keyframes sweep{to{transform:scaleX(1)}}
+.hero .standfirst{
+  font-size:clamp(1.02rem,2.1vw,1.28rem);max-width:44ch;color:#e8e1cf;margin:18px 0 0;
+}
+.hero .credit{margin-top:28px;color:#b8ae94;line-height:1.6;font-size:.66rem}
+.scroll-cue{
+  position:absolute;right:var(--gut);bottom:clamp(36px,7vh,76px);
+  writing-mode:vertical-rl;color:#b8ae94;display:none;text-transform:uppercase;
+}
+@media(min-width:900px){.scroll-cue{display:block}}
+
+/* ---------- section furniture ---------- */
+.band{padding-block:clamp(64px,9vw,116px)}
+.band--ink{background:var(--ink);color:var(--bone)}
+.band--deep{background:var(--clay-2)}
+.sec-head{display:flex;align-items:baseline;gap:18px;margin-bottom:clamp(28px,4vw,48px);flex-wrap:wrap}
+.sec-head h2{
+  font-family:var(--display);font-weight:800;letter-spacing:-.03em;
+  font-size:clamp(2rem,5.4vw,3.6rem);line-height:1;margin:0;
+}
+.sec-head .count{font-family:var(--mono);font-size:.7rem;letter-spacing:.14em;opacity:.55;text-transform:uppercase}
+.sec-intro{max-width:62ch;margin:0 0 clamp(28px,4vw,44px);font-size:1.05rem}
+.rule{height:1px;background:currentColor;opacity:.18;margin-block:clamp(48px,7vw,84px)}
+
+/* ---------- about ---------- */
+.about{display:grid;gap:clamp(28px,5vw,56px);grid-template-columns:1fr}
+@media(min-width:860px){.about{grid-template-columns:.85fr 1.15fr;align-items:start}}
+.about p{margin:0 0 1.1em;font-size:1.1rem}
+.portrait-slideshow{position:relative}
+.portrait-stage{aspect-ratio:3/2;overflow:hidden;position:relative;background:var(--clay-3)}
+.portrait-stage img,.portrait-stage video{width:100%;height:100%;object-fit:cover;display:block}
+.portrait-slideshow figcaption{margin-top:10px;opacity:.6;font-size:.66rem}
+.tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:26px;padding:0;list-style:none}
+.tags li{
+  font-family:var(--mono);font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;
+  padding:6px 11px;border:1px solid rgba(23,21,15,.35);border-radius:999px;
+}
+
+/* ---------- recent work ---------- */
+.recent-grid{display:grid;gap:clamp(24px,4vw,36px);grid-template-columns:repeat(auto-fit,minmax(250px,1fr))}
+.recent-card{display:flex;flex-direction:column}
+.recent-card .thumb{aspect-ratio:4/3;overflow:hidden;margin-bottom:16px}
+.recent-card .thumb img{width:100%;height:100%;object-fit:cover;transition:transform .5s cubic-bezier(.2,.7,.3,1)}
+.recent-card:hover .thumb img{transform:scale(1.05)}
+.recent-card h3{font-family:var(--display);font-weight:700;font-size:1.12rem;line-height:1.28;letter-spacing:-.015em;margin:0 0 10px}
+.recent-card h3 a{text-decoration:none}
+.recent-card h3 a:hover{color:var(--river)}
+.recent-card h3 a span{
+  background-image:linear-gradient(var(--marker),var(--marker));
+  background-repeat:no-repeat;background-position:0 88%;background-size:0% .28em;
+  transition:background-size .38s cubic-bezier(.2,.7,.3,1);
+  box-decoration-break:clone;-webkit-box-decoration-break:clone;
+}
+.recent-card h3 a:hover span,.recent-card h3 a:focus-visible span{background-size:100% .28em}
+.recent-chips{display:flex;flex-wrap:wrap;gap:6px;margin:0 0 10px}
+.recent-chips span{
+  font-family:var(--mono);font-size:.62rem;letter-spacing:.08em;
+  padding:4px 9px;border:1px solid rgba(23,21,15,.35);border-radius:999px;opacity:.75;
+}
+.recent-card .yr{font-family:var(--mono);font-size:.7rem;color:var(--river);font-weight:500;margin-bottom:8px;display:block}
+.recent-card p{font-size:.95rem;opacity:.86;margin:0}
+
+/* ---------- work: year spine + rows ---------- */
+.filters{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:32px}
+.filters button{
+  font-family:var(--display);font-size:.8rem;font-weight:600;
+  padding:8px 16px;border:1.5px solid rgba(23,21,15,.4);border-radius:999px;
+  transition:background .2s,color .2s,border-color .2s;
+}
+.filters button:hover{border-color:var(--ink)}
+.filters button[aria-pressed="true"]{background:var(--ink);color:var(--bone);border-color:var(--ink)}
+
+.rows{list-style:none;margin:0;padding:0}
+.row{border-top:1px solid rgba(23,21,15,.22)}
+.rows .row:last-child{border-bottom:1px solid rgba(23,21,15,.22)}
+.row-in{
+  display:grid;gap:16px 20px;grid-template-columns:120px 1fr;align-items:start;
+  padding:26px 0;text-decoration:none;
+}
+@media(min-width:640px){.row-in{grid-template-columns:220px 1fr;gap:22px 30px}}
+.row-thumb{aspect-ratio:4/3;overflow:hidden;background:var(--clay-3)}
+.row-thumb img{width:100%;height:100%;object-fit:cover;transition:transform .5s cubic-bezier(.2,.7,.3,1)}
+.row-thumb-doc img{object-fit:contain;background:var(--bone)}
+.row:hover .row-thumb img{transform:scale(1.05)}
+.row h3{
+  font-family:var(--display);font-weight:700;letter-spacing:-.017em;
+  font-size:clamp(1.12rem,2.1vw,1.42rem);line-height:1.22;margin:0 0 10px;
+}
+.row h3 span{
+  background-image:linear-gradient(var(--marker),var(--marker));
+  background-repeat:no-repeat;background-position:0 88%;background-size:0% .28em;
+  transition:background-size .38s cubic-bezier(.2,.7,.3,1);
+  box-decoration-break:clone;-webkit-box-decoration-break:clone;
+}
+.row:hover h3 span,.row-in:focus-visible h3 span{background-size:100% .28em}
+.row-meta{display:flex;flex-wrap:wrap;gap:6px 14px;align-items:center;opacity:.72;text-transform:uppercase}
+.row-meta .yr{color:var(--river);font-weight:500;opacity:1}
+.row-desc{font-size:.98rem;opacity:.86;margin:0;grid-column:1/-1}
+.row-go{
+  display:inline-flex;align-items:center;gap:7px;margin-top:14px;
+  font-family:var(--mono);font-size:.66rem;letter-spacing:.14em;text-transform:uppercase;color:var(--river);
+}
+.row-go svg{transition:transform .3s}
+.row:hover .row-go svg{transform:translate(3px,-3px)}
+.row-nolink{margin-top:14px;opacity:.45}
+
+/* ---------- placeholder swatch ---------- */
+.ph{
+  position:relative;background:var(--clay-3);
+  background-image:repeating-linear-gradient(135deg,rgba(23,21,15,.09) 0 1px,transparent 1px 9px);
+  display:flex;align-items:flex-end;padding:8px;
+}
+.ph span{
+  font-family:var(--mono);font-size:.54rem;letter-spacing:.06em;
+  opacity:.45;line-height:1.3;
+}
+.band--ink .ph{background-color:#241f16;background-image:repeating-linear-gradient(135deg,rgba(244,239,226,.09) 0 1px,transparent 1px 9px)}
+
+/* ---------- storytelling ---------- */
+.story+.story{margin-top:clamp(48px,7vw,80px)}
+.story{scroll-margin-top:100px}
+.story h3{
+  font-family:var(--display);font-weight:700;font-size:clamp(1.3rem,3vw,1.85rem);
+  letter-spacing:-.02em;margin:0 0 12px;
+}
+.story p{max-width:66ch;margin:0 0 22px;opacity:.88}
+.strip-head{display:flex;align-items:center;gap:10px;margin-bottom:12px}
+.strip-head .mono{opacity:.5;margin-right:auto;text-transform:uppercase}
+.strip-nav{display:flex;gap:6px}
+.strip-nav button{
+  width:34px;height:34px;border:1px solid currentColor;border-radius:50%;
+  display:grid;place-items:center;opacity:.5;transition:opacity .2s;
+}
+.strip-nav button:hover{opacity:1}
+.strip{
+  display:grid;grid-auto-flow:column;grid-auto-columns:minmax(150px,190px);
+  gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;
+  padding-bottom:14px;scrollbar-width:thin;
+}
+.strip>*{scroll-snap-align:start}
+.strip figure{margin:0}
+.strip .frame{aspect-ratio:4/5;overflow:hidden;cursor:zoom-in}
+.strip.aspect-landscape{grid-auto-columns:minmax(200px,260px)}
+.strip.aspect-landscape .frame{aspect-ratio:3/2}
+.strip.aspect-square .frame{aspect-ratio:1/1}
+.strip.aspect-portrait .frame{aspect-ratio:4/5}
+.strip .frame img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
+.strip .frame:hover img{transform:scale(1.04)}
+.strip figcaption{margin-top:8px;opacity:.55;font-size:.62rem}
+
+/* ---------- photography: categorised slideshows ---------- */
+.photo-cats{display:grid;gap:clamp(40px,6vw,60px) clamp(28px,4vw,52px);grid-template-columns:1fr}
+@media(min-width:860px){.photo-cats{grid-template-columns:1fr 1fr}}
+.photo-cat{scroll-margin-top:100px}
+.photo-cat h3{
+  font-family:var(--display);font-weight:700;letter-spacing:-.015em;
+  font-size:clamp(1.15rem,2.4vw,1.5rem);margin:0 0 10px;
+}
+.proj-desc{font-size:.92rem;opacity:.85;margin:0 0 14px;max-width:60ch}
+.slideshow{position:relative}
+.slideshow .stage{aspect-ratio:3/2;overflow:hidden;cursor:zoom-in;position:relative}
+.slideshow.aspect-landscape .stage{aspect-ratio:3/2}
+.slideshow.aspect-square .stage{aspect-ratio:1/1}
+.slideshow.aspect-portrait .stage{aspect-ratio:4/5}
+.slideshow .stage img{width:100%;height:100%;object-fit:cover}
+.slideshow .stage .ph{width:100%;height:100%}
+.slide-btn{
+  position:absolute;top:50%;transform:translateY(-50%);z-index:2;
+  width:38px;height:38px;border-radius:50%;
+  background:rgba(23,21,15,.55);color:var(--bone);
+  display:grid;place-items:center;transition:background .2s;
+}
+.slide-btn:hover{background:rgba(23,21,15,.82)}
+.slide-btn.prev{left:10px}
+.slide-btn.next{right:10px}
+.slide-meta{display:flex;justify-content:space-between;align-items:baseline;gap:14px;margin-top:10px}
+.slide-meta .cap{font-size:.92rem;opacity:.85}
+.slide-meta .count{opacity:.5;white-space:nowrap;font-family:var(--mono);font-size:.66rem;letter-spacing:.1em}
+.reels{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));margin-top:22px}
+.reel{text-decoration:none}
+.reel .frame{aspect-ratio:9/16;overflow:hidden;position:relative;background:#241f16}
+.reel .frame img{width:100%;height:100%;object-fit:cover}
+.reel .play{
+  position:absolute;inset:0;display:grid;place-items:center;
+  background:rgba(23,21,15,.28);transition:background .3s;
+}
+.reel:hover .play{background:rgba(23,21,15,.1)}
+.reel .play i{
+  width:52px;height:52px;border-radius:50%;border:1.5px solid var(--bone);
+  display:grid;place-items:center;color:var(--bone);
+}
+.reel figcaption{margin-top:9px;opacity:.6;font-size:.66rem}
+
+/* ---------- events ---------- */
+.event+.event{margin-top:clamp(48px,7vw,80px)}
+.event h3{font-family:var(--display);font-weight:700;font-size:clamp(1.3rem,3vw,1.9rem);letter-spacing:-.02em;margin:0 0 10px}
+.event p{max-width:70ch;margin:0 0 22px;opacity:.88}
+
+/* ---------- research ---------- */
+.papers{display:grid;gap:clamp(24px,4vw,40px);grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
+.paper .cover{aspect-ratio:1/1.414;overflow:hidden;background:var(--bone);cursor:zoom-in}
+.paper .cover img{width:100%;height:100%;object-fit:cover}
+.paper h3{font-family:var(--display);font-weight:700;font-size:1.06rem;line-height:1.3;letter-spacing:-.01em;margin:16px 0 8px}
+.paper p{font-size:.95rem;opacity:.85;margin:10px 0 0}
+.paper .award{
+  display:inline-block;margin-top:10px;padding:3px 9px;border:1px solid currentColor;
+  font-family:var(--mono);font-size:.6rem;letter-spacing:.12em;text-transform:uppercase;color:var(--river);
+}
+.band--ink .paper .award{color:var(--marker)}
+
+/* ---------- contact ---------- */
+.contact{display:grid;gap:32px;grid-template-columns:1fr}
+@media(min-width:800px){.contact{grid-template-columns:1.2fr .8fr;align-items:end}}
+.contact h2{font-family:var(--display);font-weight:800;font-size:clamp(1.9rem,5vw,3.2rem);letter-spacing:-.03em;line-height:1.02;margin:0}
+.links{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:2px}
+.links a{
+  display:flex;justify-content:space-between;gap:20px;align-items:center;
+  padding:13px 0;border-bottom:1px solid rgba(244,239,226,.22);
+  text-decoration:none;font-family:var(--display);font-weight:600;font-size:1rem;
+}
+.links a:hover{color:var(--marker)}
+.colophon{margin-top:56px;opacity:.42;font-size:.62rem;line-height:1.7}
+
+/* ---------- lightbox ---------- */
+.lb{
+  position:fixed;inset:0;z-index:100;background:rgba(12,11,8,.94);
+  display:none;align-items:center;justify-content:center;padding:clamp(16px,4vw,56px);
+}
+.lb.open{display:flex}
+.lb figure{margin:0;max-width:100%;max-height:100%;display:flex;flex-direction:column;gap:12px;align-items:center}
+.lb img{max-width:100%;max-height:78svh;object-fit:contain}
+.lb .ph{width:min(70vw,520px);aspect-ratio:4/5}
+.lb figcaption{color:#cfc6ad;font-family:var(--mono);font-size:.68rem;letter-spacing:.06em;text-align:center;max-width:60ch}
+.lb-btn{
+  position:absolute;color:var(--bone);width:46px;height:46px;border-radius:50%;
+  border:1px solid rgba(244,239,226,.4);display:grid;place-items:center;
+}
+.lb-btn:hover{background:rgba(244,239,226,.12)}
+.lb-close{top:18px;right:18px}
+.lb-prev{left:14px;top:50%;transform:translateY(-50%)}
+.lb-next{right:14px;top:50%;transform:translateY(-50%)}
+.lb-count{position:absolute;bottom:18px;left:50%;transform:translateX(-50%);color:#8f886f;font-family:var(--mono);font-size:.66rem;letter-spacing:.14em}
+
+/* ---------- reveal ---------- */
+.rv{opacity:0;transform:translateY(18px);transition:opacity .7s ease,transform .7s cubic-bezier(.2,.7,.3,1)}
+.rv.in{opacity:1;transform:none}
+
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}
+  .rv{opacity:1;transform:none}
+  .hero h1 .sweep::after{transform:scaleX(1)}
+}
+</style>
+</head>
+
+<body>
+
+<header class="topbar" id="topbar">
+  <span class="sig">Sam Hofman</span>
+  <span class="current-section mono" id="currentSection">About</span>
+  <nav id="nav" aria-label="Sections">
+    <a href="#about">About</a>
+    <a href="#recent-work">Recent work</a>
+    <a href="#work">Published work</a>
+    <a href="#storytelling">Communication projects</a>
+    <a href="#photography">Photography &amp; video</a>
+    <a href="#events">Events</a>
+    <a href="#research">Research</a>
+    <a href="#contact">Contact</a>
+  </nav>
+  <button type="button" class="menu-btn" id="menuBtn" aria-label="Open menu" aria-expanded="false" aria-controls="nav">
+    <span></span><span></span><span></span>
+  </button>
+</header>
+
+<main>
+
+  <section class="hero" id="hero">
+    <div class="hero-img" id="heroImg"></div>
+    <div class="hero-inner">
+      <p class="mono eyebrow" id="heroEyebrow"></p>
+      <p class="name-line" id="heroName"></p>
+      <h1><span class="sweep" id="heroTitleA"></span><br><span id="heroTitleB"></span></h1>
+      <p class="standfirst" id="heroStand"></p>
+      <p class="mono credit" id="heroCredit"></p>
+    </div>
+    <span class="mono scroll-cue">Scroll</span>
+  </section>
+
+  <section class="band" id="about">
+    <div class="wrap">
+      <div class="sec-head rv"><h2>About Sam</h2></div>
+      <div class="about">
+        <div class="rv">
+          <div id="aboutText"></div>
+          <ul class="tags" id="aboutTags"></ul>
+        </div>
+        <figure class="portrait-slideshow rv">
+          <div class="portrait-stage" id="portraitStage"></div>
+          <figcaption class="mono" id="portraitCaption"></figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="band" id="recent-work" style="padding-top:clamp(36px,7vh,76px)">
+    <div class="wrap">
+      <div class="sec-head rv"><h2>Recent work</h2></div>
+      <p class="sec-intro rv" id="recentIntro"></p>
+      <div class="recent-grid" id="recentItems"></div>
+    </div>
+  </section>
+
+  <section class="band band--deep" id="work">
+    <div class="wrap">
+      <div class="sec-head rv">
+        <h2>Published work</h2>
+        <span class="count" id="workCount"></span>
+      </div>
+      <p class="sec-intro rv">Articles, profiles, reports and guides written and produced for human rights and environmental organisations.</p>
+      <div class="filters rv" id="workFilters" role="group" aria-label="Filter work"></div>
+      <ul class="rows" id="workRows"></ul>
+    </div>
+  </section>
+
+  <section class="band" id="storytelling">
+    <div class="wrap">
+      <div class="sec-head rv"><h2>Communication projects</h2></div>
+      <p class="sec-intro rv" id="storyIntro"></p>
+      <div id="stories"></div>
+    </div>
+  </section>
+
+  <section class="band band--ink" id="photography">
+    <div class="wrap">
+      <div class="sec-head rv"><h2>Photography</h2><span class="count" id="photoCount"></span></div>
+      <p class="sec-intro rv" id="photoIntro"></p>
+      <div class="photo-cats" id="photoCats"></div>
+      <div class="rule"></div>
+      <div class="sec-head rv"><h2>Reels</h2></div>
+      <div class="reels rv" id="reels"></div>
+    </div>
+  </section>
+
+  <section class="band band--deep" id="events">
+    <div class="wrap">
+      <div class="sec-head rv"><h2>Events</h2></div>
+      <div id="eventList"></div>
+    </div>
+  </section>
+
+  <section class="band" id="research">
+    <div class="wrap">
+      <div class="sec-head rv"><h2>Academic research</h2></div>
+      <div class="papers" id="papers"></div>
+    </div>
+  </section>
+
+  <section class="band band--ink" id="contact">
+    <div class="wrap">
+      <div class="contact">
+        <h2 class="rv" id="contactLine"></h2>
+        <ul class="links rv" id="contactLinks"></ul>
+      </div>
+      <p class="colophon" id="colophon"></p>
+    </div>
+  </section>
+
+</main>
+
+<div class="lb" id="lb" role="dialog" aria-modal="true" aria-label="Image viewer">
+  <button class="lb-btn lb-close" id="lbClose" aria-label="Close">&#10005;</button>
+  <button class="lb-btn lb-prev" id="lbPrev" aria-label="Previous image">&#8592;</button>
+  <button class="lb-btn lb-next" id="lbNext" aria-label="Next image">&#8594;</button>
+  <figure id="lbFig"></figure>
+  <span class="lb-count" id="lbCount"></span>
+</div>
+
+<script type="application/json" id="seed">
+{
+  "site": {
+    "name": "Sam Hofman",
+    "eyebrow": "Human rights · Environmental Justice · Southeast Asia",
+    "titleLine1": "Communications",
+    "titleLine2": "Portfolio",
+    "standfirst": "Written and visual work made with frontline communities, Indigenous rights movements and human rights defenders.",
+    "heroImage": "",
+    "heroCredit": "Omkoi, Chiang Mai, Thailand. Taken for the sixth anniversary of the Stop the Coal Mine campaign. Photo: Sam Hofman",
+    "aboutText": "I work at the intersection of storytelling, human rights and environmental justice. My work focuses on Indigenous rights, frontline communities and environmental issues across Southeast Asia.\n\nI have produced written and visual stories, human rights defender profiles, communications campaigns, briefers and community organiser profiles for NGOs including EarthRights International and Justice & Peace Netherlands (Shelter City Network).",
+    "portraitPhotos": [
+      {"src":"", "caption":"Sam Hofman"}
+    ],
+    "portraitVideo": "",
+    "tags": ["Storytelling", "Communications", "Community-centred research", "Photography", "Southeast Asia"],
+    "contactLine": "Open to communications, storytelling and research roles.",
+    "email": "",
+    "linkedin": "",
+    "instagram": "",
+    "cv": ""
+  },
+
+  "recentwork": {
+    "intro": "A few recent pieces, spanning writing and photography.",
+    "items": [
+      { "title":"My Community My University: How Community-Based Research Stopped a Coal Power Plant in Myanmar", "year":"2026", "tags":["Article","Writer / Photographer"], "url":"", "image":"",
+        "description":"Part of a three-article series on people who used community-based research tools. I interviewed and profiled Mi Tri, an activist and community-based researcher from Mon State, Myanmar." },
+      { "title":"Collaboration between The Bowl Spot and Chow Chow Chiang Mai", "year":"2026", "tags":["Project","Photographer"], "url":"#storytelling", "image":"",
+        "description":"I was hired to photograph the making of the new recipe and menu." },
+      { "title":"Drawing the River Under Surveillance: How Communities in Laos Protect Their Rights and Natural Resources", "year":"2026", "tags":["Article","Writer / Interviewer"], "url":"", "image":"",
+        "description":"Interviewed and profiled a Lao lawyer and community rights defender on how he works directly with communities and the tools he uses." },
+      { "title":"Bringing Out Community Knowledge: LEAD Lessons from the Mekong", "year":"2026", "tags":["Article","Writer / Photographer"], "url":"", "image":"",
+        "description":"Blog post and briefer on community-led research methods in the Mekong region, compiled from multi-country training sessions." }
+    ]
+  },
+
+  "work": { "items": [
+    { "kind":"Article", "title":"My Community My University: How Community-Based Research Stopped a Coal Power Plant in Myanmar", "year":"2026", "role":"Writer / Photographer", "url":"", "image":"",
+      "description":"Part of a three-article series on people who used community-based research tools. I interviewed and profiled Mi Tri, an activist and community-based researcher from Mon State, Myanmar, about the tools and strategies she used against a large-scale development project that threatened her community's environment." },
+    { "kind":"Article", "title":"Drawing the River Under Surveillance: How Communities in Laos Protect Their Rights and Natural Resources", "year":"2026", "role":"Writer / Interviewer", "url":"", "image":"",
+      "description":"Interviewed and profiled a Lao lawyer and community rights defender on how he works directly with communities, the tools he uses, and the challenges he has faced." },
+    { "kind":"Article", "title":"Bringing Out Community Knowledge: LEAD Lessons from the Mekong", "year":"2026", "role":"Writer / Photographer", "url":"", "image":"",
+      "description":"Blog post and briefer on community-led research methods in the Mekong region. Compiled and analysed insights from multi-country training sessions into accessible content on participatory approaches and centring local knowledge in human rights work." },
+    { "kind":"Article", "title":"Six Harvests of Campaigning for an End to Coal Mining in Omkoi", "year":"2025", "role":"Writer / Photographer", "url":"", "image":"",
+      "description":"Social media and blog post announcing the achievements, history and future hopes of the six-year campaign." },
+    { "kind":"Article", "title":"Juvie, using documentation as a tool against injustice", "year":"2024", "role":"Writer / Interviewer / Photographer", "url":"", "image":"",
+      "description":"Interviewed a human rights defender from the Philippines on her experience and outlook. Published as a social media campaign and blog post." },
+    { "kind":"Article", "title":"From Africa to Europe: Enhancing global collaborations to protect human rights defenders at risk", "year":"2024", "role":"Writer / Photographer", "url":"", "image":"",
+      "description":"Documented an international convening on protecting at-risk human rights defenders." },
+    { "kind":"Article", "title":"The beginning of a partnership between Ubuntu Hub Cities and Shelter City", "year":"2024", "role":"Writer / Photographer", "url":"", "image":"",
+      "description":"Announced the collaboration between Shelter City and Ubuntu Hub Cities to expand the temporary relocation network for at-risk African human rights defenders." },
+    { "kind":"Document", "title":"Facilitating Community-Led Research in Challenging Contexts", "year":"2026", "role":"Writer", "url":"", "image":"",
+      "description":"Wrote the contents of the report and collaborated on the design and layout." },
+    { "kind":"Document", "title":"Welcome Guide NL", "year":"2024", "role":"Writer / Graphic designer / Layout", "url":"", "image":"",
+      "description":"A guide to the Netherlands for new Shelter City guests. I designed, compiled and edited the document." },
+    { "kind":"Document", "title":"Welcome Booklet, Global Partner Meeting", "year":"2023", "role":"Writer / Graphic designer / Layout", "url":"", "image":"",
+      "description":"Produced for over 70 participants at the Shelter City Global Partner Meeting." },
+    { "kind":"Document", "title":"A Guide to The Hague", "year":"2022", "role":"Writer / Graphic designer / Layout", "url":"", "image":"",
+      "description":"A plain-language guide to The Hague for new HRD guests hosted in the city and for participants of the Global Partner Meeting." },
+    { "kind":"Document", "title":"Bi-yearly Reflection Report", "year":"2022", "role":"Writer / Graphic design / Layout", "url":"", "image":"",
+      "description":"Designed the report in line with branding, wrote the contents, and led the evaluation of different projects." }
+  ]},
+
+  "storytelling": {
+    "intro": "My work blends written and visual storytelling to document human rights, environmental issues and community-led movements. Through interviews, profiles, photography and digital narratives, I aim to tell stories that shift understanding and build empathy.",
+    "items": [
+      { "title":"Chow Chow x The Bowl Spot", "aspect":"landscape",
+        "description":"Add the story of this collaboration here — what the project involved, and your role in it.",
+        "images":[] },
+      { "title":"Spotlighting Community-Based Research", "aspect":"landscape",
+        "description":"Wrote and interviewed three articles on community-based research practitioners across the Mekong region. The first, Drawing the River Under Surveillance: How Communities in Laos Protect Their Rights and Natural Resources (2026), has been published.",
+        "images":[] },
+      { "title":"Shelter City Human Rights Update", "aspect":"portrait",
+        "description":"A human rights update on Instagram Stories, letting Shelter City guests raise awareness of their work while staying anonymous. Updates covered arbitrary detention of HRDs in Venezuela, new anti-LGBT legislation in Iraq, the foreign agent law in Kyrgyzstan, and rising violence against Indigenous and environmental rights defenders in the Philippines.",
+        "images":[
+          {"src":"","caption":"Kyrgyzstan · foreign agent law"},
+          {"src":"","caption":"Venezuela · arbitrary detention"},
+          {"src":"","caption":"Philippines · violence against defenders"},
+          {"src":"","caption":"Iraq · anti-LGBT legislation"}
+        ]},
+      { "title":"Human Rights Defender Stories", "aspect":"portrait",
+        "description":"In-depth stories on human rights defenders, their experience and their hopes. Posted on social media with a corresponding blog post on the website. More detailed than the Meet the Guest campaign, and requiring deeper research.",
+        "images":[
+          {"src":"","caption":"Photographer / copywriter / graphic designer"},
+          {"src":"","caption":"Photographer / copywriter / graphic designer"},
+          {"src":"","caption":"Photographer / copywriter / graphic designer / writer"},
+          {"src":"","caption":"Photographer / copywriter / graphic designer"}
+        ]},
+      { "title":"Shelter City Resource Campaign", "aspect":"square",
+        "description":"Working on Shelter City branding at Justice & Peace NL, I revamped and revised the resource campaign designed to inform and support human rights defenders and former guests around the world. Posts went out every two weeks with clear, vivid updates on useful resources in the sector.",
+        "images":[
+          {"src":"","caption":"Resources · human rights defenders"},
+          {"src":"","caption":"Artivist award"},
+          {"src":"","caption":"Resources · defenders"},
+          {"src":"","caption":"Champions of the Earth Award"},
+          {"src":"","caption":"Resources · journalists"},
+          {"src":"","caption":"Guide to investigating war crimes"},
+          {"src":"","caption":"Resources · lawyers"},
+          {"src":"","caption":"Resources"}
+        ]},
+      { "title":"Meet the Guest Campaign", "aspect":"portrait",
+        "description":"This series introduced Shelter City guests to partners and the wider community. We protected their security by not publishing faces or identifying information, working in close consultation with each guest and monitoring the situation in their country. The call to action was an invitation to get in touch rather than a link, keeping the focus on growing each guest's network.",
+        "images":[
+          {"src":"","caption":"Photographer / copywriter / graphic designer"},
+          {"src":"","caption":"Photographer / copywriter / graphic designer"},
+          {"src":"","caption":"Photographer / copywriter / graphic designer / writer"},
+          {"src":"","caption":"Photographer / copywriter / graphic designer"}
+        ]},
+      { "title":"Highlighting the Shelter City Programme", "aspect":"portrait",
+        "description":"Communication material introducing and highlighting the Shelter City programme itself — events, announcements and updates on how the network operates and supports its guests.",
+        "images":[
+          {"src":"","caption":"Networking"},
+          {"src":"","caption":"Exhibition"},
+          {"src":"","caption":"Exhibition"},
+          {"src":"","caption":"Focusing on wellbeing"}
+        ]}
+    ]
+  },
+
+  "photography": {
+    "intro": "Photos taken over the years for different organisations: portraits, group activities, workshops, landscapes, cultural events and talks. They highlight the moments I have captured, always trying to convey the real emotion and energy of the scene. Made during my time at EarthRights International, Justice & Peace NL, or for personal projects.",
+    "categories": [
+      { "name":"Landscapes & fieldwork", "photos":[
+        {"src":"","caption":"Village and hills"},
+        {"src":"","caption":"Fieldwork, riverbank"},
+        {"src":"","caption":"Hills, northern Thailand"},
+        {"src":"","caption":"Bridge, winter"}
+      ]},
+      { "name":"Portraits", "photos":[
+        {"src":"","caption":"Workshop portrait"},
+        {"src":"","caption":"Street portrait"},
+        {"src":"","caption":"Portrait"},
+        {"src":"","caption":"Portrait, evening"}
+      ]},
+      { "name":"Community & groups", "photos":[
+        {"src":"","caption":"Stop the Coal Mine, Omkoi"},
+        {"src":"","caption":"Conversation, café"},
+        {"src":"","caption":"Community meeting"},
+        {"src":"","caption":"Group, The Hague"}
+      ]},
+      { "name":"Workshops & talks", "photos":[
+        {"src":"","caption":"Facilitator, training session"},
+        {"src":"","caption":"Speaker at gathering"},
+        {"src":"","caption":"Panel discussion"},
+        {"src":"","caption":"Training participants"},
+        {"src":"","caption":"Presentation, meeting room"}
+      ]}
+    ],
+    "reels": [
+      {"url":"","thumb":"","caption":"2023 recap"},
+      {"url":"","thumb":"","caption":"Looking back at the guests' stay"},
+      {"url":"","thumb":"","caption":"Engaging with local allies"}
+    ]
+  },
+
+  "events": { "items": [
+    { "title":"Colouring Our World: Bridging Art and Environmental Narratives", "year":"2024",
+      "description":"I organised an art book launch for a guest of the Artist's Safe Haven Programme. I set up a partnership with Bookstor, the oldest bookstore in the Netherlands, who hosted the event free of charge. A.G. (Artivist) told his story and participants were invited to buy his newly published drawing book. Over 80 people attended.",
+      "images":[
+        {"src":"","caption":"Invitation"},
+        {"src":"","caption":"Contribute to sustainable societies"},
+        {"src":"","caption":"Guests with the book"},
+        {"src":"","caption":"The launch"}
+      ]},
+    { "title":"Pride Event: Sharing Stories", "year":"2024",
+      "description":"Together with COC Haaglanden, the largest LGBTQI+ rights organisation in The Hague and the Netherlands, we organised a space where six LGBTQI+ activists shared their stories and met each other. Over 25 people attended.",
+      "images":[
+        {"src":"","caption":"Human Library: sharing international stories"},
+        {"src":"","caption":"Participant"},
+        {"src":"","caption":"Speaker"},
+        {"src":"","caption":"Conversation"}
+      ]}
+  ]},
+
+  "research": { "items": [
+    { "title":"Master thesis — Too Late When Deemed a Crisis: Humanitarian Non-Response to Heavy Metal Contamination in the Transboundary Kok River Basin", "year":"2026", "role":"Writer / Researcher", "award":"", "url":"", "cover":"",
+      "description":"Researched how rare-earth mining, entangled in the conflict economy of Wa State, affects downstream river communities on the Kok River in Thailand." },
+    { "title":"Briefer — Humanitarian Access Constraints in Myanmar", "year":"2025", "role":"Writer / Researcher", "award":"Awarded A", "url":"", "cover":"",
+      "description":"Researched and analysed humanitarian access constraints across Myanmar and turned them into a briefer aimed at policy makers." },
+    { "title":"Bachelor thesis — Creating Smiles or Frowns", "year":"2023", "role":"Writer / Researcher", "award":"Awarded A", "url":"", "cover":"",
+      "description":"Researched smallholder farmers in Thailand in an increasingly competitive agricultural market, writing on the political and cultural context and using the Gambia as a comparison case." }
+  ]}
+}
+</script>
+
+<script>
+(function(){
+  'use strict';
+  const $ = (s,r)=> (r||document).querySelector(s);
+  const $$ = (s,r)=> Array.from((r||document).querySelectorAll(s));
+  const esc = s => String(s==null?'':s).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+  const slugify = s => String(s||'').toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-+|-+$/g,'');
+
+  const FILES = {
+    site:'content/site.json', recentwork:'content/recentwork.json', work:'content/work.json', storytelling:'content/storytelling.json',
+    photography:'content/photography.json', events:'content/events.json', research:'content/research.json'
+  };
+
+  const seed = JSON.parse($('#seed').textContent);
+
+  async function load(){
+    try{
+      const keys = Object.keys(FILES);
+      const res = await Promise.all(keys.map(k => fetch(FILES[k], {cache:'no-cache'})));
+      if(res.some(r=>!r.ok)) throw new Error('missing content file');
+      const parsed = await Promise.all(res.map(r=>r.json()));
+      const out = {};
+      keys.forEach((k,i)=> out[k]=parsed[i]);
+      return out;
+    }catch(e){
+      console.warn('Using built-in content. Once deployed, the files in /content take over.', e.message);
+      return seed;
+    }
+  }
+
+  /* ---- media helpers ---- */
+  function media(src, caption, cls, ratio){
+    const label = caption ? esc(caption) : 'Image';
+    if(src){
+      return `<div class="frame ${cls||''}"${ratio?` style="aspect-ratio:${ratio}"`:''}><img src="${esc(src)}" alt="${label}" loading="lazy"></div>`;
+    }
+    return `<div class="frame ph ${cls||''}"${ratio?` style="aspect-ratio:${ratio}"`:''}><span>${label}</span></div>`;
+  }
+
+  /* ---- render ---- */
+  function renderSite(s){
+    $('#heroEyebrow').textContent = s.eyebrow||'';
+    $('#heroName').textContent = s.name||'';
+    $('#heroTitleA').textContent = s.titleLine1||'';
+    $('#heroTitleB').textContent = s.titleLine2||'';
+    $('#heroStand').textContent = s.standfirst||'';
+    $('#heroCredit').textContent = s.heroCredit||'';
+    $('.topbar .sig').textContent = s.name||'';
+    document.title = (s.name?s.name+' — ':'')+'Communications Portfolio';
+
+    if(s.heroImage){
+      $('#heroImg').innerHTML = `<img src="${esc(s.heroImage)}" alt="">`;
+    }
+
+    $('#aboutText').innerHTML = String(s.aboutText||'').split(/\n\s*\n/).map(p=>`<p>${esc(p)}</p>`).join('');
+    $('#aboutTags').innerHTML = (s.tags||[]).map(t=>`<li>${esc(t)}</li>`).join('');
+    portraitSlides = (s.portraitPhotos||[]).filter(p=>p&&p.src).map(p=>({type:'image',src:p.src,caption:p.caption}));
+    if(s.portraitVideo) portraitSlides.push({type:'video',src:s.portraitVideo,caption:''});
+    portraitIdx = 0;
+    portraitStarted = false;
+    paintPortraitStatic();
+    startPortraitWhenVisible();
+
+    $('#contactLine').textContent = s.contactLine||'';
+    const links = [];
+    if(s.email) links.push(['Email', 'mailto:'+s.email]);
+    if(s.linkedin) links.push(['LinkedIn', s.linkedin]);
+    if(s.instagram) links.push(['Instagram', s.instagram]);
+    if(s.cv) links.push(['Download CV', s.cv]);
+    $('#contactLinks').innerHTML = links.length
+      ? links.map(([l,h])=>`<li><a href="${esc(h)}"${h.startsWith('mailto')?'':' target="_blank" rel="noopener"'}>${esc(l)}<span aria-hidden="true">&#8599;</span></a></li>`).join('')
+      : `<li><a href="#work">Add your contact links in the CMS<span aria-hidden="true">&#8599;</span></a></li>`;
+    $('#colophon').textContent = '© '+new Date().getFullYear()+' '+(s.name||'')+'. All photographs by Sam Hofman unless otherwise credited.';
+  }
+
+  let workItems = [], activeFilter = 'All';
+  let photoCategories = [], photoState = {};
+  let portraitSlides = [], portraitIdx = 0, portraitTimer = null, portraitStarted = false;
+
+  function paintPortraitStatic(){
+    const stage = $('#portraitStage'), cap = $('#portraitCaption');
+    if(!portraitSlides.length){
+      stage.innerHTML = `<div class="ph" style="width:100%;height:100%"><span>Portrait</span></div>`;
+      cap.textContent = '';
+      return;
+    }
+    const first = portraitSlides[0];
+    if(first.type==='image'){
+      stage.innerHTML = `<img src="${esc(first.src)}" alt="${esc(first.caption||'')}">`;
+      cap.textContent = first.caption||'';
+    } else {
+      stage.innerHTML = `<div class="ph" style="width:100%;height:100%"><span>${esc(first.caption||'Video')}</span></div>`;
+      cap.textContent = '';
+    }
+  }
+
+  function paintPortrait(){
+    const stage = $('#portraitStage'), cap = $('#portraitCaption');
+    clearTimeout(portraitTimer);
+    if(!portraitSlides.length){
+      stage.innerHTML = `<div class="ph" style="width:100%;height:100%"><span>Portrait</span></div>`;
+      cap.textContent = '';
+      return;
+    }
+    const slide = portraitSlides[portraitIdx];
+    if(slide.type==='video'){
+      stage.innerHTML = `<video src="${esc(slide.src)}" autoplay muted playsinline></video>`;
+      const v = stage.querySelector('video');
+      if(v) v.addEventListener('ended', advancePortrait, {once:true});
+      portraitTimer = setTimeout(advancePortrait, 15000);
+    } else {
+      stage.innerHTML = `<img src="${esc(slide.src)}" alt="${esc(slide.caption||'')}">`;
+      portraitTimer = setTimeout(advancePortrait, 2600);
+    }
+    cap.textContent = slide.caption||'';
+  }
+  function advancePortrait(){
+    if(!portraitSlides.length) return;
+    portraitIdx = (portraitIdx+1) % portraitSlides.length;
+    paintPortrait();
+  }
+  function startPortraitWhenVisible(){
+    const el = document.querySelector('.portrait-slideshow');
+    if(!el || !portraitSlides.length) return;
+    const obs = new IntersectionObserver(es=>{
+      es.forEach(e=>{
+        if(e.isIntersecting && !portraitStarted){
+          portraitStarted = true;
+          portraitIdx = 0;
+          paintPortrait();
+          obs.disconnect();
+        }
+      });
+    }, {threshold:0.35});
+    obs.observe(el);
+  }
+
+  function renderWork(){
+    const shown = activeFilter==='All' ? workItems : workItems.filter(i=>i.kind===activeFilter);
+    $('#workCount').textContent = shown.length+' '+(shown.length===1?'item':'items');
+
+    $('#workRows').innerHTML = shown.map((it,i)=>{
+      const hasLink = !!it.url;
+      const tag = hasLink ? 'a' : 'div';
+      const attrs = hasLink ? ` href="${esc(it.url)}" target="_blank" rel="noopener"` : '';
+      const isDoc = it.kind==='Document';
+      const thumbClass = 'row-thumb ph'+(isDoc?' row-thumb-doc':'');
+      const thumbStyle = `aspect-ratio:${isDoc?'3/4':'4/3'}${it.image?';background:none':''}`;
+      return `<li class="row rv" data-year="${esc(it.year)}" data-i="${i}">
+        <${tag} class="row-in"${attrs}>
+          <div class="${thumbClass}" style="${thumbStyle}">${it.image?`<img src="${esc(it.image)}" alt="">`:`<span>${esc(it.kind||'')}</span>`}</div>
+          <div>
+            <h3><span>${esc(it.title)}</span></h3>
+            <div class="row-meta mono">
+              <span class="yr">${esc(it.year)}</span>
+              <span>${esc(it.kind||'')}</span>
+              <span>${esc(it.role||'')}</span>
+            </div>
+            ${hasLink
+              ? `<span class="row-go">Read<svg width="11" height="11" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M2 10L10 2M10 2H4M10 2v6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>`
+              : `<span class="row-go row-nolink">Link to be added</span>`}
+          </div>
+          <p class="row-desc">${esc(it.description)}</p>
+        </${tag}>
+      </li>`;
+    }).join('');
+
+    revealScan();
+  }
+
+  function renderRecentWork(d){
+    $('#recentIntro').textContent = d.intro||'';
+    $('#recentItems').innerHTML = (d.items||[]).map(it=>{
+      const hasLink = !!it.url;
+      const isInternal = hasLink && it.url.startsWith('#');
+      const linkAttrs = isInternal ? '' : ' target="_blank" rel="noopener"';
+      const titleInner = esc(it.title);
+      return `<article class="recent-card rv">
+        <div class="thumb ph"${it.image?' style="background:none"':''}>${it.image?`<img src="${esc(it.image)}" alt="">`:`<span>${titleInner}</span>`}</div>
+        <span class="yr">${esc(it.year)}</span>
+        <h3>${hasLink?`<a href="${esc(it.url)}"${linkAttrs}><span>${titleInner}</span></a>`:titleInner}</h3>
+        <div class="recent-chips">${(it.tags||[]).map(t=>`<span>${esc(t)}</span>`).join('')}</div>
+        <p>${esc(it.description)}</p>
+      </article>`;
+    }).join('');
+    revealScan();
+  }
+
+  function renderStorytelling(d){
+    $('#storyIntro').textContent = d.intro||'';
+    $('#stories').innerHTML = (d.items||[]).map((s,si)=>`
+      <article class="story rv" id="story-${slugify(s.title)}">
+        <h3>${esc(s.title)}</h3>
+        <p>${esc(s.description)}</p>
+        ${(s.images&&s.images.length)?`
+          <div class="strip-head">
+            <span class="mono">${s.images.length} image${s.images.length===1?'':'s'}</span>
+            <div class="strip-nav">
+              <button type="button" data-dir="-1" data-strip="s${si}" aria-label="Scroll left">&#8592;</button>
+              <button type="button" data-dir="1" data-strip="s${si}" aria-label="Scroll right">&#8594;</button>
+            </div>
+          </div>
+          <div class="strip aspect-${esc(s.aspect||'portrait')}" id="s${si}" data-gallery="story-${si}">
+            ${s.images.map((im,ii)=>`<figure>
+              <div class="frame ${im.src?'':'ph'}" data-gi="${ii}" tabindex="0" role="button" aria-label="Open image">
+                ${im.src?`<img src="${esc(im.src)}" alt="${esc(im.caption||'')}" loading="lazy">`:`<span>${esc(im.caption||'Image')}</span>`}
+              </div>
+              <figcaption class="mono">${esc(im.caption||'')}</figcaption>
+            </figure>`).join('')}
+          </div>`:''}
+      </article>`).join('');
+
+    $$('.strip-nav button').forEach(b=>b.addEventListener('click',()=>{
+      const el = document.getElementById(b.dataset.strip);
+      el.scrollBy({left: (+b.dataset.dir)*Math.min(el.clientWidth*0.8, 600), behavior:'smooth'});
+    }));
+    registerGalleries(d.items.map((s,i)=>({key:'story-'+i, images:s.images||[]})));
+    revealScan();
+  }
+
+  function paintSlide(ci){
+    const cat = photoCategories[ci]; if(!cat) return;
+    const i = photoState[ci]||0;
+    const photo = cat.photos[i]||{};
+    const root = document.querySelector(`.slideshow[data-cat="${ci}"]`);
+    if(!root) return;
+    const stage = root.querySelector('.stage');
+    stage.dataset.gi = i;
+    stage.innerHTML = photo.src
+      ? `<img src="${esc(photo.src)}" alt="${esc(photo.caption||'')}" loading="lazy">`
+      : `<div class="ph"><span>${esc(photo.caption||'Photograph')}</span></div>`;
+    root.querySelector('.cap').textContent = photo.caption||'';
+    root.querySelector('.count').textContent = (i+1)+' / '+cat.photos.length;
+  }
+  function stepSlide(ci,dir){
+    const cat = photoCategories[ci]; if(!cat) return;
+    const n = cat.photos.length; if(!n) return;
+    photoState[ci] = ((photoState[ci]||0)+dir+n)%n;
+    paintSlide(ci);
+  }
+
+  function renderPhotography(d){
+    $('#photoIntro').textContent = d.intro||'';
+    photoCategories = d.categories||[];
+    photoState = {};
+    const total = photoCategories.reduce((n,c)=>n+(c.photos||[]).length,0);
+    $('#photoCount').textContent = total+' frames';
+
+    $('#photoCats').innerHTML = photoCategories.map((cat,ci)=>`
+      <div class="photo-cat rv">
+        <h3>${esc(cat.name)}</h3>
+        <div class="slideshow" data-cat="${ci}">
+          <div class="stage" data-gallery="cat-${ci}" data-gi="0" tabindex="0" role="button" aria-label="Open image"></div>
+          ${(cat.photos||[]).length>1?`
+          <button type="button" class="slide-btn prev" data-cat="${ci}" data-dir="-1" aria-label="Previous photo">&#8592;</button>
+          <button type="button" class="slide-btn next" data-cat="${ci}" data-dir="1" aria-label="Next photo">&#8594;</button>`:''}
+          <div class="slide-meta">
+            <span class="cap"></span>
+            <span class="count mono"></span>
+          </div>
+        </div>
+      </div>`).join('');
+
+    photoCategories.forEach((c,ci)=>paintSlide(ci));
+    $$('#photoCats .slide-btn').forEach(b=>b.addEventListener('click', ()=>stepSlide(+b.dataset.cat, +b.dataset.dir)));
+    registerGalleries(photoCategories.map((c,i)=>({key:'cat-'+i, images:c.photos||[]})));
+
+    $('#reels').innerHTML = (d.reels||[]).map(r=>{
+      const inner = `<div class="frame">${r.thumb?`<img src="${esc(r.thumb)}" alt="">`:''}<span class="play"><i>&#9654;</i></span></div>
+        <figcaption class="mono">${esc(r.caption||'')}</figcaption>`;
+      return r.url
+        ? `<a class="reel" href="${esc(r.url)}" target="_blank" rel="noopener">${inner}</a>`
+        : `<div class="reel">${inner}</div>`;
+    }).join('');
+  }
+
+  function renderEvents(d){
+    $('#eventList').innerHTML = (d.items||[]).map((e,ei)=>`
+      <article class="event rv">
+        <p class="mono" style="opacity:.55;margin:0 0 8px">${esc(e.year||'')}</p>
+        <h3>${esc(e.title)}</h3>
+        <p>${esc(e.description)}</p>
+        ${(e.images&&e.images.length)?`
+        <div class="strip" data-gallery="event-${ei}">
+          ${e.images.map((im,ii)=>`<figure>
+            <div class="frame ${im.src?'':'ph'}" data-gi="${ii}" tabindex="0" role="button" aria-label="Open image">
+              ${im.src?`<img src="${esc(im.src)}" alt="${esc(im.caption||'')}" loading="lazy">`:`<span>${esc(im.caption||'Image')}</span>`}
+            </div>
+            <figcaption class="mono">${esc(im.caption||'')}</figcaption>
+          </figure>`).join('')}
+        </div>`:''}
+      </article>`).join('');
+    registerGalleries((d.items||[]).map((e,i)=>({key:'event-'+i, images:e.images||[]})));
+  }
+
+  function renderResearch(d){
+    $('#papers').innerHTML = (d.items||[]).map((p,i)=>`
+      <article class="paper rv">
+        <div class="cover ${p.cover?'':'ph'}" data-gallery="papers" data-gi="${i}" tabindex="0" role="button" aria-label="Open cover">
+          ${p.cover?`<img src="${esc(p.cover)}" alt="${esc(p.title)}">`:`<span>${esc(p.year||'')} cover</span>`}
+        </div>
+        <h3>${p.url?`<a href="${esc(p.url)}" target="_blank" rel="noopener">${esc(p.title)}</a>`:esc(p.title)}</h3>
+        <div class="row-meta mono"><span class="yr">${esc(p.year)}</span><span>${esc(p.role||'')}</span></div>
+        ${p.award?`<span class="award">${esc(p.award)}</span>`:''}
+        <p>${esc(p.description)}</p>
+      </article>`).join('');
+    registerGalleries([{key:'papers', images:(d.items||[]).map(p=>({src:p.cover,caption:p.title}))}]);
+  }
+
+  /* ---- lightbox ---- */
+  const galleries = {};
+  let lbKey=null, lbIndex=0;
+  function registerGalleries(list){ list.forEach(g=>{ galleries[g.key]=g.images; }); }
+
+  function openLb(key,i){
+    lbKey=key; lbIndex=i;
+    paintLb(); $('#lb').classList.add('open'); document.body.style.overflow='hidden'; $('#lbClose').focus();
+  }
+  function paintLb(){
+    const imgs = galleries[lbKey]||[]; const im = imgs[lbIndex]||{};
+    $('#lbFig').innerHTML = (im.src?`<img src="${esc(im.src)}" alt="${esc(im.caption||'')}">`:`<div class="ph"><span>${esc(im.caption||'Image')}</span></div>`)
+      + (im.caption?`<figcaption>${esc(im.caption)}</figcaption>`:'');
+    $('#lbCount').textContent = (lbIndex+1)+' / '+imgs.length;
+    const many = imgs.length>1;
+    $('#lbPrev').style.display = many?'grid':'none';
+    $('#lbNext').style.display = many?'grid':'none';
+  }
+  function stepLb(d){ const n=(galleries[lbKey]||[]).length; if(!n) return; lbIndex=(lbIndex+d+n)%n; paintLb(); }
+  function closeLb(){ $('#lb').classList.remove('open'); document.body.style.overflow=''; }
+
+  $('#lbClose').addEventListener('click', closeLb);
+  $('#lbPrev').addEventListener('click', ()=>stepLb(-1));
+  $('#lbNext').addEventListener('click', ()=>stepLb(1));
+  $('#lb').addEventListener('click', e=>{ if(e.target.id==='lb') closeLb(); });
+  document.addEventListener('keydown', e=>{
+    if(!$('#lb').classList.contains('open')) return;
+    if(e.key==='Escape') closeLb();
+    if(e.key==='ArrowLeft') stepLb(-1);
+    if(e.key==='ArrowRight') stepLb(1);
+  });
+  function frameActivate(e){
+    const f = e.target.closest('[data-gi]');
+    if(!f) return;
+    const holder = f.closest('[data-gallery]') || f;
+    const key = holder.dataset.gallery;
+    if(!key || !galleries[key]) return;
+    if(e.type==='keydown' && e.key!=='Enter' && e.key!==' ') return;
+    if(e.type==='keydown') e.preventDefault();
+    openLb(key, +f.dataset.gi);
+  }
+  document.addEventListener('click', frameActivate);
+  document.addEventListener('keydown', frameActivate);
+
+  /* ---- scroll behaviour ---- */
+  const topbar = $('#topbar');
+  addEventListener('scroll', ()=>{ topbar.classList.toggle('stuck', scrollY > innerHeight*0.7); }, {passive:true});
+
+  const navLinks = $$('#nav a');
+  const currentSectionEl = $('#currentSection');
+  const secObs = new IntersectionObserver(es=>{
+    es.forEach(e=>{
+      if(e.isIntersecting){
+        const href = '#'+e.target.id;
+        navLinks.forEach(a=>a.classList.toggle('on', a.getAttribute('href')===href));
+        const activeLink = navLinks.find(a=>a.getAttribute('href')===href);
+        if(activeLink && currentSectionEl) currentSectionEl.textContent = activeLink.textContent;
+      }
+    });
+  }, {rootMargin:'-45% 0px -50% 0px'});
+  $$('main section[id]').forEach(s=>secObs.observe(s));
+
+  const menuBtn = $('#menuBtn'), navEl = $('#nav');
+  menuBtn.addEventListener('click', ()=>{
+    const open = navEl.classList.toggle('open');
+    menuBtn.setAttribute('aria-expanded', String(open));
+  });
+  navLinks.forEach(a=>a.addEventListener('click', ()=>{
+    navEl.classList.remove('open');
+    menuBtn.setAttribute('aria-expanded','false');
+  }));
+  document.addEventListener('click', e=>{
+    if(navEl.classList.contains('open') && !navEl.contains(e.target) && e.target!==menuBtn && !menuBtn.contains(e.target)){
+      navEl.classList.remove('open');
+      menuBtn.setAttribute('aria-expanded','false');
+    }
+  });
+
+  const revObs = new IntersectionObserver(es=>{
+    es.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); revObs.unobserve(e.target); } });
+  }, {rootMargin:'0px 0px -8% 0px'});
+  function revealScan(){ $$('.rv:not(.in)').forEach(el=>revObs.observe(el)); }
+
+  /* ---- boot ---- */
+  load().then(data=>{
+    renderSite(data.site||{});
+    workItems = (data.work&&data.work.items)||[];
+    const kinds = ['All', ...new Set(workItems.map(i=>i.kind).filter(Boolean))];
+    $('#workFilters').innerHTML = kinds.map(k=>
+      `<button type="button" aria-pressed="${k===activeFilter}">${esc(k==='Article'?'Articles':k==='Document'?'Documents':k)}</button>`
+    ).join('');
+    $$('#workFilters button').forEach((b,i)=>b.addEventListener('click',()=>{
+      activeFilter = kinds[i];
+      $$('#workFilters button').forEach((x,j)=>x.setAttribute('aria-pressed', String(j===i)));
+      renderWork();
+    }));
+    renderWork();
+    renderRecentWork(data.recentwork||{});
+    renderStorytelling(data.storytelling||{});
+    renderPhotography(data.photography||{});
+    renderEvents(data.events||{});
+    renderResearch(data.research||{});
+    revealScan();
+  });
+})();
+</script>
+</body>
+</html>
