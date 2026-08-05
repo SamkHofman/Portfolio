@@ -6,11 +6,11 @@
       "year": "2026",
       "tags": [
         "Article",
-        "Writer / Photographer"
+        "Writer"
       ],
-      "url": "",
-      "image": "",
-      "description": "Part of a three-article series on people who used community-based research tools. I interviewed and profiled Mi Tri, an activist and community-based researcher from Mon State, Myanmar."
+      "url": "https://earthrights.org/blog/my-community-my-university-how-community-based-research-stopped-a-coal-power-plant-in-myanmar/",
+      "image": "/images/image (1)-2.png",
+      "description": "Read more about Mi Tri, an activist and community-based researcher from Mon State, Myanmar, who, together with her community, resisted a coal-fired power plant in her community. This was part of a three part series on community based research tools. "
     },
     {
       "title": "Collaboration between The Bowl Spot and Chow Chow Chiang Mai",
@@ -20,19 +20,18 @@
         "Photographer"
       ],
       "url": "#storytelling",
-      "image": "",
-      "description": "I was hired to photograph the making of the new recipe and menu."
+      "description": "I was hired to photograph the making of a new recipe and menu."
     },
     {
       "title": "Drawing the River Under Surveillance: How Communities in Laos Protect Their Rights and Natural Resources",
       "year": "2026",
       "tags": [
         "Article",
-        "Writer / Interviewer"
+        "Writer"
       ],
-      "url": "",
-      "image": "",
-      "description": "Interviewed and profiled a Lao lawyer and community rights defender on how he works directly with communities and the tools he uses."
+      "url": "https://earthrights.org/blog/drawing-the-river-under-surveillance-how-communities-in-laos-protect-their-rights-and-natural-resources/",
+      "image": "/images/image (2).png",
+      "description": "Interviewed Bounmy, a Lao lawyer and community rights defenders, on how he works directly with communities and the tools he uses. This was part of a three part series on community based research tools. "
     },
     {
       "title": "Bringing Out Community Knowledge: LEAD Lessons from the Mekong",
@@ -41,8 +40,8 @@
         "Article",
         "Writer / Photographer"
       ],
-      "url": "",
-      "image": "",
+      "url": "https://earthrights.org/blog/bringing-out-community-knowledge-lead-lessons-from-the-mekong/",
+      "image": "/images/image (51).png",
       "description": "Blog post and briefer on community-led research methods in the Mekong region, compiled from multi-country training sessions."
     }
   ]
