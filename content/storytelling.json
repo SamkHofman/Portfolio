@@ -3,143 +3,130 @@
   "items": [
     {
       "title": "Chow Chow x The Bowl Spot",
-      "aspect": "landscape",
-      "description": "Add the story of this collaboration here — what the project involved, and your role in it.",
-      "images": []
+      "description": "Was hired to photograph the making of a new recipe between two restaurants, photographed inside the kitchen, the interior of the restaurant and the exterior. ",
+      "aspect": "landscape"
     },
     {
       "title": "Spotlighting Community-Based Research",
-      "aspect": "landscape",
       "description": "Wrote and interviewed three articles on community-based research practitioners across the Mekong region. The first, Drawing the River Under Surveillance: How Communities in Laos Protect Their Rights and Natural Resources (2026), has been published.",
-      "images": []
+      "aspect": "landscape",
+      "images": [
+        {
+          "src": "/images/image (1)-1.png",
+          "caption": "Writer"
+        },
+        {
+          "src": "/images/image (2).png",
+          "caption": "Writer"
+        }
+      ]
     },
     {
       "title": "Shelter City Human Rights Update",
-      "aspect": "portrait",
       "description": "A human rights update on Instagram Stories, letting Shelter City guests raise awareness of their work while staying anonymous. Updates covered arbitrary detention of HRDs in Venezuela, new anti-LGBT legislation in Iraq, the foreign agent law in Kyrgyzstan, and rising violence against Indigenous and environmental rights defenders in the Philippines.",
+      "aspect": "portrait",
       "images": [
         {
-          "src": "",
+          "src": "/images/image (33).png",
           "caption": "Kyrgyzstan · foreign agent law"
         },
         {
-          "src": "",
+          "src": "/images/image (35).png",
           "caption": "Venezuela · arbitrary detention"
         },
         {
-          "src": "",
-          "caption": "Philippines · violence against defenders"
+          "src": "/images/image (34).png",
+          "caption": "Venezuela · arbitrary detention"
         },
         {
-          "src": "",
+          "src": "/images/image (36).png",
           "caption": "Iraq · anti-LGBT legislation"
         }
       ]
     },
     {
       "title": "Human Rights Defender Stories",
-      "aspect": "portrait",
       "description": "In-depth stories on human rights defenders, their experience and their hopes. Posted on social media with a corresponding blog post on the website. More detailed than the Meet the Guest campaign, and requiring deeper research.",
+      "aspect": "portrait",
       "images": [
         {
-          "src": "",
+          "src": "/images/image (24).png",
           "caption": "Photographer / copywriter / graphic designer"
         },
         {
-          "src": "",
+          "src": "/images/image (22).png",
           "caption": "Photographer / copywriter / graphic designer"
         },
         {
-          "src": "",
+          "src": "/images/image (21).png",
+          "caption": "Photographer / copywriter / graphic designer / writer"
+        }
+      ]
+    },
+    {
+      "title": "Meet the Guest Campaign",
+      "description": "This series introduced Shelter City guests to partners and the wider community. We protected their security by not publishing faces or identifying information, working in close consultation with each guest and monitoring the situation in their country. The call to action was an invitation to get in touch rather than a link, keeping the focus on growing each guest's network.",
+      "aspect": "portrait",
+      "images": [
+        {
+          "src": "/images/image (17).png",
+          "caption": "Photographer / copywriter / graphic designer"
+        },
+        {
+          "src": "/images/image (19).png",
+          "caption": "Photographer / copywriter / graphic designer"
+        },
+        {
+          "src": "/images/image (20).png",
           "caption": "Photographer / copywriter / graphic designer / writer"
         },
         {
-          "src": "",
           "caption": "Photographer / copywriter / graphic designer"
         }
       ]
     },
     {
       "title": "Shelter City Resource Campaign",
-      "aspect": "square",
       "description": "Working on Shelter City branding at Justice & Peace NL, I revamped and revised the resource campaign designed to inform and support human rights defenders and former guests around the world. Posts went out every two weeks with clear, vivid updates on useful resources in the sector.",
+      "aspect": "square",
       "images": [
         {
-          "src": "",
+          "src": "/images/image (32).png",
           "caption": "Resources · human rights defenders"
         },
         {
-          "src": "",
+          "src": "/images/image (31).png",
           "caption": "Artivist award"
         },
         {
-          "src": "",
+          "src": "/images/`1.png",
           "caption": "Resources · defenders"
         },
         {
-          "src": "",
-          "caption": "Champions of the Earth Award"
-        },
-        {
-          "src": "",
+          "src": "/images/image (28).png",
           "caption": "Resources · journalists"
         },
         {
-          "src": "",
-          "caption": "Guide to investigating war crimes"
-        },
-        {
-          "src": "",
-          "caption": "Resources · lawyers"
-        },
-        {
-          "src": "",
-          "caption": "Resources"
-        }
-      ]
-    },
-    {
-      "title": "Meet the Guest Campaign",
-      "aspect": "portrait",
-      "description": "This series introduced Shelter City guests to partners and the wider community. We protected their security by not publishing faces or identifying information, working in close consultation with each guest and monitoring the situation in their country. The call to action was an invitation to get in touch rather than a link, keeping the focus on growing each guest's network.",
-      "images": [
-        {
-          "src": "",
-          "caption": "Photographer / copywriter / graphic designer"
-        },
-        {
-          "src": "",
-          "caption": "Photographer / copywriter / graphic designer"
-        },
-        {
-          "src": "",
-          "caption": "Photographer / copywriter / graphic designer / writer"
-        },
-        {
-          "src": "",
-          "caption": "Photographer / copywriter / graphic designer"
+          "src": "/images/image (15).png",
+          "caption": "Human Rights Press Award"
         }
       ]
     },
     {
       "title": "Highlighting the Shelter City Programme",
-      "aspect": "portrait",
       "description": "Communication material introducing and highlighting the Shelter City programme itself — events, announcements and updates on how the network operates and supports its guests.",
+      "aspect": "portrait",
       "images": [
         {
-          "src": "",
-          "caption": "Networking"
-        },
-        {
-          "src": "",
+          "src": "/images/2.png",
           "caption": "Exhibition"
         },
         {
-          "src": "",
+          "src": "/images/image (11).png",
           "caption": "Exhibition"
         },
         {
-          "src": "",
+          "src": "/images/image (10).png",
           "caption": "Focusing on wellbeing"
         }
       ]
