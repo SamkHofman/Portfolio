@@ -50,11 +50,15 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
 .topbar{
   position:fixed;inset:0 0 auto 0;z-index:60;
   display:flex;align-items:center;gap:24px;
-  padding:14px var(--gut);
+  padding:14px var(--gut);color:var(--bone);
   transition:background .35s ease,color .35s ease,padding .35s ease;
 }
 .topbar.stuck{background:var(--ink);color:var(--bone);padding-block:10px}
-.topbar .sig{font-family:var(--display);font-weight:700;letter-spacing:-.02em;font-size:.95rem;white-space:nowrap}
+.topbar .sig{
+  font-family:var(--display);font-weight:700;letter-spacing:-.02em;font-size:.95rem;white-space:nowrap;
+  opacity:0;transition:opacity .3s ease;
+}
+.topbar.stuck .sig{opacity:1}
 .topbar nav{margin-left:auto;display:flex;gap:4px;overflow-x:auto;scrollbar-width:none}
 .topbar nav::-webkit-scrollbar{display:none}
 .topbar nav a{
@@ -64,7 +68,36 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
 }
 .topbar nav a:hover{opacity:1}
 .topbar nav a.on{opacity:1;background:var(--clay);color:var(--ink)}
-.menu-btn{display:none}
+
+.current-section{
+  display:none;margin-left:auto;font-family:var(--mono);font-size:.68rem;
+  letter-spacing:.1em;text-transform:uppercase;white-space:nowrap;opacity:.85;
+}
+.menu-btn{
+  display:none;flex-direction:column;justify-content:center;gap:5px;
+  width:26px;height:20px;margin-left:16px;flex-shrink:0;
+}
+.menu-btn span{display:block;height:2px;background:currentColor;border-radius:1px;transition:transform .25s,opacity .25s}
+.menu-btn[aria-expanded="true"] span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.menu-btn[aria-expanded="true"] span:nth-child(2){opacity:0}
+.menu-btn[aria-expanded="true"] span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+
+@media(max-width:700px){
+  .current-section{display:block}
+  .menu-btn{display:flex}
+  .topbar nav{
+    display:none;position:absolute;top:100%;left:0;right:0;
+    flex-direction:column;gap:0;background:var(--ink);color:var(--bone);
+    padding:6px var(--gut) 18px;max-height:70vh;overflow-y:auto;
+    box-shadow:0 12px 24px rgba(0,0,0,.25);
+  }
+  .topbar nav.open{display:flex}
+  .topbar nav a{
+    padding:13px 0;border-radius:0;opacity:.85;
+    border-bottom:1px solid rgba(244,239,226,.14);
+  }
+  .topbar nav a.on{background:none;color:var(--marker);opacity:1}
+}
 
 /* ---------- hero ---------- */
 .hero{
@@ -230,13 +263,17 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
 }
 .strip-nav button:hover{opacity:1}
 .strip{
-  display:grid;grid-auto-flow:column;grid-auto-columns:minmax(190px,240px);
+  display:grid;grid-auto-flow:column;grid-auto-columns:minmax(150px,190px);
   gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;
   padding-bottom:14px;scrollbar-width:thin;
 }
 .strip>*{scroll-snap-align:start}
 .strip figure{margin:0}
 .strip .frame{aspect-ratio:4/5;overflow:hidden;cursor:zoom-in}
+.strip.aspect-landscape{grid-auto-columns:minmax(200px,260px)}
+.strip.aspect-landscape .frame{aspect-ratio:3/2}
+.strip.aspect-square .frame{aspect-ratio:1/1}
+.strip.aspect-portrait .frame{aspect-ratio:4/5}
 .strip .frame img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
 .strip .frame:hover img{transform:scale(1.04)}
 .strip figcaption{margin-top:8px;opacity:.55;font-size:.62rem}
@@ -350,6 +387,7 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
 
 <header class="topbar" id="topbar">
   <span class="sig">Sam Hofman</span>
+  <span class="current-section mono" id="currentSection">About</span>
   <nav id="nav" aria-label="Sections">
     <a href="#about">About</a>
     <a href="#recent-work">Recent work</a>
@@ -360,6 +398,9 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
     <a href="#research">Research</a>
     <a href="#contact">Contact</a>
   </nav>
+  <button type="button" class="menu-btn" id="menuBtn" aria-label="Open menu" aria-expanded="false" aria-controls="nav">
+    <span></span><span></span><span></span>
+  </button>
 </header>
 
 <main>
@@ -416,7 +457,7 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
     <div class="wrap">
       <div class="sec-head rv"><h2>Communication projects</h2></div>
       <p class="sec-intro rv" id="storyIntro"></p>
-      <div class="photo-cats" id="projectCats"></div>
+      <div id="stories"></div>
     </div>
   </section>
 
@@ -493,7 +534,7 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
     "items": [
       { "title":"My Community My University: How Community-Based Research Stopped a Coal Power Plant in Myanmar", "year":"2026", "tags":["Article","Writer / Photographer"], "url":"", "image":"",
         "description":"Part of a three-article series on people who used community-based research tools. I interviewed and profiled Mi Tri, an activist and community-based researcher from Mon State, Myanmar." },
-      { "title":"Collaboration between The Bowl Spot and Chow Chow Chiang Mai", "year":"2026", "tags":["Project","Photographer"], "url":"#story-chow-chow-x-the-bowl-spot", "image":"",
+      { "title":"Collaboration between The Bowl Spot and Chow Chow Chiang Mai", "year":"2026", "tags":["Project","Photographer"], "url":"#storytelling", "image":"",
         "description":"I was hired to photograph the making of the new recipe and menu." },
       { "title":"Drawing the River Under Surveillance: How Communities in Laos Protect Their Rights and Natural Resources", "year":"2026", "tags":["Article","Writer / Interviewer"], "url":"", "image":"",
         "description":"Interviewed and profiled a Lao lawyer and community rights defender on how he works directly with communities and the tools he uses." },
@@ -726,7 +767,6 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
 
   let workItems = [], activeFilter = 'All';
   let photoCategories = [], photoState = {};
-  let projItems = [], projState = {};
   let portraitSlides = [], portraitIdx = 0, portraitTimer = null;
 
   function paintPortrait(){
@@ -806,54 +846,35 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
     revealScan();
   }
 
-  function paintProjSlide(pi){
-    const item = projItems[pi]; if(!item) return;
-    const i = projState[pi]||0;
-    const photo = item.photos[i]||{};
-    const root = document.querySelector(`.slideshow[data-proj="${pi}"]`);
-    if(!root) return;
-    const stage = root.querySelector('.stage');
-    stage.dataset.gi = i;
-    stage.innerHTML = photo.src
-      ? `<img src="${esc(photo.src)}" alt="${esc(photo.caption||'')}" loading="lazy">`
-      : `<div class="ph"><span>${esc(photo.caption||'Photograph')}</span></div>`;
-    root.querySelector('.cap').textContent = photo.caption||'';
-    root.querySelector('.count').textContent = (i+1)+' / '+item.photos.length;
-  }
-  function stepProjSlide(pi,dir){
-    const item = projItems[pi]; if(!item) return;
-    const n = item.photos.length; if(!n) return;
-    projState[pi] = ((projState[pi]||0)+dir+n)%n;
-    paintProjSlide(pi);
-  }
-
   function renderStorytelling(d){
     $('#storyIntro').textContent = d.intro||'';
-    projItems = (d.items||[]).map(s=>({
-      title:s.title, description:s.description, aspect:s.aspect||'landscape',
-      photos:(s.images&&s.images.length)?s.images:[{src:'',caption:'Photos coming soon'}]
-    }));
-    projState = {};
-
-    $('#projectCats').innerHTML = projItems.map((item,pi)=>`
-      <div class="photo-cat rv" id="story-${slugify(item.title)}">
-        <h3>${esc(item.title)}</h3>
-        <p class="proj-desc">${esc(item.description)}</p>
-        <div class="slideshow aspect-${esc(item.aspect)}" data-proj="${pi}">
-          <div class="stage" data-gallery="proj-${pi}" data-gi="0" tabindex="0" role="button" aria-label="Open image"></div>
-          ${item.photos.length>1?`
-          <button type="button" class="slide-btn prev" data-proj="${pi}" data-dir="-1" aria-label="Previous photo">&#8592;</button>
-          <button type="button" class="slide-btn next" data-proj="${pi}" data-dir="1" aria-label="Next photo">&#8594;</button>`:''}
-          <div class="slide-meta">
-            <span class="cap"></span>
-            <span class="count mono"></span>
+    $('#stories').innerHTML = (d.items||[]).map((s,si)=>`
+      <article class="story rv" id="story-${slugify(s.title)}">
+        <h3>${esc(s.title)}</h3>
+        <p>${esc(s.description)}</p>
+        ${(s.images&&s.images.length)?`
+          <div class="strip-head">
+            <span class="mono">${s.images.length} image${s.images.length===1?'':'s'}</span>
+            <div class="strip-nav">
+              <button type="button" data-dir="-1" data-strip="s${si}" aria-label="Scroll left">&#8592;</button>
+              <button type="button" data-dir="1" data-strip="s${si}" aria-label="Scroll right">&#8594;</button>
+            </div>
           </div>
-        </div>
-      </div>`).join('');
+          <div class="strip aspect-${esc(s.aspect||'portrait')}" id="s${si}" data-gallery="story-${si}">
+            ${s.images.map((im,ii)=>`<figure>
+              <div class="frame ${im.src?'':'ph'}" data-gi="${ii}" tabindex="0" role="button" aria-label="Open image">
+                ${im.src?`<img src="${esc(im.src)}" alt="${esc(im.caption||'')}" loading="lazy">`:`<span>${esc(im.caption||'Image')}</span>`}
+              </div>
+              <figcaption class="mono">${esc(im.caption||'')}</figcaption>
+            </figure>`).join('')}
+          </div>`:''}
+      </article>`).join('');
 
-    projItems.forEach((it,pi)=>paintProjSlide(pi));
-    $$('#projectCats .slide-btn').forEach(b=>b.addEventListener('click', ()=>stepProjSlide(+b.dataset.proj, +b.dataset.dir)));
-    registerGalleries(projItems.map((it,i)=>({key:'proj-'+i, images:it.photos})));
+    $$('.strip-nav button').forEach(b=>b.addEventListener('click',()=>{
+      const el = document.getElementById(b.dataset.strip);
+      el.scrollBy({left: (+b.dataset.dir)*Math.min(el.clientWidth*0.8, 600), behavior:'smooth'});
+    }));
+    registerGalleries(d.items.map((s,i)=>({key:'story-'+i, images:s.images||[]})));
     revealScan();
   }
 
@@ -995,14 +1016,34 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
   addEventListener('scroll', ()=>{ topbar.classList.toggle('stuck', scrollY > innerHeight*0.7); }, {passive:true});
 
   const navLinks = $$('#nav a');
+  const currentSectionEl = $('#currentSection');
   const secObs = new IntersectionObserver(es=>{
     es.forEach(e=>{
       if(e.isIntersecting){
-        navLinks.forEach(a=>a.classList.toggle('on', a.getAttribute('href')==='#'+e.target.id));
+        const href = '#'+e.target.id;
+        navLinks.forEach(a=>a.classList.toggle('on', a.getAttribute('href')===href));
+        const activeLink = navLinks.find(a=>a.getAttribute('href')===href);
+        if(activeLink && currentSectionEl) currentSectionEl.textContent = activeLink.textContent;
       }
     });
   }, {rootMargin:'-45% 0px -50% 0px'});
   $$('main section[id]').forEach(s=>secObs.observe(s));
+
+  const menuBtn = $('#menuBtn'), navEl = $('#nav');
+  menuBtn.addEventListener('click', ()=>{
+    const open = navEl.classList.toggle('open');
+    menuBtn.setAttribute('aria-expanded', String(open));
+  });
+  navLinks.forEach(a=>a.addEventListener('click', ()=>{
+    navEl.classList.remove('open');
+    menuBtn.setAttribute('aria-expanded','false');
+  }));
+  document.addEventListener('click', e=>{
+    if(navEl.classList.contains('open') && !navEl.contains(e.target) && e.target!==menuBtn && !menuBtn.contains(e.target)){
+      navEl.classList.remove('open');
+      menuBtn.setAttribute('aria-expanded','false');
+    }
+  });
 
   const revObs = new IntersectionObserver(es=>{
     es.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); revObs.unobserve(e.target); } });
