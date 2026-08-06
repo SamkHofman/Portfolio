@@ -3,21 +3,26 @@
   "items": [
     {
       "title": "Chow Chow x The Bowl Spot",
-      "description": "Was hired to photograph the making of a new recipe between two restaurants, photographed inside the kitchen, the interior of the restaurant and the exterior. ",
-      "aspect": "landscape"
+      "description": "Was hired to photograph the making of a new recipe between two restaurants, photographed inside the kitchen, the interior of the restaurant and the exterior. More photos will be uploaded soon.",
+      "aspect": "landscape",
+      "images": [
+        {
+          "src": "/images/WhatsApp Image 2026-08-05 at 17.31.31.jpeg"
+        }
+      ]
     },
     {
       "title": "Spotlighting Community-Based Research",
-      "description": "Wrote and interviewed three articles on community-based research practitioners across the Mekong region. The first, Drawing the River Under Surveillance: How Communities in Laos Protect Their Rights and Natural Resources (2026), has been published.",
+      "description": "Wrote and interviewed three articles on community-based research practitioners across the Mekong region. The articles aim to shed light on Local Engagement Action and Dialogue tools while also centring the activist who has used them in different contexts. ",
       "aspect": "landscape",
       "images": [
         {
           "src": "/images/image (1)-1.png",
-          "caption": "Writer"
+          "caption": "My Community My University: How Community-Based Research Stopped a Coal Power Plant in Myanmar (2026)"
         },
         {
           "src": "/images/image (2).png",
-          "caption": "Writer"
+          "caption": "Drawing the River Under Surveillance: How Communities in Laos Protect Their Rights and Natural Resources (2026)"
         }
       ]
     },
@@ -115,7 +120,7 @@
     {
       "title": "Highlighting the Shelter City Programme",
       "description": "Communication material introducing and highlighting the Shelter City programme itself — events, announcements and updates on how the network operates and supports its guests.",
-      "aspect": "portrait",
+      "aspect": "square",
       "images": [
         {
           "src": "/images/2.png",
