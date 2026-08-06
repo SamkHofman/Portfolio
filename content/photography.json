@@ -2,108 +2,108 @@
   "intro": "Photos taken over the years for different organisations: portraits, group activities, workshops, landscapes, cultural events and talks. They highlight the moments I have captured, always trying to convey the real emotion and energy of the scene. Made during my time at EarthRights International, Justice & Peace NL, or for personal projects.",
   "categories": [
     {
-      "name": "Landscapes & fieldwork",
+      "name": "Commerating the 6 years of ongoing campaigning to stop the coal mine in Omkoi, Chiang Mai, Thailand",
       "photos": [
         {
-          "src": "",
-          "caption": "Village and hills"
+          "src": "/images/image (52)-1.png",
+          "caption": "Community coming together to celebrate the ongoing battle"
         },
         {
-          "src": "",
-          "caption": "Fieldwork, riverbank"
+          "src": "/images/image00007.jpg",
+          "caption": "Representative from EarthRights International speaking"
         },
         {
-          "src": "",
-          "caption": "Hills, northern Thailand"
+          "src": "/images/image00009-1.jpg",
+          "caption": "Community sings together"
         },
         {
-          "src": "",
-          "caption": "Bridge, winter"
+          "src": "/images/image00006.jpg",
+          "caption": "Karen ceremony to bless the fields for the upcoming rain season"
+        },
+        {
+          "src": "/images/image00013.jpg",
+          "caption": "Continued"
+        },
+        {
+          "src": "/images/image00015.jpg",
+          "caption": "Continued"
+        },
+        {
+          "src": "/images/1.Title_Omkoi.jpg",
+          "caption": "View of Omkoi mountains and valley"
         }
       ]
     },
     {
-      "name": "Portraits",
+      "name": "Workshops Dynamic Photography",
       "photos": [
         {
-          "src": "",
-          "caption": "Workshop portrait"
+          "src": "/images/image (51).jpg"
         },
         {
-          "src": "",
-          "caption": "Street portrait"
+          "src": "/images/image (43).png"
         },
         {
-          "src": "",
-          "caption": "Portrait"
+          "src": "/images/IMG_0669.jpg"
         },
         {
-          "src": "",
-          "caption": "Portrait, evening"
+          "src": "/images/IMG_1250-2.jpg"
+        },
+        {
+          "src": "/images/IMG_8074.jpg"
+        },
+        {
+          "src": "/images/image (45).png"
+        },
+        {
+          "src": "/images/IMG_8260.jpg"
+        },
+        {
+          "src": "/images/IMG_4754.jpg"
+        },
+        {
+          "src": "/images/IMG_1237-2.jpg"
         }
       ]
     },
     {
-      "name": "Community & groups",
+      "name": "Individual cover shots",
       "photos": [
         {
-          "src": "",
-          "caption": "Stop the Coal Mine, Omkoi"
+          "src": "/images/IMG_3249-2.jpg"
         },
         {
-          "src": "",
+          "src": "/images/IMG_3234-1.jpg",
           "caption": "Conversation, café"
         },
         {
-          "src": "",
+          "src": "/images/image (41).png",
           "caption": "Community meeting"
         },
         {
-          "src": "",
+          "src": "/images/image (44).png",
           "caption": "Group, The Hague"
-        }
-      ]
-    },
-    {
-      "name": "Workshops & talks",
-      "photos": [
-        {
-          "src": "",
-          "caption": "Facilitator, training session"
         },
         {
-          "src": "",
-          "caption": "Speaker at gathering"
+          "src": "/images/image (44)-1.png"
         },
         {
-          "src": "",
-          "caption": "Panel discussion"
-        },
-        {
-          "src": "",
-          "caption": "Training participants"
-        },
-        {
-          "src": "",
-          "caption": "Presentation, meeting room"
+          "src": "/images/IMG_9382.jpg"
         }
       ]
     }
   ],
   "reels": [
     {
-      "url": "",
-      "thumb": "",
+      "url": "https://www.instagram.com/reels/C1ZVxOqoMmw/",
       "caption": "2023 recap"
     },
     {
-      "url": "",
-      "thumb": "",
+      "url": "https://www.instagram.com/reels/C04N4AQoplE/",
       "caption": "Looking back at the guests' stay"
     },
     {
-      "url": "",
-      "thumb": "",
+      "url": "https://www.instagram.com/sheltercityglobal/?utm_source=ig_embed&ig_rid=AWjxVcZvoYH8zXANVLAmI1p",
       "caption": "Engaging with local allies"
     }
   ]
