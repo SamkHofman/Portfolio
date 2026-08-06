@@ -2,7 +2,7 @@
   "intro": "Photos taken over the years for different organisations: portraits, group activities, workshops, landscapes, cultural events and talks. They highlight the moments I have captured, always trying to convey the real emotion and energy of the scene. Made during my time at EarthRights International, Justice & Peace NL, or for personal projects.",
   "categories": [
     {
-      "name": "Commerating the 6 years of ongoing campaigning to stop the coal mine in Omkoi, Chiang Mai, Thailand",
+      "name": "Omkoi Thailand",
       "photos": [
         {
           "src": "/images/image (52)-1.png",
@@ -73,16 +73,13 @@
           "src": "/images/IMG_3249-2.jpg"
         },
         {
-          "src": "/images/IMG_3234-1.jpg",
-          "caption": "Conversation, café"
+          "src": "/images/IMG_3234-1.jpg"
         },
         {
-          "src": "/images/image (41).png",
-          "caption": "Community meeting"
+          "src": "/images/image (41).png"
         },
         {
-          "src": "/images/image (44).png",
-          "caption": "Group, The Hague"
+          "src": "/images/image (44).png"
         },
         {
           "src": "/images/image (44)-1.png"
@@ -96,14 +93,17 @@
   "reels": [
     {
       "url": "https://www.instagram.com/reels/C1ZVxOqoMmw/",
+      "thumb": "/images/Screenshot 2026-08-06 153908.png",
       "caption": "2023 recap"
     },
     {
       "url": "https://www.instagram.com/reels/C04N4AQoplE/",
+      "thumb": "/images/Screenshot 2026-08-06 153939.png",
       "caption": "Looking back at the guests' stay"
     },
     {
       "url": "https://www.instagram.com/sheltercityglobal/?utm_source=ig_embed&ig_rid=AWjxVcZvoYH8zXANVLAmI1p",
+      "thumb": "/images/Screenshot 2026-08-06 154013.png",
       "caption": "Engaging with local allies"
     }
   ]
