@@ -392,7 +392,7 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
     <a href="#about">About</a>
     <a href="#recent-work">Recent work</a>
     <a href="#work">Published work</a>
-    <a href="#storytelling">Communication projects</a>
+    <a href="#communicationprojects">Communication projects</a>
     <a href="#photography">Photography &amp; video</a>
     <a href="#events">Events</a>
     <a href="#research">Research</a>
@@ -453,7 +453,7 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
     </div>
   </section>
 
-  <section class="band" id="storytelling">
+  <section class="band" id="communicationprojects">
     <div class="wrap">
       <div class="sec-head rv"><h2>Communication projects</h2></div>
       <p class="sec-intro rv" id="storyIntro"></p>
@@ -534,7 +534,7 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
     "items": [
       { "title":"My Community My University: How Community-Based Research Stopped a Coal Power Plant in Myanmar", "year":"2026", "tags":["Article","Writer / Photographer"], "url":"", "image":"",
         "description":"Part of a three-article series on people who used community-based research tools. I interviewed and profiled Mi Tri, an activist and community-based researcher from Mon State, Myanmar." },
-      { "title":"Collaboration between The Bowl Spot and Chow Chow Chiang Mai", "year":"2026", "tags":["Project","Photographer"], "url":"#storytelling", "image":"",
+      { "title":"Collaboration between The Bowl Spot and Chow Chow Chiang Mai", "year":"2026", "tags":["Project","Photographer"], "url":"#communicationprojects", "image":"",
         "description":"I was hired to photograph the making of the new recipe and menu." },
       { "title":"Drawing the River Under Surveillance: How Communities in Laos Protect Their Rights and Natural Resources", "year":"2026", "tags":["Article","Writer / Interviewer"], "url":"", "image":"",
         "description":"Interviewed and profiled a Lao lawyer and community rights defender on how he works directly with communities and the tools he uses." },
@@ -699,6 +699,13 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
   const $$ = (s,r)=> Array.from((r||document).querySelectorAll(s));
   const esc = s => String(s==null?'':s).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
   const slugify = s => String(s||'').toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-+|-+$/g,'');
+  const SITE_BASE = location.pathname.replace(/[^/]*$/, '').replace(/\/$/, '');
+  const mediaUrl = p => {
+    if(!p) return p;
+    if(/^https?:\/\//i.test(p) || p.startsWith('#') || p.startsWith('mailto:')) return p;
+    if(p.startsWith('/')) return SITE_BASE + p;
+    return p;
+  };
 
   const FILES = {
     site:'content/site.json', recentwork:'content/recentwork.json', work:'content/work.json', storytelling:'content/storytelling.json',
@@ -726,7 +733,7 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
   function media(src, caption, cls, ratio){
     const label = caption ? esc(caption) : 'Image';
     if(src){
-      return `<div class="frame ${cls||''}"${ratio?` style="aspect-ratio:${ratio}"`:''}><img src="${esc(src)}" alt="${label}" loading="lazy"></div>`;
+      return `<div class="frame ${cls||''}"${ratio?` style="aspect-ratio:${ratio}"`:''}><img src="${esc(mediaUrl(src))}" alt="${label}" loading="lazy"></div>`;
     }
     return `<div class="frame ph ${cls||''}"${ratio?` style="aspect-ratio:${ratio}"`:''}><span>${label}</span></div>`;
   }
@@ -743,7 +750,7 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
     document.title = (s.name?s.name+' — ':'')+'Communications Portfolio';
 
     if(s.heroImage){
-      $('#heroImg').innerHTML = `<img src="${esc(s.heroImage)}" alt="">`;
+      $('#heroImg').innerHTML = `<img src="${esc(mediaUrl(s.heroImage))}" alt="">`;
     }
 
     $('#aboutText').innerHTML = String(s.aboutText||'').split(/\n\s*\n/).map(p=>`<p>${esc(p)}</p>`).join('');
@@ -762,7 +769,7 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
     if(s.instagram) links.push(['Instagram', s.instagram]);
     if(s.cv) links.push(['Download CV', s.cv]);
     $('#contactLinks').innerHTML = links.length
-      ? links.map(([l,h])=>`<li><a href="${esc(h)}"${h.startsWith('mailto')?'':' target="_blank" rel="noopener"'}>${esc(l)}<span aria-hidden="true">&#8599;</span></a></li>`).join('')
+      ? links.map(([l,h])=>`<li><a href="${esc(mediaUrl(h))}"${h.startsWith('mailto')?'':' target="_blank" rel="noopener"'}>${esc(l)}<span aria-hidden="true">&#8599;</span></a></li>`).join('')
       : `<li><a href="#work">Add your contact links in the CMS<span aria-hidden="true">&#8599;</span></a></li>`;
     $('#colophon').textContent = '© '+new Date().getFullYear()+' '+(s.name||'')+'. All photographs by Sam Hofman unless otherwise credited.';
   }
@@ -780,7 +787,7 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
     }
     const first = portraitSlides[0];
     if(first.type==='image'){
-      stage.innerHTML = `<img src="${esc(first.src)}" alt="${esc(first.caption||'')}">`;
+      stage.innerHTML = `<img src="${esc(mediaUrl(first.src))}" alt="${esc(first.caption||'')}">`;
       cap.textContent = first.caption||'';
     } else {
       stage.innerHTML = `<div class="ph" style="width:100%;height:100%"><span>${esc(first.caption||'Video')}</span></div>`;
@@ -798,12 +805,12 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
     }
     const slide = portraitSlides[portraitIdx];
     if(slide.type==='video'){
-      stage.innerHTML = `<video src="${esc(slide.src)}" autoplay muted playsinline></video>`;
+      stage.innerHTML = `<video src="${esc(mediaUrl(slide.src))}" autoplay muted playsinline></video>`;
       const v = stage.querySelector('video');
       if(v) v.addEventListener('ended', advancePortrait, {once:true});
       portraitTimer = setTimeout(advancePortrait, 15000);
     } else {
-      stage.innerHTML = `<img src="${esc(slide.src)}" alt="${esc(slide.caption||'')}">`;
+      stage.innerHTML = `<img src="${esc(mediaUrl(slide.src))}" alt="${esc(slide.caption||'')}">`;
       portraitTimer = setTimeout(advancePortrait, 2600);
     }
     cap.textContent = slide.caption||'';
@@ -842,7 +849,7 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
       const thumbStyle = `aspect-ratio:${isDoc?'3/4':'4/3'}${it.image?';background:none':''}`;
       return `<li class="row rv" data-year="${esc(it.year)}" data-i="${i}">
         <${tag} class="row-in"${attrs}>
-          <div class="${thumbClass}" style="${thumbStyle}">${it.image?`<img src="${esc(it.image)}" alt="">`:`<span>${esc(it.kind||'')}</span>`}</div>
+          <div class="${thumbClass}" style="${thumbStyle}">${it.image?`<img src="${esc(mediaUrl(it.image))}" alt="">`:`<span>${esc(it.kind||'')}</span>`}</div>
           <div>
             <h3><span>${esc(it.title)}</span></h3>
             <div class="row-meta mono">
@@ -870,7 +877,7 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
       const linkAttrs = isInternal ? '' : ' target="_blank" rel="noopener"';
       const titleInner = esc(it.title);
       return `<article class="recent-card rv">
-        <div class="thumb ph"${it.image?' style="background:none"':''}>${it.image?`<img src="${esc(it.image)}" alt="">`:`<span>${titleInner}</span>`}</div>
+        <div class="thumb ph"${it.image?' style="background:none"':''}>${it.image?`<img src="${esc(mediaUrl(it.image))}" alt="">`:`<span>${titleInner}</span>`}</div>
         <span class="yr">${esc(it.year)}</span>
         <h3>${hasLink?`<a href="${esc(it.url)}"${linkAttrs}><span>${titleInner}</span></a>`:titleInner}</h3>
         <div class="recent-chips">${(it.tags||[]).map(t=>`<span>${esc(t)}</span>`).join('')}</div>
@@ -897,7 +904,7 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
           <div class="strip aspect-${esc(s.aspect||'portrait')}" id="s${si}" data-gallery="story-${si}">
             ${s.images.map((im,ii)=>`<figure>
               <div class="frame ${im.src?'':'ph'}" data-gi="${ii}" tabindex="0" role="button" aria-label="Open image">
-                ${im.src?`<img src="${esc(im.src)}" alt="${esc(im.caption||'')}" loading="lazy">`:`<span>${esc(im.caption||'Image')}</span>`}
+                ${im.src?`<img src="${esc(mediaUrl(im.src))}" alt="${esc(im.caption||'')}" loading="lazy">`:`<span>${esc(im.caption||'Image')}</span>`}
               </div>
               <figcaption class="mono">${esc(im.caption||'')}</figcaption>
             </figure>`).join('')}
@@ -921,7 +928,7 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
     const stage = root.querySelector('.stage');
     stage.dataset.gi = i;
     stage.innerHTML = photo.src
-      ? `<img src="${esc(photo.src)}" alt="${esc(photo.caption||'')}" loading="lazy">`
+      ? `<img src="${esc(mediaUrl(photo.src))}" alt="${esc(photo.caption||'')}" loading="lazy">`
       : `<div class="ph"><span>${esc(photo.caption||'Photograph')}</span></div>`;
     root.querySelector('.cap').textContent = photo.caption||'';
     root.querySelector('.count').textContent = (i+1)+' / '+cat.photos.length;
@@ -960,7 +967,7 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
     registerGalleries(photoCategories.map((c,i)=>({key:'cat-'+i, images:c.photos||[]})));
 
     $('#reels').innerHTML = (d.reels||[]).map(r=>{
-      const inner = `<div class="frame">${r.thumb?`<img src="${esc(r.thumb)}" alt="">`:''}<span class="play"><i>&#9654;</i></span></div>
+      const inner = `<div class="frame">${r.thumb?`<img src="${esc(mediaUrl(r.thumb))}" alt="">`:''}<span class="play"><i>&#9654;</i></span></div>
         <figcaption class="mono">${esc(r.caption||'')}</figcaption>`;
       return r.url
         ? `<a class="reel" href="${esc(r.url)}" target="_blank" rel="noopener">${inner}</a>`
@@ -978,7 +985,7 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
         <div class="strip" data-gallery="event-${ei}">
           ${e.images.map((im,ii)=>`<figure>
             <div class="frame ${im.src?'':'ph'}" data-gi="${ii}" tabindex="0" role="button" aria-label="Open image">
-              ${im.src?`<img src="${esc(im.src)}" alt="${esc(im.caption||'')}" loading="lazy">`:`<span>${esc(im.caption||'Image')}</span>`}
+              ${im.src?`<img src="${esc(mediaUrl(im.src))}" alt="${esc(im.caption||'')}" loading="lazy">`:`<span>${esc(im.caption||'Image')}</span>`}
             </div>
             <figcaption class="mono">${esc(im.caption||'')}</figcaption>
           </figure>`).join('')}
@@ -991,7 +998,7 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
     $('#papers').innerHTML = (d.items||[]).map((p,i)=>`
       <article class="paper rv">
         <div class="cover ${p.cover?'':'ph'}" data-gallery="papers" data-gi="${i}" tabindex="0" role="button" aria-label="Open cover">
-          ${p.cover?`<img src="${esc(p.cover)}" alt="${esc(p.title)}">`:`<span>${esc(p.year||'')} cover</span>`}
+          ${p.cover?`<img src="${esc(mediaUrl(p.cover))}" alt="${esc(p.title)}">`:`<span>${esc(p.year||'')} cover</span>`}
         </div>
         <h3>${p.url?`<a href="${esc(p.url)}" target="_blank" rel="noopener">${esc(p.title)}</a>`:esc(p.title)}</h3>
         <div class="row-meta mono"><span class="yr">${esc(p.year)}</span><span>${esc(p.role||'')}</span></div>
@@ -1012,7 +1019,7 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
   }
   function paintLb(){
     const imgs = galleries[lbKey]||[]; const im = imgs[lbIndex]||{};
-    $('#lbFig').innerHTML = (im.src?`<img src="${esc(im.src)}" alt="${esc(im.caption||'')}">`:`<div class="ph"><span>${esc(im.caption||'Image')}</span></div>`)
+    $('#lbFig').innerHTML = (im.src?`<img src="${esc(mediaUrl(im.src))}" alt="${esc(im.caption||'')}">`:`<div class="ph"><span>${esc(im.caption||'Image')}</span></div>`)
       + (im.caption?`<figcaption>${esc(im.caption)}</figcaption>`:'');
     $('#lbCount').textContent = (lbIndex+1)+' / '+imgs.length;
     const many = imgs.length>1;
