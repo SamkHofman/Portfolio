@@ -32,10 +32,10 @@
 }
 
 *{box-sizing:border-box}
-html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;font-size:18px}
 body{
   margin:0;background:var(--clay);color:var(--ink);
-  font-family:var(--body);font-size:17px;line-height:1.62;
+  font-family:var(--body);font-size:19px;line-height:1.62;
   font-synthesis-weight:none;-webkit-font-smoothing:antialiased;
 }
 img{max-width:100%;display:block}
@@ -168,7 +168,7 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
 }
 
 /* ---------- recent work ---------- */
-.recent-grid{display:grid;gap:clamp(24px,4vw,36px);grid-template-columns:repeat(auto-fit,minmax(250px,1fr))}
+.recent-grid{display:grid;gap:clamp(24px,4vw,36px);grid-template-columns:repeat(auto-fit,minmax(340px,1fr))}
 .recent-card{display:flex;flex-direction:column}
 .recent-card .thumb{aspect-ratio:4/3;overflow:hidden;margin-bottom:16px}
 .recent-card .thumb img{width:100%;height:100%;object-fit:cover;transition:transform .5s cubic-bezier(.2,.7,.3,1)}
@@ -205,14 +205,16 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
 .row{border-top:1px solid rgba(23,21,15,.22)}
 .rows .row:last-child{border-bottom:1px solid rgba(23,21,15,.22)}
 .row-in{
-  display:grid;gap:16px 20px;grid-template-columns:120px 1fr;align-items:start;
-  padding:26px 0;text-decoration:none;
+  display:grid;gap:18px;grid-template-columns:1fr;align-items:start;
+  padding:30px 0;text-decoration:none;
 }
-@media(min-width:640px){.row-in{grid-template-columns:220px 1fr;gap:22px 30px}}
-.row-thumb{aspect-ratio:4/3;overflow:hidden;background:var(--clay-3)}
+@media(min-width:640px){.row-in{grid-template-columns:380px 1fr;gap:30px 42px;align-items:stretch}}
+.row-thumb{overflow:hidden;background:var(--clay-3);width:100%;aspect-ratio:3/2}
+@media(min-width:640px){.row-thumb{aspect-ratio:auto;height:100%;min-height:200px}}
 .row-thumb img{width:100%;height:100%;object-fit:cover;transition:transform .5s cubic-bezier(.2,.7,.3,1)}
 .row-thumb-doc img{object-fit:contain;background:var(--bone)}
 .row:hover .row-thumb img{transform:scale(1.05)}
+.row-content{display:flex;flex-direction:column;justify-content:center}
 .row h3{
   font-family:var(--display);font-weight:700;letter-spacing:-.017em;
   font-size:clamp(1.3rem,2.6vw,1.7rem);line-height:1.22;margin:0 0 10px;
@@ -226,7 +228,7 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
 .row:hover h3 span,.row-in:focus-visible h3 span{background-size:100% .28em}
 .row-meta{display:flex;flex-wrap:wrap;gap:6px 14px;align-items:center;opacity:.72;text-transform:uppercase}
 .row-meta .yr{color:var(--river);font-weight:500;opacity:1}
-.row-desc{font-size:.98rem;opacity:.86;margin:0;grid-column:1/-1}
+.row-desc{font-size:1rem;opacity:.86;margin:12px 0 0}
 .row-go{
   display:inline-flex;align-items:center;gap:7px;margin-top:14px;
   font-family:var(--mono);font-size:.66rem;letter-spacing:.14em;text-transform:uppercase;color:var(--river);
@@ -872,22 +874,22 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
       const attrs = hasLink ? ` href="${esc(it.url)}" target="_blank" rel="noopener"` : '';
       const isDoc = it.kind==='Document';
       const thumbClass = 'row-thumb ph'+(isDoc?' row-thumb-doc':'');
-      const thumbStyle = `aspect-ratio:${isDoc?'3/4':'4/3'}${it.image?';background:none':''}`;
+      const thumbStyle = it.image ? 'background:none' : '';
       return `<li class="row rv" data-year="${esc(it.year)}" data-i="${i}">
         <${tag} class="row-in"${attrs}>
           <div class="${thumbClass}" style="${thumbStyle}">${it.image?`<img src="${esc(mediaUrl(it.image))}" alt="">`:`<span>${esc(it.kind||'')}</span>`}</div>
-          <div>
+          <div class="row-content">
             <h3><span>${esc(it.title)}</span></h3>
             <div class="row-meta mono">
               <span class="yr">${esc(it.year)}</span>
               <span>${esc(it.kind||'')}</span>
               <span>${esc(it.role||'')}</span>
             </div>
+            <p class="row-desc">${esc(it.description)}</p>
             ${hasLink
               ? `<span class="row-go">Read<svg width="11" height="11" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M2 10L10 2M10 2H4M10 2v6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>`
               : `<span class="row-go row-nolink">Link to be added</span>`}
           </div>
-          <p class="row-desc">${esc(it.description)}</p>
         </${tag}>
       </li>`;
     }).join('');
