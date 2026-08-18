@@ -885,10 +885,10 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
               <span>${esc(it.kind||'')}</span>
               <span>${esc(it.role||'')}</span>
             </div>
-            <p class="row-desc">${esc(it.description)}</p>
             ${hasLink
               ? `<span class="row-go">Read<svg width="11" height="11" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M2 10L10 2M10 2H4M10 2v6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>`
               : `<span class="row-go row-nolink">Link to be added</span>`}
+            <p class="row-desc">${esc(it.description)}</p>
           </div>
         </${tag}>
       </li>`;
