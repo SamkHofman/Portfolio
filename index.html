@@ -150,6 +150,7 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
 }
 .sec-head .count{font-family:var(--mono);font-size:.7rem;letter-spacing:.14em;opacity:.55;text-transform:uppercase}
 .sec-intro{max-width:62ch;margin:0 0 clamp(28px,4vw,44px);font-size:1.05rem}
+#work .sec-intro,#storyIntro,#photoIntro{max-width:none}
 .rule{height:1px;background:currentColor;opacity:.18;margin-block:clamp(48px,7vw,84px)}
 
 /* ---------- about ---------- */
@@ -214,7 +215,7 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
 .row:hover .row-thumb img{transform:scale(1.05)}
 .row h3{
   font-family:var(--display);font-weight:700;letter-spacing:-.017em;
-  font-size:clamp(1.12rem,2.1vw,1.42rem);line-height:1.22;margin:0 0 10px;
+  font-size:clamp(1.3rem,2.6vw,1.7rem);line-height:1.22;margin:0 0 10px;
 }
 .row h3 span{
   background-image:linear-gradient(var(--marker),var(--marker));
@@ -442,7 +443,7 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
     <span class="mono scroll-cue">Scroll</span>
   </section>
 
-  <section class="band" id="about">
+  <section class="band" id="about" style="padding-bottom:clamp(28px,4.5vw,52px)">
     <div class="wrap">
       <div class="sec-head rv"><h2>About Sam</h2></div>
       <div class="about">
@@ -458,7 +459,7 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
     </div>
   </section>
 
-  <section class="band" id="recent-work" style="padding-top:clamp(36px,7vh,76px)">
+  <section class="band" id="recent-work" style="padding-top:clamp(18px,3.5vh,40px)">
     <div class="wrap">
       <div class="sec-head rv"><h2>Recent work</h2></div>
       <p class="sec-intro rv" id="recentIntro"></p>
