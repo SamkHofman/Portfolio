@@ -2,6 +2,29 @@
   "intro": "My work blends written and visual storytelling to document human rights, environmental issues and community-led movements. Through interviews, profiles, photography and digital narratives, I aim to tell stories that shift understanding and build empathy.",
   "items": [
     {
+      "title": "Jonge Mensen Maken Amsterdam: content voor de lancering van een nieuwe aanvraagronde",
+      "description": "Draaidag voor de lancering van een nieuwe aanvraagronde van Jonge Mensen Maken Amsterdam, een fonds dat jongeren onder de 30 €1.500 geeft om iets te doen voor hun wijk of voor de stad. Op één middag in Amsterdam West filmden we een promovideo van minder dan een minuut en straatinterviews waarin voorbijgangers ter plekke hun idee pitchten. Ook maakten we foto’s voor de beeldbank van de organisatie. Ik fotografeerde en filmde de hele dag.",
+      "aspect": "portrait",
+      "images": [
+        {
+          "src": "/images/IMG_4768.jpg",
+          "caption": "Behind the scenes"
+        },
+        {
+          "src": "/images/IMG_4810-1.jpg",
+          "caption": "Groepsfoto"
+        },
+        {
+          "src": "/images/IMG_4709.jpg",
+          "caption": "Sip & paint scène"
+        },
+        {
+          "src": "/images/IMG_4817.jpg",
+          "caption": "Straat scène"
+        }
+      ]
+    },
+    {
       "title": "Chow Chow x The Bowl Spot",
       "description": "Was hired to photograph the making of a new recipe between two restaurants, photographed inside the kitchen, the interior of the restaurant and the exterior. More photos will be uploaded soon.",
       "aspect": "landscape",
